@@ -6,9 +6,9 @@
 class CDate
 {
 public:
-    CDate(int Days, int Months, int Years); //Abfragen der Eigenschaften
-    CDate();
-    void print() const; //Ausgeben
+    CDate(); //Date ohne Parameter
+    CDate(int Days, int Months, int Years); //Abfragen der Eigenschaften            
+    void print() const; //Ausgabe
 
 private:
     int m_Days;

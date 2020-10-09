@@ -12,10 +12,10 @@ CDate::CDate(int Days, int Months, int Years)
 
 CDate::CDate()
 {
-   time_t now = time(0);
+   time_t now = time(0);   //Aktuelles Datum / Uhrzeit basierend auf dem aktuellen System
 
-   tm *ltm = localtime(&now);
-
+   tm *ltm = localtime(&now); //struct ltm
+   //Aktuelles Datum
    m_Days = ltm->tm_mday;
    m_Months = 1 + ltm->tm_mon;
    m_Years = 1900 + ltm->tm_year;
@@ -23,5 +23,5 @@ CDate::CDate()
 
 void CDate::print() const
 {
-   cout << setfill('0') << setw(2) << m_Days << '.' << setw(2) << m_Months << '.' << setw(2) << m_Years;
+   cout << setfill('0') << setw(2) << m_Days << '.' << setw(2) << m_Months << '.' << setw(2) << m_Years; //setfill('0') und setw(2) ist wie %02i im C 
 }
