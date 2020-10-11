@@ -24,11 +24,14 @@ CTime::CTime()
 void CTime::print() const
 {
     if (m_Seconds != 0)
-    {
-        cout << setfill('0') << setw(2) << m_Hours << ':' << setw(2) << m_Minutes << ':' << setw(2) << m_Seconds;
+    { 
+        printf("%02d.%02d.%02d",m_Hours,m_Minutes,m_Seconds);
+
+        //cout << setfill('0') << setw(2) << m_Hours << ':' << setw(2) << m_Minutes << ':' << setw(2) << m_Seconds;
     }
     else
-    {
-        cout << setfill('0') << setw(2) << m_Hours << ':' << setw(2) << m_Minutes ;
+    {   
+        printf("%02d:%02d:%02d",m_Hours,m_Minutes); 
+        //cout << setfill('0') << setw(2) << m_Hours << ':' << setw(2) << m_Minutes ;
     }
 }

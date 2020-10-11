@@ -6,8 +6,8 @@
 class CDate
 {
 public:
-    CDate(); //Date ohne Parameter
-    CDate(int Days, int Months, int Years); //Abfragen der Eigenschaften            
+    CDate(); //Konstruktor
+    CDate(int Days, int Months, int Years); //Abfragen der Eigenschaften : Konstruktor            
     void print() const; //Ausgabe
 
 private:
