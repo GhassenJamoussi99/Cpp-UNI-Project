@@ -16,9 +16,9 @@ CTime::CTime()
 
     tm *ltm = localtime(&now);
     //Aktuelle Uhrzeit
-    m_Hours = ltm->tm_hour; 
-    m_Minutes = ltm->tm_min;
-    m_Seconds = ltm->tm_sec;
+    m_Hours = ltm->tm_hour;  //Hours
+    m_Minutes = ltm->tm_min; //Minutes
+    m_Seconds = ltm->tm_sec; //Seconds
 }
 
 void CTime::print() const
