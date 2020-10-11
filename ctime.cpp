@@ -10,6 +10,11 @@ CTime::CTime(int Hours, int Minutes, int Seconds)
     m_Seconds = Seconds;
 }
 
+CTime::~CTime()
+{
+  //printf("Die Uhrzeit %02d.%02d.%02d wird vernichtet\n",m_Hours,m_Minutes,m_Seconds);
+}
+
 CTime::CTime()
 {
     time_t now = time(0); //Aktuelles Datum / Uhrzeit basierend auf dem aktuellen System

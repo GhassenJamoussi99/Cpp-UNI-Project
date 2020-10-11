@@ -11,6 +11,11 @@ CDate::CDate(int Days, int Months, int Years)
    m_Years = Years;
 }
 
+CDate::~CDate()
+{
+  //printf("Das Datum %02d.%02d.%02d wird vernichtet\n",m_Days,m_Months,m_Years);
+}
+
 CDate::CDate()
 {
    time_t now = time(0);   //Aktuelles Datum / Uhrzeit basierend auf dem aktuellen System
@@ -27,3 +32,4 @@ void CDate::print() const
    printf("%02d.%02d.%02d",m_Days,m_Months,m_Years);
    //cout << setfill('0') << setw(2) << m_Days << '.' << setw(2) << m_Months << '.' << setw(2) << m_Years; //setfill('0') und setw(2) ist wie %02i im C 
 }
+

@@ -6,14 +6,15 @@
 class CTime
 {
  public:
-   CTime(int Hours, int Minutes, int Seconds=0);
-   CTime();
-   void print() const;
+  CTime();  //Standardkonstruktor
+  CTime(int Hours, int Minutes, int Seconds = 0); //Konstruktor
+  ~CTime(); //Destruktor
+  void print() const;
 
  private:
-   int m_Hours;
-   int m_Minutes;
-   int m_Seconds;
+  int m_Hours;
+  int m_Minutes;
+  int m_Seconds;
 };
 
 #endif
