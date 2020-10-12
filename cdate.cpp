@@ -1,6 +1,5 @@
 #include "cdate.hpp"
 #include <iomanip>
-//#include <cstdio>
 
 using namespace std;
 
