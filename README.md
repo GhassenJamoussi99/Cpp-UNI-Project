@@ -1,5 +1,4 @@
-## Cpp-Labor
-CPP Labor Projekt 
+## Cpp-Labor project
 
 _3rd Semester (Informatik III)_
 ![inf](https://user-images.githubusercontent.com/63748847/96006332-a93be200-0e3d-11eb-8e43-3aaac8545b8a.png)
