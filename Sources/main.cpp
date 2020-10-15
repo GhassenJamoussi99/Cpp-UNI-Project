@@ -24,7 +24,7 @@ int main()
 
    // Bloecke
    CBlock Block1( 1, Zeit0800);
-  /* CBlock Block2( 2, Zeit1000);
+   CBlock Block2( 2, Zeit1000);
    CBlock Block3( 3, Zeit1215);
    CBlock Block4( 4, Zeit1415);
    CBlock Block5( 5, Zeit1600);
@@ -43,8 +43,8 @@ int main()
    CPerson Student2("Detlef Dicht", "Dichterweg", "27", 29031, "Vordertupfingen", 27, 5, 1991);
    CPerson Student3("Frank Faust", "Goethestr.", "3-5", 12345, "Berlin", 3, 11, 1987);
    CPerson Student4("Max Muster", "Meistergasse", "23", 19885, "Hintertupfingen", 19, 7, 1985);
-   CPerson *Studenten[4] = { &Student1, &Student2, &Student3, &Student4 };
-   CAddress *Adressen[4] = { &(Student1.getAddress()), &(Student2.getAddress()),
+   CPerson *Studenten[4] = { &Student1, &Student2, &Student3, &Student4 }; 
+   CAddress *Adressen[4] = { &(Student1.getAddress()), &(Student2.getAddress()), 
                              &(Student3.getAddress()), &(Student4.getAddress()) };
 
    cout << "\nKlasse CBlock:" << endl;
@@ -75,6 +75,6 @@ int main()
       Studenten[i]->print();
       cout << endl;
    }
-*/
+
    return 0;
 }
