@@ -11,7 +11,7 @@ class CBlock
 
    short getBlockNr();
    void print() ;
-   void getEnd();
+   CTime getEnd();
    
    ~CBlock(){};
 

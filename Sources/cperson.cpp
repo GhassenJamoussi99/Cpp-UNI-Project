@@ -21,7 +21,7 @@ CPerson::CPerson(
 
 void CPerson::print() const
 {
-    cout << Name << " (* " << Birthday.Day << "." << Birthday.Month << "." << Birthday.Year << ")" << endl;
+    cout << Name << " (* " << Birthday.Day << "." << Birthday.Month << "." << Birthday.Year << ")";
 }
 
  CAddress &CPerson::getAddress()

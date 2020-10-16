@@ -15,21 +15,20 @@ short CBlock::getBlockNr()
   return BlockNr;
 }
 
-void CBlock::getEnd()
+CTime CBlock::getEnd()
 {
   int STD = (Begin.Minute + 30) / 60;
   Begin.Minute = (Begin.Minute + 30) % 60;
   Begin.Hour = Begin.Hour + 1 + STD;
+
+  return Begin;
 }
 
-void CBlock::print() 
-{ 
-    cout << Begin.Hour << ":" << Begin.Minute <<" - ";
-  //cout << setfill('0') << setw(2) << Begin.Hour << ":" << setw(2) << Begin.Minute << " – ";
-  
+void CBlock::print()
+{
+  cout << setfill('0') << setw(2) << Begin.Hour << ":" << setw(2) << Begin.Minute << " - ";
+
   getEnd();
 
-    cout << Begin.Hour << ":" << Begin.Minute ;
-
-  // cout << setfill('0') << setw(2) << Begin.Hour << ":" << setw(2) << Begin.Minute << endl;
+  cout << setfill('0') << setw(2) << Begin.Hour << ":" << setw(2) << Begin.Minute ;
 }
