@@ -44,8 +44,8 @@ int main()
    CPerson Student3("Frank Faust", "Goethestr.", "3-5", 12345, "Berlin", 3, 11, 1987);
    CPerson Student4("Max Muster", "Meistergasse", "23", 19885, "Hintertupfingen", 19, 7, 1985);
    CPerson *Studenten[4] = { &Student1, &Student2, &Student3, &Student4 }; 
-   CAddress *Adressen[4] = { &(Student1.getAddress()), &(Student2.getAddress()), 
-                             &(Student3.getAddress()), &(Student4.getAddress()) };
+   CAddress *Adressen[4] = { &Student1.getAddress(), &Student2.getAddress(), 
+                            &Student3.getAddress(), &Student4.getAddress() };
 
    cout << "\nKlasse CBlock:" << endl;
    for (i = 0; i < 7; i++)

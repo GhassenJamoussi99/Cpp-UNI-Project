@@ -11,5 +11,5 @@ CRoom::CRoom(string m_Name, string m_Building , short m_Seats )
 
 void CRoom::print() const
 {
-  cout << "Raum" << Name << " (" << Building << ")" ;
+  cout << "Raum " << Name << " (" << Building << ")" ;
 }

@@ -6,7 +6,8 @@ using namespace std;
 CBlock::CBlock(short m_BlockNr, CTime m_Begin)
 {
   BlockNr = m_BlockNr;
-  Begin = m_Begin;
+  Begin.Hour = m_Begin.Hour;
+  Begin.Minute = m_Begin.Minute;
 }
 
 short CBlock::getBlockNr()
@@ -21,12 +22,14 @@ void CBlock::getEnd()
   Begin.Hour = Begin.Hour + 1 + STD;
 }
 
-void CBlock::print() const
+void CBlock::print() 
 { 
-  CBlock End();
-  cout << setfill('0') << setw(2) << Begin.Hour << ":" << setw(2) << Begin.Minute << " – ";
+    cout << Begin.Hour << ":" << Begin.Minute <<" - ";
+  //cout << setfill('0') << setw(2) << Begin.Hour << ":" << setw(2) << Begin.Minute << " – ";
   
-  End().getEnd();
+  getEnd();
 
-  cout << setfill('0') << setw(2) << Begin.Hour << ":" << setw(2) << Begin.Minute << endl;
+    cout << Begin.Hour << ":" << Begin.Minute ;
+
+  // cout << setfill('0') << setw(2) << Begin.Hour << ":" << setw(2) << Begin.Minute << endl;
 }

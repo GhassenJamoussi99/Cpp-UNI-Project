@@ -7,8 +7,8 @@
 class CRoom
 {
   public:
-   CRoom();
-   CRoom(string m_Name, string m_Building , short m_Seats );
+   CRoom() = default;
+   CRoom(std::string m_Name, std::string m_Building , short m_Seats );
    void print() const;
    ~CRoom(){};
 

@@ -5,9 +5,9 @@ using namespace std;
 
 CTime::CTime(int Hours, int Minutes, int Seconds)
 {
-    Hours = Hours;
-    Minutes = Minutes;
-    Seconds = Seconds;
+    Hour = Hours;
+    Minute = Minutes;
+    Second = Seconds;
 }
 
 

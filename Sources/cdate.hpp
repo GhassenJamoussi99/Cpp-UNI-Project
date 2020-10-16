@@ -6,11 +6,11 @@
 class CDate
 {
 public:
-    CDate(); // Standardkonstruktor
-    CDate(int m_Days, int m_Months, int m_Years); //Abfragen der Eigenschaften : Konstruktor 
+    CDate() ; 
+    CDate(int m_Days, int m_Months, int m_Years); 
     void print() const;
     friend class CPerson;
-    ~CDate(){};  //Destruktor           
+    ~CDate(){};          
 
 private:
     int Day;   

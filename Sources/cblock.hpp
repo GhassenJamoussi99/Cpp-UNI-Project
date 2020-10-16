@@ -6,11 +6,11 @@
 class CBlock
 {
  public:
-   CBlock();
+   CBlock() = default;
    CBlock(short m_BlockNr,CTime m_Begin);
 
    short getBlockNr();
-   void print() const;
+   void print() ;
    void getEnd();
    
    ~CBlock(){};

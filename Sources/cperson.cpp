@@ -21,12 +21,10 @@ CPerson::CPerson(
 
 void CPerson::print() const
 {
-    cout << Name << "(* " << Birthday.Day << "." << Birthday.Month << "." << Birthday.Year << ")" << endl;
+    cout << Name << " (* " << Birthday.Day << "." << Birthday.Month << "." << Birthday.Year << ")" << endl;
 }
 
 CAddress CPerson::getAddress()
 {
-    CPerson Erg;
-
-    return Erg.Address;
+    return this->Address;
 }

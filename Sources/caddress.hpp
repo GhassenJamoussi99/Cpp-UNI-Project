@@ -5,7 +5,7 @@
 class CAddress
 {
 public:
-    CAddress();
+    CAddress() = default;
     void print() const;
     friend class CPerson;
 
