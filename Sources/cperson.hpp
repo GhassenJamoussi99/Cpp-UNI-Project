@@ -11,7 +11,7 @@ public:
   CPerson(std::string m_Name, std::string m_Street,
           std::string m_HouseNr, unsigned m_Zipcode,
           std::string m_City, int m_Day, int m_Month, int m_Year);
-  CAddress getAddress();
+  CAddress &getAddress();
   void print() const;
   ~CPerson(){};
 
