@@ -7,21 +7,17 @@ CPerson::CPerson(
     string m_HouseNr,
     unsigned m_Zipcode,
     string m_City,
-    int m_Day, int m_Month, int m_Year)
+    int m_Day, int m_Month, int m_Year) 
+    :Address(m_Street,m_HouseNr,m_Zipcode,m_City),Birthday(m_Day,m_Month,m_Year)
 {
     Name = m_Name;
-    Address.Street = m_Street;
-    Address.HouseNr = m_HouseNr;
-    Address.Zipcode = m_Zipcode;
-    Address.City = m_City;
-    Birthday.Day = m_Day;
-    Birthday.Month = m_Month;
-    Birthday.Year = m_Year;
 }
 
 void CPerson::print() const
 {
-    cout << Name << " (* " << Birthday.Day << "." << Birthday.Month << "." << Birthday.Year << ")";
+    cout << Name << " (* " ;
+    Birthday.print();
+    cout << ")";
 }
 
  CAddress &CPerson::getAddress()

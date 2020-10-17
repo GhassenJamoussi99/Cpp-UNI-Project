@@ -3,11 +3,11 @@
 
 using namespace std;
 
-CDate::CDate(int m_Days, int m_Months, int m_Years)
+CDate::CDate(int m_Day, int m_Month, int m_Year)
 {
-   Day = m_Days;
-   Month = Month;
-   Year = Year;
+   Day = m_Day;
+   Month = m_Month;
+   Year = m_Year;
 }
 
 CDate::CDate()
