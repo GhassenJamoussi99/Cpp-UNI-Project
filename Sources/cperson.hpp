@@ -22,5 +22,4 @@ private:
   CDate Birthday;
 };
 
-
 #endif
