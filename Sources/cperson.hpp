@@ -12,6 +12,7 @@ public:
           std::string m_HouseNr, unsigned m_Zipcode,
           std::string m_City, int m_Day, int m_Month, int m_Year);
   CAddress &getAddress();
+  friend class CEvents;
   void print() const;
   ~CPerson(){};
 

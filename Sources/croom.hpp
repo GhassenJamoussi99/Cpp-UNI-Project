@@ -9,6 +9,7 @@ class CRoom
   public:
    CRoom() = default;
    CRoom(std::string m_Name, std::string m_Building , short m_Seats );
+   friend class CEvents;
    void print() const;
    ~CRoom(){};
 

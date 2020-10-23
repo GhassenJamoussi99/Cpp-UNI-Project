@@ -2,18 +2,19 @@
 #define CEVENTS_H
 #include <iostream>
 #include <vector>
+#include "CEvent.hpp"
 
-
-class CEvent
+class CEvents
 {
- public:
-    CEvent() = default;
-    CEvent addEvent(CEvent *m_Event);
-    void print() const;
-    ~CEvent(){};
+public:
+   CEvents() = default;
+   void addEvent(CEvent m_Event);
 
- private:
-    std::vector<CEvent*> Events;
+   void print();
+   ~CEvents(){};
+
+private:
+   std::vector<CEvent*> Events;
 };
 
 #endif

@@ -6,7 +6,7 @@ using namespace std;
 #include "croom.hpp"
 #include "cperson.hpp"
 #include "cevent.hpp"
-//#include "cevents.hpp"
+#include "cevents.hpp"
 
 int main()
 {
