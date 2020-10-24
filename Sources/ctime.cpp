@@ -1,4 +1,4 @@
-#include "ctime.hpp"
+#include "CTime.hpp"
 #include <iomanip>
 
 using namespace std;

@@ -1,7 +1,8 @@
 #ifndef CPERSON_H
-#define CPERSOn_H
-#include "caddress.hpp"
-#include "cdate.hpp"
+#define CPERSON_H
+
+#include "CAddress.hpp"
+#include "CDate.hpp"
 #include <iostream>
 
 class CPerson

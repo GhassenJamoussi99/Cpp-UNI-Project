@@ -8,7 +8,7 @@ class CEvents
 {
 public:
    CEvents() = default;
-   void addEvent(CEvent m_Event);
+   void addEvent(CEvent *m_Event);
 
    void print();
    ~CEvents(){};

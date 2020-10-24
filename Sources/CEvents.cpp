@@ -3,9 +3,9 @@ using namespace std;
 
 
 
-void CEvents::addEvent(CEvent m_Event)
+void CEvents::addEvent(CEvent *m_Event)
 {
-  Events.push_back(&m_Event); //à revoir weird shit.
+  Events.push_back(&(*m_Event)); //à revoir weird shit.
 }
 
 extern "C" void CEvents::print()

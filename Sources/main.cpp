@@ -2,11 +2,11 @@
 using namespace std;
 
 #include "CTime.hpp"
-#include "cblock.hpp"
-#include "croom.hpp"
-#include "cperson.hpp"
-#include "cevent.hpp"
-#include "cevents.hpp"
+#include "CBlock.hpp"
+#include "CRoom.hpp"
+#include "CPerson.hpp"
+#include "CEvent.hpp"
+#include "CEvents.hpp"
 
 int main()
 {

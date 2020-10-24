@@ -2,11 +2,11 @@
 using namespace std;
 
 CEvent::CEvent(string m_Name,
-               CBlock *m_Block,
-               CPerson *Teacher,
-               CRoom *m_Room,
-               CWeekday m_day,
-               short m_Period)
+             CPerson *Teacher,
+             CRoom *m_Room,
+             CBlock *m_Block,
+             CWeekday m_day, 
+             short m_Period)
 {
     Name = m_Name;
     *Block = *m_Block;
@@ -35,5 +35,6 @@ string CEvent::getDay()
         return "Sonntag";
 
     default:
+        return "None";
    }
 }
