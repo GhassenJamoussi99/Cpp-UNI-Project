@@ -3,12 +3,9 @@
 
 using namespace std;
 
-CBlock::CBlock(short m_BlockNr, CTime m_Begin)
-{
-  BlockNr = m_BlockNr;
-  Begin.Hour = m_Begin.Hour;
-  Begin.Minute = m_Begin.Minute;
-}
+CBlock::CBlock(short m_BlockNr, CTime m_Begin):
+BlockNr(m_BlockNr),Begin(m_Begin.Hour,m_Begin.Minute)
+{}
 
 short CBlock::getBlockNr()
 {

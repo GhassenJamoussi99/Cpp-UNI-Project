@@ -11,7 +11,7 @@ void CEvents::addEvent(CEvent *m_Event)
   Events.push_back(m_Event); //Works correctly but see why.
 }
 
-extern "C" void CEvents::print()
+void CEvents::print()
 {
   cout << "Veranstaltungen:" << endl;
   string a = " ";
@@ -20,6 +20,6 @@ extern "C" void CEvents::print()
     CWeekday Day = Events[i]->WeekDay;
     printf("%d: %-10s %5s", i + 1, Events[i]->getDay(Day).c_str(), a.c_str());
     Events[i]->Block->print();
-     printf("%5s %-30s %-20s %-10s\n",a.c_str(),Events[i]->Name.c_str(),Events[i]->Teacher->Name.c_str(),Events[i]->Room->Name.c_str());  
+    printf("%5s %-30s %-20s %-10s\n", a.c_str(), Events[i]->Name.c_str(), Events[i]->Teacher->Name.c_str(), Events[i]->Room->Name.c_str());
   }
 }

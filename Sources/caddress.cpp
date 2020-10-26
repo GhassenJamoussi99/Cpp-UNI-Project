@@ -9,9 +9,5 @@ void CAddress::print() const
 }
 
 CAddress::CAddress(std::string m_Street, std::string m_HouseNr, unsigned m_Zipcode, std::string m_City)
-{
-   this->Street = m_Street;
-   this->HouseNr = m_HouseNr;
-   this->Zipcode = m_Zipcode;
-   this->City = m_City;
-}
+:Street(m_Street),HouseNr(m_HouseNr),Zipcode(m_Zipcode),City(m_City)
+{}

@@ -3,12 +3,9 @@
 
 using namespace std;
 
-CTime::CTime(int Hours, int Minutes, int Seconds)
-{
-    Hour = Hours;
-    Minute = Minutes;
-    Second = Seconds;
-}
+CTime::CTime(int Hours, int Minutes, int Seconds):
+Hour(Hours),Minute(Minutes),Second(Seconds)
+{}
 
 
 CTime::CTime()
