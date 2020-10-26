@@ -7,14 +7,15 @@ CEvent::CEvent(string m_Name,
              CRoom *m_Room,
              CBlock *m_Block,
              CWeekday m_day, 
-             short m_Period) 
+             short m_Period) : Name(m_Name),Teacher(m_Teacher),
+                               Room(m_Room),Block(m_Block),WeekDay(m_day),
+                               Period(m_Period)
 {
-    Name
 }
 
-string CEvent::getDay()
+string CEvent::getDay(CWeekday m_WeekDay)
 {
-   switch (WeekDay)
+   switch (m_WeekDay)
    {
     case Mo:
         return "Montag";
