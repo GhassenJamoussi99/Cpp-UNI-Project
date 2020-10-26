@@ -13,15 +13,13 @@ void CEvents::addEvent(CEvent *m_Event)
 
 extern "C" void CEvents::print()
 {
-  cout << "Veranstaltungen:" << endl ;
-
-  for (int i = 0 ; i < counter;i++)
+  cout << "Veranstaltungen:" << endl;
+  string a = " ";
+  for (int i = 0; i < counter; i++)
   {
     CWeekday Day = Events[i]->WeekDay;
-    printf("%d: %s",i+1,Events[i]->getDay(Day).c_str() );
-    Events[i]->Block->print(); 
-    printf("%25s %20s %10s\n",Events[i]->Name.c_str(),Events[i]->Teacher->Name.c_str(),Events[i]->Room->Name.c_str());
+    printf("%d: %-10s %5s", i + 1, Events[i]->getDay(Day).c_str(), a.c_str());
+    Events[i]->Block->print();
+     printf("%5s %-30s %-20s %-10s\n",a.c_str(),Events[i]->Name.c_str(),Events[i]->Teacher->Name.c_str(),Events[i]->Room->Name.c_str());  
   }
-  
-
 }

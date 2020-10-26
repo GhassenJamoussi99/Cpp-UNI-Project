@@ -28,9 +28,9 @@ void CBlock::print()
 {
   int HBegin = Begin.Hour;
   int MBegin = Begin.Minute;
-  
+
   cout << setfill('0') << setw(2) << Begin.Hour << ":" << setw(2) << Begin.Minute << " - ";
-  
+
   getEnd();
 
   cout << setfill('0') << setw(2) << Begin.Hour << ":" << setw(2) << Begin.Minute;
