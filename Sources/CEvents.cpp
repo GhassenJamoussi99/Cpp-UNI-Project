@@ -1,4 +1,5 @@
 #include "CEvents.hpp"
+#include <iomanip>
 
 using namespace std;
 
@@ -13,14 +14,13 @@ void CEvents::addEvent(CEvent *m_Event)
 extern "C" void CEvents::print()
 {
   cout << "Veranstaltungen:" << endl ;
-  
+
   for (int i = 0 ; i < counter;i++)
   {
     CWeekday Day = Events[i]->WeekDay;
-    printf("%d: %s                 ",i+1,Events[i]->getDay(Day).c_str() );
+    printf("%d: %s",i+1,Events[i]->getDay(Day).c_str() );
     Events[i]->Block->print(); 
-    printf("%25s %20s %20s\n",Events[i]->Name.c_str(),Events[i]->Teacher->Name.c_str(),Events[i]->Room->Name.c_str());
-
+    printf("%25s %20s %10s\n",Events[i]->Name.c_str(),Events[i]->Teacher->Name.c_str(),Events[i]->Room->Name.c_str());
   }
   
 
