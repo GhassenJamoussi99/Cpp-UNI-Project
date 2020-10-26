@@ -1,16 +1,17 @@
 #include "CEvents.hpp"
 using namespace std;
 
-
+static int counter = 0;
 
 void CEvents::addEvent(CEvent *m_Event)
 {
-  Events.push_back(&(*m_Event)); //à revoir weird shit.
+  counter++;
+  Events.push_back(m_Event); //à revoir weird shit.
 }
 
-extern "C" void CEvents::print()
+/*extern "C" */void CEvents::print()
 {
-  for (int i = 0 ; i < Events.size();i++)
+  for (int i = 0 ; i < counter;i++)
   {
     printf("%d: %s",i+1,Events[i]->getDay() );
     Events[i]->Block->print(); 

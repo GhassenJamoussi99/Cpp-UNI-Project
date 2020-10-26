@@ -1,18 +1,15 @@
 #include "CEvent.hpp"
+
 using namespace std;
 
 CEvent::CEvent(string m_Name,
-             CPerson *Teacher,
+             CPerson *m_Teacher,
              CRoom *m_Room,
              CBlock *m_Block,
              CWeekday m_day, 
-             short m_Period)
+             short m_Period) 
 {
-    Name = m_Name;
-    *Block = *m_Block;
-    *Room = *m_Room;
-    WeekDay = m_day;
-    Period = m_Period;
+    Name
 }
 
 string CEvent::getDay()
