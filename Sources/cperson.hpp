@@ -17,8 +17,8 @@ public:
   void print() const;
   ~CPerson(){};
 
-private:
-  unsigned ID;
+protected:
+  static unsigned ID;
   std::string Name;
   CAddress Address;
   CDate Birthday;

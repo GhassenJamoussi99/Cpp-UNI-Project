@@ -13,7 +13,7 @@ public:
    void print();
    ~CEvents(){};
 
-private:
+protected:
    std::vector<CEvent*> Events;
 };
 
