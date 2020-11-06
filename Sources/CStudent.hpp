@@ -16,6 +16,7 @@ class CStudent : public CPerson
   std::string getName() { return this->Name; }
   CDate getBirthday() { return this->Birthday; }
   unsigned int getMatrNr() { return this->MatriculationNr; }
+  void getStudy(){Study->print();}
     //set
   void print();
   ~CStudent()

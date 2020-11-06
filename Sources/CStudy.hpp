@@ -8,6 +8,7 @@ class CStudy
  public:
   CStudy() = default;
   CStudy(std::string m_Name, bool m_NC, short m_NrOfTerms);
+  std::string getStudy(){return this->Name;}
   void print();
   ~CStudy()
   {std::cout<<"Studiengang " << Name <<" wird vernichtet."<<endl; }

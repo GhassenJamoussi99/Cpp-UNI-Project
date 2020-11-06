@@ -54,7 +54,7 @@ int main()
    CStudent *Student3 = new CStudent("Frank Faust", "Goethestr.", "3-5", 12345, "Berlin",
                                      3, 11, 1987, 191492, 2, 24, TechInfo);
    CStudent *Student4 = new CStudent("Max Muster", "Meistergasse", "23", 19885, "Hintertupfingen",
-                                     19, 7, 1985, 191368, 3, 30, Etechnik);
+                                     19, 7, 1985, 191368, 3, 30, ETechnik);
    CPerson *Dozent1 = new CTeacher("Kevin Kaufmann", "Kaiserstr.", "38", 12075, "Berlin",
                                    15, 6, 1959, 12);
    CPerson *Dozent2 = new CTeacher("Nathan Neuling", "Neue Str.", "7", 10777, "Berlin",
@@ -75,7 +75,7 @@ int main()
 
    // Faecher einschl. der Zuordnung zu den Veranstaltungen
    CSubject *Fach1 = new CSubject("Mathe I", 31103, TechInfo);
-   CSubject *Fach2 = new CSubject("Digitale Systeme", 33102, Etechnik);
+   CSubject *Fach2 = new CSubject("Digitale Systeme", 33102, ETechnik);
    CSubject *Fach3 = new CSubject("Informatik I", 31101, TechInfo);
    CSubject *Fach4 = new CSubject("Englisch", 31209, TechInfo);
    CSubject *Fach5 = new CSubject("Quantenmechanik", 32502, Physik);
@@ -97,7 +97,7 @@ int main()
    Belegungen.push_back(new CBooking(Fach1, Student2, 4, 10, 2020, 13, 28, 56));
    Belegungen.push_back(new CBooking(Fach1, Student3, 4, 10, 2020, 17, 3, 31));
    Belegungen.push_back(new CBooking(Fach1, Student4, 5, 10, 2020, 1, 52, 11));
-
+   int i;
    for (i = 0; i < Belegungen.size(); i++)
    {
       Belegungen[i]->print();
@@ -132,7 +132,7 @@ int main()
    delete Dozent3;
    delete Dozent4;
    delete Physik;
-   delete Etechnik;
+   delete ETechnik;
    delete D114;
    delete D117;
    delete D136;

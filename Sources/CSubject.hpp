@@ -13,6 +13,8 @@ class CSubject
   CSubject(std::string m_Name,unsigned m_SubjNr,CStudy *m_Study);
   void addEvent(CEvent *m_Event);
   void print();
+  std::string getSubject(){return Name;}
+  unsigned getSubjNr(){return SubjNr;}
   ~CSubject()
   {std::cout<<"Studienfach " << Name <<" wird vernichtet."<<endl; }
 

@@ -19,11 +19,12 @@ void CBooking::print()
     BookingTime.print();
     cout << endl;
 
-    cout<<"hat " << Student->getName() << "(* ";
+    cout << "hat " << Student->getName() << "(* ";
     (Student->getBirthday()).print();
-    cout<<"; " <<"MatrNr. "<< Student->getMatrNr() <<")" << endl;
-    
-    cout<<"das Fach " //STOPPED HERE 
+    cout << "; "
+         << "MatrNr. " << Student->getMatrNr() << ")" << endl;
 
-
+    cout << "das Fach '" << Subject->getSubject() << "(" << Subject->getSubjNr() << "; ";
+    Student->getStudy();
+    cout << ") '"<< "belegt";
 }
