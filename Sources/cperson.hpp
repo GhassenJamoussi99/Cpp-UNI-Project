@@ -15,7 +15,9 @@ public:
   CAddress &getAddress();
   friend class CEvents;
   void print() const;
-  ~CPerson(){};
+  ~CPerson()
+  {std::cout<<"Person " << Name <<" wird vernichtet."<<endl; }
+
 
 protected:
   static unsigned ID;

@@ -10,15 +10,18 @@ class CSubject
 {
   public:
   CSubject() = default;
+  CSubject(std::string m_Name,unsigned m_SubjNr,CStudy *m_Study);
   void addEvent(CEvent *m_Event);
   void print();
+  ~CSubject()
+  {std::cout<<"Studienfach " << Name <<" wird vernichtet."<<endl; }
 
   private:
-   static unsigned SubjNr;
+   unsigned SubjNr;   //Static
    std::string Name;
    CStudy *Study;
-   std::vector<CEvent*> Events;
-
+   std::vector<CEvent*> Events; 
+   
 };
 
 
