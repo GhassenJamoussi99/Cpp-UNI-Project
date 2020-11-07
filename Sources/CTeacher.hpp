@@ -14,7 +14,7 @@ class CTeacher : public CPerson
   //get
   void print();
   ~CTeacher()
-  {std::cout<<"Lehrer*in " << Name <<" wird vernichtet."<<endl; }
+  {std::cout<<"Lehrer*in " << Name <<" wird vernichtet."<<std::endl; }
 
   private:
    unsigned PersonalNr;

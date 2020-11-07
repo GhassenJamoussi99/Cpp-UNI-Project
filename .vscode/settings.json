@@ -43,5 +43,6 @@
         "typeinfo": "cpp",
         "list": "cpp"
     },
-    "C_Cpp.dimInactiveRegions": false
+    "C_Cpp.dimInactiveRegions": false,
+    "git.ignoreLimitWarning": true
 }

@@ -15,8 +15,8 @@ public:
   CAddress &getAddress();
   friend class CEvents;
   void print() const;
-  ~CPerson()
-  {std::cout<<"Person " << Name <<" wird vernichtet."<<endl; }
+  virtual ~CPerson()
+  {std::cout<<"Person " << Name <<" wird vernichtet."<<std::endl; }
 
 
 protected:

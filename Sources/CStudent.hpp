@@ -21,7 +21,7 @@ class CStudent : public CPerson
   void print();
   ~CStudent()
   {
-    std::cout << "Student*in " << Name << " wird vernichtet." << endl;
+    std::cout << "Student*in " << Name << " wird vernichtet." << std::endl;
   }
 
  private:

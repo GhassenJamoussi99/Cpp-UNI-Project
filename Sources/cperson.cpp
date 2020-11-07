@@ -1,6 +1,9 @@
 #include "CPerson.hpp"
 using namespace std;
 
+unsigned CPerson::ID = 0;
+
+
 CPerson::CPerson(
     string m_Name,
     string m_Street,
@@ -11,6 +14,7 @@ CPerson::CPerson(
     :Address(m_Street,m_HouseNr,m_Zipcode,m_City),Birthday(m_Day,m_Month,m_Year)
 {
     Name = m_Name;
+    ID++;
 }
 
 void CPerson::print() const

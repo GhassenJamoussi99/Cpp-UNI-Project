@@ -6,6 +6,8 @@
 #include "CStudent.hpp"
 #include "CTime.hpp"
 
+static unsigned TMP = 0;
+
 class CBooking
 {
  public:
@@ -14,7 +16,10 @@ class CBooking
              int m_Hour,int m_Minute,int m_Second);
     void print();
     ~CBooking()
-    {std::cout<<"Belegung Nr. " << BookingNr <<" wird vernichtet."<<endl; }
+    {
+       TMP++;
+       std::cout<<"Belegung Nr. " << TMP <<" wird vernichtet."<<std::endl; 
+    }
 
  private:
     static unsigned BookingNr;
