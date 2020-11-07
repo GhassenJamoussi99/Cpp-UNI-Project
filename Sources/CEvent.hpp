@@ -25,8 +25,8 @@ public:
     std::string getDay(CWeekday m_WeekDay);
     friend class CEvents;
 
-    void print();
-    ~CEvent(){};
+     void print();
+    ~CEvent(){}; 
 
 private:
     std::string Name;
