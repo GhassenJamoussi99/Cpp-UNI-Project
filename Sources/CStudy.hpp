@@ -11,7 +11,7 @@ class CStudy
   std::string getStudy(){return this->Name;}
   void print();
   ~CStudy()
-  {std::cout<<"Studiengang " << Name <<" wird vernichtet."<<endl; }
+  {std::cout<<"Studiengang " << Name <<" wird vernichtet."<<std::endl; }
 
  private:
   std::string Name;

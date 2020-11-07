@@ -20,7 +20,7 @@ class CEvent
 {
 public:
     CEvent() = default;
-    CEvent(std::string m_Name, CPerson *Teacher, CRoom *m_Room, CBlock *m_Block,
+    CEvent(std::string m_Name, CPerson *Teacher, CRoom m_Room, CBlock m_Block,
            CWeekday m_day, short m_Period);
     std::string getDay(CWeekday m_WeekDay);
     friend class CEvents;
@@ -31,8 +31,8 @@ public:
 private:
     std::string Name;
     CPerson *Teacher;
-    CRoom *Room;
-    CBlock *Block;
+    CRoom Room;
+    CBlock Block;
     CWeekday WeekDay;
     short Period;
 };

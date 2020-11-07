@@ -64,7 +64,7 @@ int main()
    CPerson *Dozent4 = new CTeacher("Willi Witzig", "Wunderweg", "99", 15911, "Nauen",
                                    9, 11, 1976, 34);
    // Veranstaltungen
-   CEvent *Event1 = new CEvent("SU Mathe I ", Dozent2, B301, Block2, Mo, 1);
+   CEvent *Event1 = new CEvent("SU Mathe I ", Dozent2, B301, Block2, Mo, 1); //Minimal reproducible issue
    CEvent *Event2 = new CEvent("SU Digitale Systeme ", Dozent4, D136, Block5, Di, 1);
    CEvent *Event3 = new CEvent("Ueb Digitale Systeme", Dozent4, D114, Block6, Di, 1);
    CEvent *Event4 = new CEvent("Ueb Mathe I ", Dozent2, D209, Block2, Mi, 1);
@@ -133,7 +133,7 @@ int main()
    delete Dozent4;
    delete Physik;
    delete ETechnik;
-   delete D114;
+   /*delete D114;
    delete D117;
    delete D136;
    delete D209;
@@ -153,6 +153,6 @@ int main()
    delete Zeit1600;
    delete Zeit1745;
    delete Zeit1930;
-   
+   */
    return 0;
 }

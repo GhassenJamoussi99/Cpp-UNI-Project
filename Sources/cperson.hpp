@@ -16,7 +16,7 @@ public:
   friend class CEvents;
   void print() const;
   ~CPerson()
-  {std::cout<<"Person " << Name <<" wird vernichtet."<<endl; }
+  {std::cout<<"Person " << Name <<" wird vernichtet."<<std::endl; }
 
 
 protected:

@@ -16,7 +16,7 @@ class CSubject
   std::string getSubject(){return Name;}
   unsigned getSubjNr(){return SubjNr;}
   ~CSubject()
-  {std::cout<<"Studienfach " << Name <<" wird vernichtet."<<endl; }
+  {std::cout<<"Studienfach " << Name <<" wird vernichtet."<<std::endl; }
 
   private:
    unsigned SubjNr;   //Static
