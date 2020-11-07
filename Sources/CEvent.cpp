@@ -10,8 +10,7 @@ CEvent::CEvent(string m_Name,
              short m_Period) : Name(m_Name),Teacher(m_Teacher),
                                Room(m_Room),Block(m_Block),WeekDay(m_day),
                                Period(m_Period)
-{
-}
+{}
 
 string CEvent::getDay(CWeekday m_WeekDay)
 {
