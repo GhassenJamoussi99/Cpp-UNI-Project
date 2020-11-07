@@ -7,15 +7,16 @@ unsigned CBooking::BookingNr = 0;
 CBooking::CBooking(CSubject *m_Subject, CStudent *m_Student, int m_Day, int m_Month, int m_Year,
                    int m_Hour, int m_Minute, int m_Second) : Subject(m_Subject), Student(m_Student),
                                                              BookingDate(m_Day, m_Month, m_Year), BookingTime(m_Hour, m_Minute, m_Second)
-{
-    BookingNr++;
-}
+{}
 
 void CBooking::print()
-{
-    cout << "Belegung Nr.    " << BookingNr << ":" << endl;
+{   
 
-    cout << "Am";
+    BookingNr++;
+
+    cout << "Belegung Nr.  " << BookingNr << ":" << endl;
+
+    cout << "Am ";
     BookingDate.print();
     cout << " um ";
     BookingTime.print();
@@ -26,7 +27,7 @@ void CBooking::print()
     cout << "; "
          << "MatrNr. " << Student->getMatrNr() << ")" << endl;
 
-    cout << "das Fach '" << Subject->getSubject() << "(" << Subject->getSubjNr() << "; ";
+    cout << "das Fach '" << Subject->getSubject() << " (" << Subject->getSubjNr() << "; ";
     Student->getStudy();
-    cout << ") '"<< "belegt";
+    cout << ")' "<< "belegt.";
 }

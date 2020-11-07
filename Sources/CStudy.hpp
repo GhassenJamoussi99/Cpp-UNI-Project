@@ -3,13 +3,14 @@
 
 #include <iostream>
 
+
 class CStudy 
 {
  public:
   CStudy() = default;
   CStudy(std::string m_Name, bool m_NC, short m_NrOfTerms);
-  std::string getStudy(){return this->Name;}
-  void print() {std::cout<<Name;}
+  std::string getStudy(){return Name;}
+  void print() const;
   ~CStudy()
   {std::cout<<"Studiengang " << Name <<" wird vernichtet."<<std::endl; }
 

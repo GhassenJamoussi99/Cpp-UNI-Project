@@ -19,7 +19,7 @@ void CEvents::print()
   {
     CWeekday Day = Events[i]->WeekDay;
     printf("%d: %-10s %3s", i + 1, Events[i]->getDay(Day).c_str(), a.c_str());
-    Events[i]->Block.print();
-    printf("%3s %-25s %-20s %-5s\n", a.c_str(), Events[i]->Name.c_str(), Events[i]->Teacher->Name.c_str(), Events[i]->Room.Name.c_str());
+    Events[i]->Block->print();
+    printf("%3s %-25s %-20s %-5s\n", a.c_str(), Events[i]->Name.c_str(), Events[i]->Teacher->Name.c_str(), Events[i]->Room->Name.c_str());
   }
 }
