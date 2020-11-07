@@ -14,7 +14,7 @@ class CBooking
              int m_Hour,int m_Minute,int m_Second);
     void print();
     ~CBooking()
-    {std::cout<<"Belegung Nr. " << BookingNr <<" wird vernichtet."<<endl; }
+    {std::cout<<"Belegung Nr. " << BookingNr <<" wird vernichtet."<<std::endl; }
 
  private:
     static unsigned BookingNr;

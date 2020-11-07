@@ -1,6 +1,9 @@
 #include "CPerson.hpp"
 using namespace std;
 
+unsigned CPerson::ID = 0;
+
+
 CPerson::CPerson(
     string m_Name,
     string m_Street,
