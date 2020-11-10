@@ -9,13 +9,13 @@ class CRoom
   public:
    CRoom() = default;
    CRoom(std::string m_Name, std::string m_Building , short m_Seats );
-   friend class CEvents;
+   std::string getName() {return Name;}
    void print() const;
    ~CRoom(){};
 
 
   private:
-   std::string Name; //or include 'using namespace std'
+   std::string Name; 
    std::string Building;
    short Seats;
 
