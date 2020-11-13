@@ -12,13 +12,13 @@ class CBookings
 {
  public:
   CBookings() = default;
-  CBookings(char *str);
+  CBookings(std::string str);
   void findRoom();
   void print();
   //More to come
 
  private:
-  std::vector<CBlock *> Blocks;
+  std::vector<CBlock *>Blocks;
   std::vector<CRoom *>Rooms;
   std::vector<CStudy *>Studies;
   std::vector<CPerson *>Persons;

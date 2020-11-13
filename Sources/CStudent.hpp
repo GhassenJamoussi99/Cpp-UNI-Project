@@ -17,7 +17,6 @@ class CStudent : public CPerson
   CDate getBirthday() { return this->Birthday; }
   unsigned int getMatrNr() { return this->MatriculationNr; }
   void getStudy(){Study->print();}
-    //set
   void print();
   ~CStudent()
   {
