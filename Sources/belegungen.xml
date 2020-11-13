@@ -1,0 +1,376 @@
+<data>
+ <room>
+  <name>D 113</name>
+  <building>Haus Bauwesen</building>
+  <seats>28</seats>
+ </room>
+ <room>
+  <name>D 114</name>
+  <building>Haus Bauwesen</building>
+  <seats>28</seats>
+ </room>
+ <room>
+  <name>D 117 (H3)</name>
+  <building>Haus Bauwesen</building>
+  <seats>104</seats>
+ </room>
+ <room>
+  <name>D 136 (H5)</name>
+  <building>Haus Bauwesen</building>
+  <seats>104</seats>
+ </room>
+ <room>
+  <seats>35</seats>
+  <building>Haus Bauwesen</building>
+  <name>D 209</name>
+ </room>
+ <room>
+  <name>D 419</name>
+  <building>Haus Bauwesen</building>
+  <seats>40</seats>
+ </room>
+ <room>
+  <name>B 301</name>
+  <building>Haus Gauss</building>
+  <seats>100</seats>
+ </room>
+ <block>
+  <blocknr>1</blocknr>
+  <begin>
+   <hour>8</hour>
+  </begin>
+ </block>
+ <block>
+  <blocknr>2</blocknr>
+  <begin>
+   <hour>10</hour>
+   <minute>0</minute>
+  </begin>
+ </block>
+ <block>
+  <blocknr>3</blocknr>
+  <begin>
+   <hour>12</hour>
+   <minute>15</minute>
+  </begin>
+ </block>
+ <block>
+  <blocknr>4</blocknr>
+  <begin>
+   <hour>14</hour>
+   <minute>15</minute>
+  </begin>
+ </block>
+ <block>
+  <blocknr>5</blocknr>
+  <begin>
+   <hour>16</hour>
+   <minute>0</minute>
+  </begin>
+ </block>
+ <block>
+  <blocknr>6</blocknr>
+  <begin>
+   <hour>17</hour>
+   <minute>45</minute>
+  </begin>
+ </block>
+ <block>
+  <blocknr>7</blocknr>
+  <begin>
+   <hour>19</hour>
+   <minute>30</minute>
+  </begin>
+ </block>
+ <study>
+  <name>Technische Informatik</name>
+  <nc>false</nc>
+  <nrofterms>8</nrofterms>
+ </study>
+ <study>
+  <name>Physik</name>
+  <nc>true</nc>
+  <nrofterms>10</nrofterms>
+ </study>
+ <study>
+  <name>Elektrotechnik</name>
+  <nc>false</nc>
+  <nrofterms>8</nrofterms>
+ </study>
+ <student>
+  <name>Anna Albrecht</name>
+  <address>
+   <street>Albrechtstr.</street>
+   <housenr>15a</housenr>
+   <zipcode>12045</zipcode>
+   <city>Berlin</city>
+  </address>
+  <birthday>
+   <day>15</day>
+   <month>9</month>
+   <year>1989</year>
+  </birthday>
+  <matriculationnr>191278</matriculationnr>
+  <term>2</term>
+  <credits>28</credits>
+  <study>Technische Informatik</study>
+ </student>
+ <student>
+  <name>Detlef Dicht</name>
+  <address>
+   <street>Dichterweg</street>
+   <housenr>27</housenr>
+   <zipcode>29031</zipcode>
+   <city>Vordertupfingen</city>
+  </address>
+  <birthday>
+   <day>27</day>
+   <month>5</month>
+   <year>1991</year>
+  </birthday>
+  <matriculationnr>191115</matriculationnr>
+  <term>3</term>
+  <credits>31</credits>
+  <study>Physik</study>
+ </student>
+ <student>
+  <name>Frank Faust</name>
+  <address>
+   <street>Goethestr.</street>
+   <housenr>3-5</housenr>
+   <zipcode>12345</zipcode>
+   <city>Berlin</city>
+  </address>
+  <birthday>
+   <day>3</day>
+   <month>11</month>
+   <year>1987</year>
+  </birthday>
+  <matriculationnr>191492</matriculationnr>
+  <term>2</term>
+  <credits>24</credits>
+  <study>Technische Informatik</study>
+ </student>
+ <student>
+  <name>Max Muster</name>
+  <address>
+   <street>Meistergasse</street>
+   <housenr>23</housenr>
+   <zipcode>19885</zipcode>
+   <city>Hintertupfingen</city>
+  </address>
+  <birthday>
+   <day>19</day>
+   <month>7</month>
+   <year>1985</year>
+  </birthday>
+  <matriculationnr>191368</matriculationnr>
+  <term>2</term>
+  <credits>21</credits>
+  <study>Elektrotechnik</study>
+ </student>
+ <teacher>
+  <name>Kevin Kaufmann</name>
+  <address>
+   <street>Kaiserstr.</street>
+   <housenr>38</housenr>
+   <zipcode>12075</zipcode>
+   <city>Berlin</city>
+  </address>
+  <birthday>
+   <day>15</day>
+   <month>6</month>
+   <year>1959</year>
+  </birthday>
+  <personalnr>12</personalnr>
+ </teacher>
+ <teacher>
+  <name>Nathan Neuling</name>
+  <address>
+   <street>Neue Str.</street>
+   <housenr>7</housenr>
+   <zipcode>10777</zipcode>
+   <city>Berlin</city>
+  </address>
+  <birthday>
+   <day>9</day>
+   <month>9</month>
+   <year>1969</year>
+  </birthday>
+  <personalnr>97</personalnr>
+ </teacher>
+ <teacher>
+  <name>Sabine Sauber</name>
+  <address>
+   <street>Saubere Gasse</street>
+   <housenr>1</housenr>
+   <zipcode>17001</zipcode>
+   <city>Auf dem Land</city>
+  </address>
+  <birthday>
+   <day>3</day>
+   <month>1</month>
+   <year>1962</year>
+  </birthday>
+  <personalnr>68</personalnr>
+ </teacher>
+ <teacher>
+  <name>Willi Witzig</name>
+  <address>
+   <street>Wunderweg</street>
+   <housenr>99</housenr>
+   <zipcode>15911</zipcode>
+   <city>Nauen</city>
+  </address>
+  <birthday>
+   <day>9</day>
+   <month>11</month>
+   <year>1976</year>
+  </birthday>
+  <personalnr>34</personalnr>
+ </teacher>
+ <subject>
+  <name>Informatik I</name>
+  <subjectnr>136027</subjectnr>
+  <study>Technische Informatik</study>
+  <event>
+   <name>SU IN I</name>
+   <teacher>Kevin Kaufmann</teacher>
+   <room>D 117 (H3)</room>
+   <block>2</block>
+   <weekday>Fr</weekday>
+   <period>1</period>
+  </event>
+  <event>
+   <name>UEB IN I</name>
+   <teacher>Kevin Kaufmann</teacher>
+   <room>D 114</room>
+   <block>3</block>
+   <weekday>Fr</weekday>
+   <period>2</period>
+  </event>
+  <event>
+   <name>UEB IN I</name>
+   <teacher>Kevin Kaufmann</teacher>
+   <room>D 114</room>
+   <block>4</block>
+   <weekday>Fr</weekday>
+   <period>2</period>
+  </event>
+ </subject>
+ <subject>
+  <name>Mathematik I</name>
+  <subjectnr>132017</subjectnr>
+  <event>
+   <name>SU M I</name>
+   <teacher>Nathan Neuling</teacher>
+   <room>B 301</room>
+   <block>2</block>
+   <weekday>Mo</weekday>
+   <period>1</period>
+  </event>
+  <study>Technische Informatik</study>
+  <event>
+   <name>UEB M I</name>
+   <teacher>Nathan Neuling</teacher>
+   <room>D 209</room>
+   <block>2</block>
+   <weekday>Mi</weekday>
+   <period>1</period>
+  </event>
+ </subject>
+ <subject>
+  <name>Englisch</name>
+  <subjectnr>139033</subjectnr>
+  <study>Technische Informatik</study>
+  <event>
+   <name>SU E</name>
+   <teacher>Sabine Sauber</teacher>
+   <room>D 419</room>
+   <block>5</block>
+   <weekday>Do</weekday>
+   <period>1</period>
+  </event>
+ </subject>
+ <subject>
+  <name>Digitale Systeme</name>
+  <subjectnr>136024</subjectnr>
+  <event>
+   <name>SU DS</name>
+   <teacher>Willi Witzig</teacher>
+   <room>D 136 (H5)</room>
+   <block>5</block>
+   <weekday>Di</weekday>
+   <period>1</period>
+  </event>
+  <event>
+   <name>UEB DS</name>
+   <teacher>Willi Witzig</teacher>
+   <room>D 114</room>
+   <block>6</block>
+   <weekday>Di</weekday>
+   <period>1</period>
+  </event>
+  <study>Technische Informatik</study>
+ </subject>
+ <booking>
+  <bookingnr>1</bookingnr>
+  <subject>Informatik I</subject>
+  <student>Max Muster</student>
+  <bookingdate>
+   <day>15</day>
+   <month>10</month>
+   <year>2020</year>
+  </bookingdate>
+  <bookingtime>
+   <hour>8</hour>
+   <minute>12</minute>
+   <second>27</second>
+  </bookingtime>
+ </booking>
+ <booking>
+  <bookingnr>2</bookingnr>
+  <subject>Mathematik I</subject>
+  <student>Anna Albrecht</student>
+  <bookingdate>
+   <day>15</day>
+   <month>10</month>
+   <year>2020</year>
+  </bookingdate>
+  <bookingtime>
+   <hour>9</hour>
+   <minute>53</minute>
+   <second>49</second>
+  </bookingtime>
+ </booking>
+ <booking>
+  <bookingnr>3</bookingnr>
+  <subject>Informatik I</subject>
+  <student>Frank Faust</student>
+  <bookingdate>
+   <day>16</day>
+   <month>10</month>
+   <year>2020</year>
+  </bookingdate>
+  <bookingtime>
+   <hour>23</hour>
+   <minute>07</minute>
+   <second>31</second>
+  </bookingtime>
+ </booking>
+ <booking>
+  <bookingnr>4</bookingnr>
+  <subject>Informatik I</subject>
+  <student>Anna Albrecht</student>
+  <bookingdate>
+   <day>17</day>
+   <month>10</month>
+   <year>2020</year>
+  </bookingdate>
+  <bookingtime>
+   <hour>19</hour>
+   <minute>21</minute>
+   <second>3</second>
+  </bookingtime>
+ </booking>
+</data>
