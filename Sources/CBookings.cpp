@@ -41,9 +41,9 @@ CBookings::CBookings(string str)
       
       if (Zeile.compare("<student>")==0)
       {
-        CPerson *P1 = new CStudent();
-        P1->load(src);
-        Persons.push_back(P1);
+        CStudent *S1 = new CStudent();
+        S1->load(src);
+        Persons.push_back(S1);
       }
 
     }
@@ -54,11 +54,6 @@ CBookings::CBookings(string str)
 
 void CBookings::print()
 {
-  cout << Studies.size() << endl;
-  for (int i = 0 ; i<Studies.size();i++)
-  {
-    Studies[i]->print();
-    cout << "\n" << boolalpha <<Studies[i]->NC << endl;
-    cout << Studies[i]->NrOfTerms << endl;
-  }
+  
+  
 }

@@ -10,6 +10,7 @@ public:
     CDate(int m_Days, int m_Months, int m_Years); 
     void print() const;
     friend class CPerson;
+    friend class CStudent;
     ~CDate(){};          
 
 private:

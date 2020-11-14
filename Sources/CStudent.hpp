@@ -15,8 +15,11 @@ class CStudent : public CPerson
 
   std::string getName() { return this->Name; }
   CDate getBirthday() { return this->Birthday; }
+  friend class CBookings;
   unsigned int getMatrNr() { return this->MatriculationNr; }
   void getStudy(){Study->print();}
+  void load(std::ifstream& File);
+
   void print();
   ~CStudent()
   {
