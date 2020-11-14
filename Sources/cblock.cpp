@@ -75,6 +75,7 @@ void CBlock::load(ifstream &File)
           if (strncmp(Zeile.c_str() + 6 + Len, "</hour>", 7) == 0)
           {
             Begin.Hour = stoi(Zeile.substr(6, Len));
+            Begin.Minute = 0;
           }
         }
 
