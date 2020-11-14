@@ -47,10 +47,10 @@ CBookings::CBookings(string str)
 
 void CBookings::print()
 {
-  cout << Blocks.size() << endl;
-  for (int i = 0 ; i<Blocks.size();i++)
+  cout << Studies.size() << endl;
+  for (int i = 0 ; i<Studies.size();i++)
   {
-   Blocks[i]->print();
-   cout << endl;
+    Studies[i]->print();
+    cout << "\n" << boolalpha <<Studies[i]->NC << endl;
   }
 }

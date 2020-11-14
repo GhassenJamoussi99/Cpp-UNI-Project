@@ -9,6 +9,6 @@ int main()
 
    Belegungen.print();
    
-   //cout <<"No crash";
+   cout <<"No crash";
    return 0;
 }

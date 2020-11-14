@@ -11,6 +11,7 @@ class CStudy
   CStudy(std::string m_Name, bool m_NC, short m_NrOfTerms);
   std::string getStudy(){return Name;}
   void print() const;
+  friend class CBookings;
   void load(std::ifstream& File);
   ~CStudy()
   {std::cout<<"Studiengang " << Name <<" wird vernichtet."<<std::endl; }
