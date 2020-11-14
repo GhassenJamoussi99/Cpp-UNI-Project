@@ -3,6 +3,7 @@
 
 #include "CAddress.hpp"
 #include "CDate.hpp"
+#include <fstream>
 #include <iostream>
 
 class CPerson
@@ -14,6 +15,7 @@ public:
           std::string m_City, int m_Day, int m_Month, int m_Year);
   CAddress &getAddress();
   std::string getName(){return Name;}
+  void load(std::ifstream& File):
   void print() const;
   virtual ~CPerson()
   {std::cout<<"Person " << Name <<" wird vernichtet."<<std::endl; }
