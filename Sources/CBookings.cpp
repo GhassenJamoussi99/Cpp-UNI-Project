@@ -32,6 +32,12 @@ CBookings::CBookings(string str)
         B->load(src);
         Blocks.push_back(B);
       }
+       if (Zeile.compare("<study>")==0)
+      {
+        CStudy *S = new CStudy();
+        S->load(src);
+        Studies.push_back(S);
+      }
 
     }
   }
@@ -41,9 +47,10 @@ CBookings::CBookings(string str)
 
 void CBookings::print()
 {
-  cout << Rooms.size() << endl;
-  for (int i = 0 ; i<Rooms.size();i++)
+  cout << Blocks.size() << endl;
+  for (int i = 0 ; i<Blocks.size();i++)
   {
-  cout<<Rooms[i]->getName() << endl;
+   Blocks[i]->print();
+   cout << endl;
   }
 }

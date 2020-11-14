@@ -9,7 +9,6 @@ class CBlock
  public:
    CBlock() = default;
    CBlock(short m_BlockNr,CTime m_Begin);
-
    short getBlockNr();
    void print();
    void load(std::ifstream& File);

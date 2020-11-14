@@ -14,9 +14,13 @@ class CBookings
   CBookings() = default;
   CBookings(std::string str);
   void findRoom();
-  void print();
+  void print();  
   //More to come
-
+  ~CBookings()
+  {
+      //printf shreiben 
+  }
+  
  private:
   std::vector<CBlock *>Blocks;
   std::vector<CRoom *>Rooms;
