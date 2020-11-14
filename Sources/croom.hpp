@@ -12,6 +12,7 @@ class CRoom
    CRoom(std::string m_Name, std::string m_Building , short m_Seats );
    std::string getName() {return Name;}
    void print() const;
+   friend class CEvent; //..
    void load(std::ifstream& File);
    ~CRoom(){};
 

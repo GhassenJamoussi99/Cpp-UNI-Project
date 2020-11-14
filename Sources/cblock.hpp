@@ -11,13 +11,14 @@ class CBlock
    CBlock(short m_BlockNr,CTime m_Begin);
    short getBlockNr();
    void print();
+   friend class CEvent;
    void load(std::ifstream& File);
    CTime getEnd();
    
    ~CBlock(){};
 
  private:
-   short BlockNr = 1;
+   short BlockNr;
    CTime Begin;
 
 

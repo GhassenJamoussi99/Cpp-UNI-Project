@@ -7,6 +7,8 @@
 #include "CStudy.hpp"
 #include "CBooking.hpp"
 #include "CBlock.hpp"
+#include "CTeacher.hpp"
+#include "CStudent.hpp"
 
 class CBookings
 {

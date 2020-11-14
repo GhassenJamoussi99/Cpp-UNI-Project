@@ -14,12 +14,13 @@ public:
           std::string m_HouseNr, unsigned m_Zipcode,
           std::string m_City, int m_Day, int m_Month, int m_Year);
   CAddress &getAddress();
-  friend class CBookings; // zu entfernen
-  std::string getName(){return Name;}
+  friend class CEvent;
+  std::string getName() { return Name; }
   virtual void print() const;
   virtual ~CPerson()
-  {std::cout<<"Person " << Name <<" wird vernichtet."<<std::endl; }
-
+  {
+    std::cout << "Person " << Name << " wird vernichtet." << std::endl;
+  }
 
 protected:
   static unsigned LfNr;

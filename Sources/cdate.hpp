@@ -11,6 +11,7 @@ public:
     void print() const;
     friend class CPerson;
     friend class CStudent;
+    friend class CTeacher;
     ~CDate(){};          
 
 private:

@@ -1,6 +1,7 @@
 #ifndef CTEACHER_H
 #define CTEACHER_H
 #include "CPerson.hpp"
+#include <fstream>
 
 class CTeacher : public CPerson
 {
@@ -11,6 +12,7 @@ class CTeacher : public CPerson
           std::string m_City, int m_Day, int m_Month, int m_Year,
           int m_PersonalNr);
   void print();
+  void load(std::ifstream &File);
   ~CTeacher()
   {std::cout<<"Lehrer*in " << Name <<" wird vernichtet."<<std::endl; }
 
