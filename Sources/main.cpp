@@ -8,6 +8,7 @@ int main()
    CBookings Belegungen("belegungen.xml");
 
    Belegungen.print();
-
+   
+   //cout <<"No crash";
    return 0;
 }

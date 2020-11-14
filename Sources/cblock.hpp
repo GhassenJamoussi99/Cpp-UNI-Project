@@ -2,6 +2,7 @@
 #define CBLOCK_H
 #include "ctime.hpp"
 #include <iostream>
+#include <fstream>
 
 class CBlock
 {
@@ -10,7 +11,8 @@ class CBlock
    CBlock(short m_BlockNr,CTime m_Begin);
 
    short getBlockNr();
-   void print() ;
+   void print();
+   void load(std::ifstream& File);
    CTime getEnd();
    
    ~CBlock(){};
