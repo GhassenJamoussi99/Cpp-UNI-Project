@@ -55,7 +55,6 @@ CBookings::CBookings(string str)
 
       if (Zeile.compare("<subject>") == 0)
       {
-        cout << "azbi ?"<< endl;
         CSubject *S = new CSubject();
         S->load(src);
         Subjects.push_back(S);
@@ -66,20 +65,23 @@ CBookings::CBookings(string str)
 
 void CBookings::print()
 {
-  cout << "Subject's size" << Subjects.size() << endl;
-  cout << " Event's size " << Subjects[0]->Events.size() << endl;
-  /*for (int i = 0; i < Subjects.size(); i++)
+    cout << "Subject's size" << Subjects.size() << endl;
+
+  for (int i = 0; i < Subjects.size(); i++)
   {
-    for (int j = 0; j < (Subjects[i]->Events).size(); i++)
+        cout << " Subjects[i].Events size : " << Subjects[i]->Events.size() << endl;
+
+    for (int j = 0; j < (Subjects[i]->Events).size(); j++)
     {
       cout << "Event Nr." << j + 1 << endl;
       cout << "name of the Event " << Subjects[i]->Events[j]->Name << endl;
-      cout << "Teacher's name " << Subjects[i]->Events[j]->Teacher->getName() << endl;
+      cout << "Teacher's name " << Subjects[i]->Events[j]->Teacher->getName();
       cout << "\nRoom's name " << Subjects[i]->Events[j]->Room->getName();
-      cout << "\nBlocks's name " << Subjects[i]->Events[j]->Room->getName();
+      cout << "\nBlocks's number " << Subjects[i]->Events[j]->Block->getBlockNr();
       cout << "\nDay :  " << Subjects[i]->Events[j]->WeekDay;
-      cout << "\nPeriod :" << Subjects[i]->Events[j]->Period;
+      cout << "\nPeriod :" << Subjects[i]->Events[j]->Period << endl ;
+      cout << "---------------------------" <<endl;
     }
   }
-  */
+  
 }

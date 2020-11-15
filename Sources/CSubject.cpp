@@ -48,7 +48,7 @@ void CSubject::load(ifstream &File)
         {
             CEvent *E = new CEvent();
             E->loadEvent(File);
-            Events.push_back(E);
+            Events.push_back(E);     //ähnliche Funktion steht in Zeile 11
         }
     }
 }
