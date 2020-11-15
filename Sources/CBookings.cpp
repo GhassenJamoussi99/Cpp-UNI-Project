@@ -15,11 +15,15 @@ CBookings::CBookings(string str)
   }
   else
   {
-    cout << "Datei wurde erfolgreich eingelesen!" << endl;
     while (getline(src, Zeile))
     {
       Zeile = regex_replace(Zeile, regex("^ +"), ""); //nur führende Leerzeichen entfernen
-      //cout << Zeile << endl;
+
+      if (Zeile == "</date>")
+      {
+        break;
+      }
+       
       if (Zeile.compare("<room>") == 0)
       {
         CRoom *R = new CRoom();
@@ -59,29 +63,33 @@ CBookings::CBookings(string str)
         S->load(src);
         Subjects.push_back(S);
       }
+      
+      if (Zeile.compare("<booking>") == 0)
+      {
+        CBooking *CB = new CBooking();
+        CB->load(src);
+        Bookings.push_back(CB);
+      }
     }
   }
 }
 
 void CBookings::print()
 {
-    cout << "Subject's size" << Subjects.size() << endl;
+  cout << "Datei wurde erfolgreich eingelesen!" << endl;
 
-  for (int i = 0; i < Subjects.size(); i++)
-  {
-        cout << " Subjects[i].Events size : " << Subjects[i]->Events.size() << endl;
-
-    for (int j = 0; j < (Subjects[i]->Events).size(); j++)
-    {
-      cout << "Event Nr." << j + 1 << endl;
-      cout << "name of the Event " << Subjects[i]->Events[j]->Name << endl;
-      cout << "Teacher's name " << Subjects[i]->Events[j]->Teacher->getName();
-      cout << "\nRoom's name " << Subjects[i]->Events[j]->Room->getName();
-      cout << "\nBlocks's number " << Subjects[i]->Events[j]->Block->getBlockNr();
-      cout << "\nDay :  " << Subjects[i]->Events[j]->WeekDay;
-      cout << "\nPeriod :" << Subjects[i]->Events[j]->Period << endl ;
-      cout << "---------------------------" <<endl;
-    }
+  for (int i = 0; i < Bookings.size(); i++)
+  {  
+      cout << "BookingNr " << i+1;  
+      cout << "Subject "  << Bookings[i]->Subject->Name << endl;
+      cout << "Student's name " << Bookings[i]->Student->getName();
+      cout << endl;
+      cout <<" BookingDate : ";
+      Bookings[i]->BookingDate.print();
+      cout << endl;
+      cout << " BookingTime " ;
+      Bookings[i]->BookingTime.print();
+      cout << endl;
+    
   }
-  
 }

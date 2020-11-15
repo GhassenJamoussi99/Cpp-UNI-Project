@@ -29,13 +29,13 @@ public:
     friend class CEvents;
     friend class CBookings;
     friend class CSubject;
-    ~CEvent(){}; 
+    ~CEvent(){};
 
 private:
     std::string Name;
-    CPerson *Teacher;
-    CRoom *Room;
-    CBlock *Block;
+    CPerson *Teacher = new CPerson();
+    CRoom *Room = new CRoom();
+    CBlock *Block = new CBlock();
     CWeekday WeekDay;
     short Period;
 };

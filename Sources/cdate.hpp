@@ -12,6 +12,7 @@ public:
     friend class CPerson;
     friend class CStudent;
     friend class CTeacher;
+    friend class CBooking;
     ~CDate(){};          
 
 private:

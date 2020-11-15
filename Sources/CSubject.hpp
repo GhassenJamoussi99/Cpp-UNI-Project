@@ -15,6 +15,7 @@ class CSubject
   void addEvent(CEvent *m_Event);
   void print();
   friend class CBookings; // zu entfernen
+  friend class CBooking;
   void load(std::ifstream& File);
   std::string getSubject(){return Name;}
   unsigned getSubjNr(){return SubjNr;}

@@ -84,7 +84,6 @@ void CEvent::loadEvent(ifstream &File)
             Len = Zeile.length() - (9 + 10);
             if (strncmp(Zeile.c_str() + 9 + Len, "</teacher>", 10) == 0)
             {
-                Teacher = new CPerson();
                 Teacher->Name = Zeile.substr(9, Len);
             }
         }
@@ -95,7 +94,6 @@ void CEvent::loadEvent(ifstream &File)
             Len = Zeile.length() - (6 + 7);
             if (strncmp(Zeile.c_str() + 6 + Len, "</room>", 7) == 0)
             {
-                Room = new CRoom();
                 Room->Name = Zeile.substr(6, Len);
             }
         }
@@ -105,7 +103,6 @@ void CEvent::loadEvent(ifstream &File)
             Len = Zeile.length() - (7 + 8);
             if (strncmp(Zeile.c_str() + 7 + Len, "</block>", 8) == 0)
             {
-                Block = new CBlock();
                 Block->BlockNr = stoi(Zeile.substr(7, Len));
             }
         }
