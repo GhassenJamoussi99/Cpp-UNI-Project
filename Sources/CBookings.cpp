@@ -98,6 +98,18 @@ unsigned CBookings::findID(string m_Name)
   return 0;
 }
 
+string CBookings::findStudy(string m_Name)
+{
+  for (int i = 0; i < Subjects.size(); i++)
+  {
+    if (Subjects[i]->Name == m_Name)
+    {
+      return Subjects[i]->Study->Name;
+    }
+  }
+  return "";
+}
+
 unsigned CBookings::findSubjNr(string m_Name)
 {
   for (int i = 0; i < Subjects.size(); i++)
@@ -110,9 +122,8 @@ unsigned CBookings::findSubjNr(string m_Name)
   return 0;
 }
 
-/*CDate CBookings::findBirthday(string m_Name)
+CDate CBookings::findBirthday(string m_Name)
 {
-  CDate a(0,0,0);
     for (int i = 0; i < Persons.size(); i++)
   {
     if (Persons[i]->getName() == m_Name)
@@ -120,9 +131,9 @@ unsigned CBookings::findSubjNr(string m_Name)
       return Persons[i]->Birthday;
     }
   }
-  return a;
+  return {0,0,0};
 }
-*/
+
 
 void CBookings::print()
 {
@@ -131,12 +142,12 @@ void CBookings::print()
   for (int i = 0; i < Bookings.size(); i++)
   {
     Bookings[i]->Student->MatriculationNr = findMatrNr(Bookings[i]->Student->Name);
-    //Bookings[i]->Student->Birthday = findBirthday(Bookings[i]->Student->Name);
+    Bookings[i]->Student->Birthday = findBirthday(Bookings[i]->Student->Name);
     Bookings[i]->Student->ID = findID(Bookings[i]->Student->Name);
     Bookings[i]->Subject->SubjNr = findSubjNr(Bookings[i]->Subject->Name);
     Bookings[i]->Subject->Study->Name = findStudy(Bookings[i]->Subject->Name); //issue here
     Bookings[i]->print();
-    cout << endl; 
+    cout << endl;
     cout << endl;
   }
 }
