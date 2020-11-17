@@ -114,8 +114,6 @@ string CBookings::findStudy(string m_Name)
 {
   for (int i = 0; i < Subjects.size(); i++)
   {
-    cout << " m_Name = " << m_Name << endl;
-    cout << "Subject[i]->Name = " << Subjects[i]->Name << endl;
     if (Subjects[i]->Name == m_Name)
     {
       return Subjects[i]->Study->Name;

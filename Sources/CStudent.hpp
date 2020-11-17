@@ -18,7 +18,6 @@ public:
   friend class CBookings;
   friend class CBooking;
   unsigned int getMatrNr() { return this->MatriculationNr; }
-  void getStudy() { Study->print(); }
   void load(std::ifstream &File);
 
   void print();

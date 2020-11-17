@@ -12,7 +12,6 @@ CBooking::CBooking(CSubject *m_Subject, CStudent *m_Student, int m_Day, int m_Mo
 
 void CBooking::print()
 {
-
     BookingNr++;
 
     cout << "Belegung Nr.  " << BookingNr << ":" << endl;
@@ -29,7 +28,7 @@ void CBooking::print()
          << "MatrNr. " << Student->getMatrNr() << "; " << Student->ID << ")" << endl;
     
     cout << "das Fach '" << Subject->getSubject() << " (" << Subject->getSubjNr() << "; ";
-    Student->getStudy();
+    cout<< Subject->Study->getStudy();
     cout << ")' "
          << "belegt.";
 }
