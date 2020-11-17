@@ -1,7 +1,7 @@
 #include "CBooking.hpp"
 #include <regex>
 using namespace std;
-
+#include "CBookings.hpp"
 unsigned CBooking::BookingNr = 0;
 
 CBooking::CBooking(CSubject *m_Subject, CStudent *m_Student, int m_Day, int m_Month, int m_Year,
@@ -26,8 +26,8 @@ void CBooking::print()
     cout << "hat " << Student->getName() << "(* ";
     (Student->getBirthday()).print();
     cout << "; "
-         << "MatrNr. " << Student->getMatrNr() << ")" << endl;
-
+         << "MatrNr. " << Student->getMatrNr() << "; " << Student->ID << ")" << endl;
+    
     cout << "das Fach '" << Subject->getSubject() << " (" << Subject->getSubjNr() << "; ";
     Student->getStudy();
     cout << ")' "

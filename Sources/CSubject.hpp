@@ -25,7 +25,7 @@ class CSubject
   private:
    unsigned SubjNr;   
    std::string Name;
-   CStudy *Study;
+   CStudy *Study = new CStudy();
    std::vector<CEvent*> Events; 
    
 };

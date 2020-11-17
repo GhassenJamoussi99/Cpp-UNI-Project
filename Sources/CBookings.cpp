@@ -74,22 +74,43 @@ CBookings::CBookings(string str)
   }
 }
 
+unsigned int CBookings::findMatrNr(string m_Name)
+{  
+  for (int i = 0 ; i < Persons.size() ; i++)
+  {  
+      if ( Persons[i]->getName() == m_Name)
+       {
+           return Persons[i]->getMatrNr();
+       }
+
+  }
+  return 0;
+}
+
+unsigned CBookings::findID(string m_Name)
+{  
+  for (int i = 0 ; i < Persons.size() ; i++)
+  {  
+      if ( Persons[i]->getName() == m_Name)
+       {
+           return Persons[i]->getID();
+       }
+
+  }
+  return 0;
+}
+
+
 void CBookings::print()
 {
   cout << "Datei wurde erfolgreich eingelesen!" << endl;
 
   for (int i = 0; i < Bookings.size(); i++)
   {  
-      cout << "BookingNr " << i+1;  
-      cout << "Subject "  << Bookings[i]->Subject->Name << endl;
-      cout << "Student's name " << Bookings[i]->Student->getName();
-      cout << endl;
-      cout <<" BookingDate : ";
-      Bookings[i]->BookingDate.print();
-      cout << endl;
-      cout << " BookingTime " ;
-      Bookings[i]->BookingTime.print();
-      cout << endl;
-    
+     Bookings[i]->Student->MatriculationNr = findMatrNr(Bookings[i]->Student->Name);
+     Bookings[i]->Student->ID              = findID(Bookings[i]->Student->Name);
+     Bookings[i]->print();
+     cout << endl;
+     cout << endl;
   }
 }

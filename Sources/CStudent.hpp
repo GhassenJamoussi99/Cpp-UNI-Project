@@ -5,7 +5,7 @@
 
 class CStudent : public CPerson
 {
- public:
+public:
   CStudent() = default;
   CStudent(std::string m_Name, std::string m_Street,
            std::string m_HouseNr, unsigned m_Zipcode,
@@ -18,8 +18,8 @@ class CStudent : public CPerson
   friend class CBookings;
   friend class CBooking;
   unsigned int getMatrNr() { return this->MatriculationNr; }
-  void getStudy(){Study->print();}
-  void load(std::ifstream& File);
+  void getStudy() { Study->print(); }
+  void load(std::ifstream &File);
 
   void print();
   ~CStudent()
@@ -27,11 +27,11 @@ class CStudent : public CPerson
     std::cout << "Student*in " << Name << " wird vernichtet." << std::endl;
   }
 
- private:
+private:
   unsigned int MatriculationNr;
   unsigned short Term;
   unsigned Credits;
-  CStudy *Study;
+  CStudy *Study = new CStudy();
 };
 
 #endif

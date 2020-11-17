@@ -16,6 +16,8 @@ class CBookings
   CBookings() = default;
   CBookings(std::string str);
   void findRoom();
+  unsigned int findMatrNr(std::string m_Name);
+  unsigned findID(std::string m_Name);
   void print();  
   //More to come
   ~CBookings()
