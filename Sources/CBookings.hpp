@@ -22,13 +22,10 @@ class CBookings
   unsigned findSubjNr(std::string m_Name);
   CDate findBirthday(std::string m_Name);
   std::string findStudy(std::string m_Name);
-
+  void ClrMemory();
   void print();  
-  //More to come
   ~CBookings()
-  {
-      //printf shreiben 
-  }
+  {}
   
  private:
   std::vector<CBlock *>Blocks;

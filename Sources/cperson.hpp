@@ -22,7 +22,7 @@ public:
   virtual void print() const;
   virtual ~CPerson()
   {
-    std::cout << "Person " << Name << " wird vernichtet." << std::endl;
+    std::cout << "   Person " << Name << " wird vernichtet." << std::endl;
   }
 
 protected:

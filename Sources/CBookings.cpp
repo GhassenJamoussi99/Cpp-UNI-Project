@@ -124,16 +124,15 @@ unsigned CBookings::findSubjNr(string m_Name)
 
 CDate CBookings::findBirthday(string m_Name)
 {
-    for (int i = 0; i < Persons.size(); i++)
+  for (int i = 0; i < Persons.size(); i++)
   {
     if (Persons[i]->getName() == m_Name)
     {
       return Persons[i]->Birthday;
     }
   }
-  return {0,0,0};
+  return {0, 0, 0};
 }
-
 
 void CBookings::print()
 {
@@ -150,4 +149,68 @@ void CBookings::print()
     cout << endl;
     cout << endl;
   }
+
+  ClrMemory();
+}
+
+void CBookings::ClrMemory()
+{
+  cout << "Bloecke freigeben ..." << endl;
+  for (int i = 0; i < Blocks.size(); i++)
+  {
+    delete Blocks[i];
+  }
+  cout << "Bloecke freigeben ok" << endl;
+
+  cout << "Raeume freigeben ..." << endl;
+  for (int i = 0; i < Blocks.size(); i++)
+  {
+    delete Rooms[i];
+  }
+  cout << "Raeume freigeben ok" << endl;
+
+  cout << "Studiengaenge freigeben ..." << endl;
+  for (int i = 0; i < Studies.size(); i++)
+  {
+    delete Studies[i];
+  }
+  cout << "Studiengaenge freigeben ok" << endl;
+
+  cout << "Studenten freigeben ..." << endl;
+  for (int i = 0; i < Persons.size(); i++)
+  {
+    CStudent *Student = dynamic_cast<CStudent *>(Persons[i]);
+    if (Student)
+    {
+      delete Student;
+    }
+  }
+  cout << "Studenten freigeben ok" << endl;
+
+  cout << "Dozenten freigeben ..." << endl;
+  for (int i = 0; i < Persons.size(); i++)
+  {
+    CTeacher *Dozent = dynamic_cast<CTeacher *>(Persons[i]);
+    if (Dozent)
+    {
+      delete Dozent;
+    }
+  }
+  cout << "Dozenten freigeben ok" << endl;
+
+  cout << "Faecher freigeben ..." << endl;
+  for (int i = 0; i < Subjects.size(); i++)
+  {
+    delete Subjects[i];
+  }
+  cout << "Faecher freigeben ok" << endl;
+
+  cout << "Belegungen freigeben ..." << endl;
+  for (int i = 0; i < Bookings.size(); i++)
+  {
+    delete Bookings[i];
+  }
+  cout << "Belegungen freigeben ok" << endl;
+
+ 
 }

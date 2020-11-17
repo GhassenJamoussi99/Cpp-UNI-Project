@@ -15,7 +15,10 @@ class CBlock
    void load(std::ifstream& File);
    CTime getEnd();
    
-   ~CBlock(){};
+   ~CBlock()
+   {
+      std::cout << "   Block Nr. " << BlockNr << " wird vernichtet."<<std::endl;
+   }
 
  private:
    short BlockNr;

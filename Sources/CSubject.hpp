@@ -20,7 +20,7 @@ class CSubject
   std::string getSubject(){return Name;}
   unsigned getSubjNr(){return SubjNr;} //override die virtuelle Funtkion
   ~CSubject()
-  {std::cout<<"Studienfach " << Name <<" wird vernichtet."<<std::endl; }
+  {std::cout<<"   Studienfach " << Name <<" wird vernichtet."<<std::endl; }
 
   private:
    unsigned SubjNr;   

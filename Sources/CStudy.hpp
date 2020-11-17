@@ -16,7 +16,7 @@ class CStudy
   friend class CSubject;
   void load(std::ifstream& File);
   ~CStudy()
-  {std::cout<<"Studiengang " << Name <<" wird vernichtet."<<std::endl; }
+  { std::cout<<"   Studiengang " << Name <<" wird vernichtet."<<std::endl; }
 
  private:
   std::string Name;

@@ -14,7 +14,11 @@ class CRoom
    void print() const;
    friend class CEvent; //..
    void load(std::ifstream& File);
-   ~CRoom(){};
+   ~CRoom()
+   {
+            std::cout << "   Raum Nr. " << Name << " wird vernichtet."<<std::endl;
+
+   }
 
 
   private:

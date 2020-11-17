@@ -23,7 +23,7 @@ public:
   void print();
   ~CStudent()
   {
-    std::cout << "Student*in " << Name << " wird vernichtet." << std::endl;
+    std::cout << "   Student*in " << Name << " wird vernichtet." << std::endl;
   }
 
 private:

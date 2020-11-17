@@ -21,7 +21,7 @@ class CBooking
     ~CBooking()
     {
        TMP++;
-       std::cout<<"Belegung Nr. " << TMP <<" wird vernichtet."<<std::endl; 
+       std::cout<<"   Belegung Nr. " << TMP <<" wird vernichtet."<<std::endl; 
     }
 
  private:
