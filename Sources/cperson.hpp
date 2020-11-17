@@ -14,7 +14,7 @@ public:
           std::string m_HouseNr, unsigned m_Zipcode,
           std::string m_City, int m_Day, int m_Month, int m_Year);
   CAddress &getAddress();
-  virtual unsigned int getMatrNr() { return 0;}
+  virtual unsigned int getMatrNr() { return 0; }
   friend class CEvent;
   unsigned getID(){return ID;}
   std::string getName() { return Name; }

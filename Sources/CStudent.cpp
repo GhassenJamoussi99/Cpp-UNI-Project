@@ -3,7 +3,6 @@
 using namespace std;
 
 
-
 CStudent::CStudent(string m_Name, string m_Street,
           string m_HouseNr, unsigned m_Zipcode,
           string m_City, int m_Day, int m_Month, int m_Year,
@@ -17,7 +16,6 @@ void CStudent::load(ifstream &File)
 {
   string Zeile;
   int Len;
-  cout << "ID : " << ID << endl;
   while (getline(File, Zeile))
   {
     Zeile = regex_replace(Zeile, regex("^ +"), ""); //nur führende Leerzeichen entfernen
@@ -33,8 +31,9 @@ void CStudent::load(ifstream &File)
       if (strncmp(Zeile.c_str() + 6 + Len, "</name>", 7) == 0)
       {
         Name = Zeile.substr(6, Len);
-        ID++;
-        cout << ID << endl;
+        
+        LfNr++;
+        ID = LfNr;
       }
     }
 
