@@ -16,6 +16,7 @@ public:
   CAddress &getAddress();
   virtual unsigned int getMatrNr() { return 0; }
   friend class CEvent;
+  friend class CBookings;
   unsigned getID(){return ID;}
   std::string getName() { return Name; }
   virtual void print() const;

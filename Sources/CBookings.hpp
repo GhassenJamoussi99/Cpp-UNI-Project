@@ -9,6 +9,7 @@
 #include "CBlock.hpp"
 #include "CTeacher.hpp"
 #include "CStudent.hpp"
+#include  "CDate.hpp"
 
 class CBookings
 {
@@ -19,6 +20,7 @@ class CBookings
   unsigned int findMatrNr(std::string m_Name);
   unsigned findID(std::string m_Name);
   unsigned findSubjNr(std::string m_Name);
+  //CDate findBirthday(std::string m_Name);
   std::string findStudy(std::string m_Name);
 
   void print();  
