@@ -100,8 +100,6 @@ unsigned CBookings::findID(string m_Name)
 
 unsigned CBookings::findSubjNr(string m_Name)
 {
-    cout << "crash here";
-
   for (int i = 0; i < Subjects.size(); i++)
   {
     if (Subjects[i]->getSubject() == m_Name)
@@ -116,12 +114,14 @@ string CBookings::findStudy(string m_Name)
 {
   for (int i = 0; i < Subjects.size(); i++)
   {
-    if (Subjects[i]->Study->Name == m_Name)
+    cout << " m_Name = " << m_Name << endl;
+    cout << "Subject[i]->Name = " << Subjects[i]->Name << endl;
+    if (Subjects[i]->Name == m_Name)
     {
       return Subjects[i]->Study->Name;
     }
   }
-  return 0;
+  return "";
 }
 
 void CBookings::print()

@@ -13,6 +13,7 @@ class CStudy
   void print() const;
   friend class CStudent;
   friend class CBookings;
+  friend class CSubject;
   void load(std::ifstream& File);
   ~CStudy()
   {std::cout<<"Studiengang " << Name <<" wird vernichtet."<<std::endl; }

@@ -48,7 +48,17 @@ void CSubject::load(ifstream &File)
         {
             CEvent *E = new CEvent();
             E->loadEvent(File);
-            Events.push_back(E);     //ähnliche Funktion steht in Zeile 11
+            Events.push_back(E);     
         }
+        
+        if (strncmp(Zeile.c_str(), "<study>", 7) == 0)
+        {
+            Len = Zeile.length() - (7 + 8);
+            if (strncmp(Zeile.c_str() + 7 + Len, "</study>", 8) == 0)
+            {
+                Study->Name = Zeile.substr(7, Len);
+            }
+        }
+        
     }
 }
