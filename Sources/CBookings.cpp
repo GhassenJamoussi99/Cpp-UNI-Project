@@ -128,7 +128,7 @@ CDate CBookings::findBirthday(string m_Name)
   {
     if (Persons[i]->getName() == m_Name)
     {
-      return Persons[i]->Birthday;
+      return Persons[i]->getBirthday();
     }
   }
   return {0, 0, 0};
