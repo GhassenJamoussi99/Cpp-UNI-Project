@@ -19,8 +19,6 @@ public:
   void setBirthday(CDate m_Birthday){ Birthday = m_Birthday;}
   void setID(unsigned int m_ID){ ID = m_ID;}
   CDate getBirthday() { return this->Birthday; }
-  //friend class CBookings;
-  //friend class CBooking;
   unsigned int& getMatrNr() { return this->MatriculationNr; }
   void load(std::ifstream &File);
 

@@ -12,9 +12,6 @@ class CStudy
   std::string getStudy(){return Name;}
   void print() const;
   void setStudy(std::string m_Name){ Name = m_Name;}
-  friend class CStudent;
-  friend class CBookings;
-  friend class CSubject;
   void load(std::ifstream& File);
   ~CStudy()
   { std::cout<<"   Studiengang " << Name <<" wird vernichtet."<<std::endl; }

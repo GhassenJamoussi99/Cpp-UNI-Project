@@ -97,7 +97,7 @@ CTeacher::CTeacher(string m_Name, string m_Street,
           Len = Zeile.length() - (5 + 6);
           if (strncmp(Zeile.c_str() + 5 + Len, "</day>", 6) == 0)
           {
-            Birthday.Day = stoi(Zeile.substr(5, Len));
+            Birthday.setDay(stoi(Zeile.substr(5, Len)));
           }
         }
 
@@ -106,7 +106,7 @@ CTeacher::CTeacher(string m_Name, string m_Street,
           Len = Zeile.length() - (7 + 8);
           if (strncmp(Zeile.c_str() + 7 + Len, "</month>", 8) == 0)
           {
-            Birthday.Month = stoi(Zeile.substr(7, Len));
+            Birthday.setMonth(stoi(Zeile.substr(7, Len)));
           }
         }
 
@@ -115,7 +115,7 @@ CTeacher::CTeacher(string m_Name, string m_Street,
           Len = Zeile.length() - (6 + 7);
           if (strncmp(Zeile.c_str() + 6 + Len, "</year>", 7) == 0)
           {
-            Birthday.Year = stoi(Zeile.substr(6, Len));
+            Birthday.setYear(stoi(Zeile.substr(6, Len)));
           }
         }
       }

@@ -56,7 +56,7 @@ void CSubject::load(ifstream &File)
             Len = Zeile.length() - (7 + 8);
             if (strncmp(Zeile.c_str() + 7 + Len, "</study>", 8) == 0)
             {
-                Study->Name = Zeile.substr(7, Len);
+                Study->setStudy(Zeile.substr(7, Len));
             }
         }
         

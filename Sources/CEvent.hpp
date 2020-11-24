@@ -27,8 +27,6 @@ public:
     CWeekday StringToEnum(std::string str);
     void loadEvent(std::ifstream &File);
     friend class CEvents;
-    friend class CBookings;
-    friend class CSubject;
     ~CEvent(){};
 
 private:

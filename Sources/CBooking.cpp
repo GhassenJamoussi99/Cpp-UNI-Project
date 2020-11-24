@@ -7,7 +7,8 @@ unsigned CBooking::BookingNr = 0;
 CBooking::CBooking(CSubject *m_Subject, CStudent *m_Student, int m_Day, int m_Month, int m_Year,
                    int m_Hour, int m_Minute, int m_Second) : Subject(m_Subject), Student(m_Student),
                                                              BookingDate(m_Day, m_Month, m_Year), BookingTime(m_Hour, m_Minute, m_Second)
-{}
+{
+}
 
 void CBooking::print()
 {
@@ -25,9 +26,9 @@ void CBooking::print()
     (Student->getBirthday()).print();
     cout << "; "
          << "MatrNr. " << Student->getMatrNr() << "; " << Student->getID() << ")" << endl;
-    
+
     cout << "das Fach '" << Subject->getSubject() << " (" << Subject->getSubjNr() << "; ";
-    cout<< Subject->getStudyName();
+    cout << Subject->getStudyName();
     cout << ")' "
          << "belegt.";
 }
@@ -63,7 +64,7 @@ void CBooking::load(ifstream &File)
                 Student->setName(Zeile.substr(9, Len));
             }
         }
-    
+
         if (strncmp(Zeile.c_str(), "<bookingdate>", 13) == 0)
         {
             while (getline(File, Zeile))
@@ -80,7 +81,7 @@ void CBooking::load(ifstream &File)
                     Len = Zeile.length() - (5 + 6);
                     if (strncmp(Zeile.c_str() + 5 + Len, "</day>", 6) == 0)
                     {
-                        BookingDate.Day = stoi(Zeile.substr(5, Len));
+                        BookingDate.setDay(stoi(Zeile.substr(5, Len)));
                     }
                 }
 
@@ -89,7 +90,7 @@ void CBooking::load(ifstream &File)
                     Len = Zeile.length() - (7 + 8);
                     if (strncmp(Zeile.c_str() + 7 + Len, "</month>", 8) == 0)
                     {
-                        BookingDate.Month = stoi(Zeile.substr(7, Len));
+                        BookingDate.setMonth(stoi(Zeile.substr(7, Len)));
                     }
                 }
 
@@ -98,7 +99,7 @@ void CBooking::load(ifstream &File)
                     Len = Zeile.length() - (6 + 7);
                     if (strncmp(Zeile.c_str() + 6 + Len, "</year>", 7) == 0)
                     {
-                        BookingDate.Year = stoi(Zeile.substr(6, Len));
+                        BookingDate.setYear(stoi(Zeile.substr(6, Len)));
                     }
                 }
             }
@@ -120,7 +121,7 @@ void CBooking::load(ifstream &File)
                     Len = Zeile.length() - (6 + 7);
                     if (strncmp(Zeile.c_str() + 6 + Len, "</hour>", 7) == 0)
                     {
-                        BookingTime.Hour = stoi(Zeile.substr(6, Len));
+                        BookingTime.setHour(stoi(Zeile.substr(6, Len)));
                     }
                 }
 
@@ -129,7 +130,7 @@ void CBooking::load(ifstream &File)
                     Len = Zeile.length() - (8 + 9);
                     if (strncmp(Zeile.c_str() + 8 + Len, "</minute>", 7) == 0)
                     {
-                        BookingTime.Minute = stoi(Zeile.substr(8, Len));
+                        BookingTime.setMinute(stoi(Zeile.substr(8, Len)));
                     }
                 }
 
@@ -138,7 +139,7 @@ void CBooking::load(ifstream &File)
                     Len = Zeile.length() - (8 + 9);
                     if (strncmp(Zeile.c_str() + 8 + Len, "</second>", 9) == 0)
                     {
-                        BookingTime.Second = stoi(Zeile.substr(8, Len));
+                        BookingTime.setSecond(stoi(Zeile.substr(8, Len)));
                     }
                 }
             }

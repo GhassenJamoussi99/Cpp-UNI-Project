@@ -94,7 +94,7 @@ void CEvent::loadEvent(ifstream &File)
             Len = Zeile.length() - (6 + 7);
             if (strncmp(Zeile.c_str() + 6 + Len, "</room>", 7) == 0)
             {
-                Room->Name = Zeile.substr(6, Len);
+                Room->setName(Zeile.substr(6, Len));
             }
         }
 

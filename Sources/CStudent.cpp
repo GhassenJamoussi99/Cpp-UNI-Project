@@ -102,7 +102,7 @@ void CStudent::load(ifstream &File)
           Len = Zeile.length() - (5 + 6);
           if (strncmp(Zeile.c_str() + 5 + Len, "</day>", 6) == 0)
           {
-            Birthday.Day = stoi(Zeile.substr(5, Len));
+            Birthday.setDay(stoi(Zeile.substr(5, Len)));
           }
         }
 
@@ -111,7 +111,7 @@ void CStudent::load(ifstream &File)
           Len = Zeile.length() - (7 + 8);
           if (strncmp(Zeile.c_str() + 7 + Len, "</month>", 8) == 0)
           {
-            Birthday.Month = stoi(Zeile.substr(7, Len));
+            Birthday.setMonth(stoi(Zeile.substr(7, Len)));
           }
         }
 
@@ -120,7 +120,7 @@ void CStudent::load(ifstream &File)
           Len = Zeile.length() - (6 + 7);
           if (strncmp(Zeile.c_str() + 6 + Len, "</year>", 7) == 0)
           {
-            Birthday.Year = stoi(Zeile.substr(6, Len));
+            Birthday.setYear(stoi(Zeile.substr(6, Len)));
           }
         }
       }
@@ -158,7 +158,7 @@ void CStudent::load(ifstream &File)
       Len = Zeile.length() - (7 + 8); // length von "<name>" und </name> -> 6 + 7
       if (strncmp(Zeile.c_str() + 7 + Len, "</term>", 8) == 0)
       {
-         Study->Name = Zeile.substr(7, Len);
+         Study->setStudy(Zeile.substr(7, Len));
       }
     }    
   }
