@@ -1,6 +1,8 @@
 #include "CStudy.hpp"
 #include <regex>   //führende Leerzeichen entfernen
 using namespace std;
+#include "CBookings.hpp"
+
 
 CStudy::CStudy(string m_Name, bool m_NC, short m_NrOfTerms)
     : Name(m_Name), NC(m_NC), NrOfTerms(m_NrOfTerms)

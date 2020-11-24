@@ -11,21 +11,26 @@
 #include "CStudent.hpp"
 #include  "CDate.hpp"
 
-class CBookings
+class CBookings 
 {
  public:
   CBookings() = default;
   CBookings(std::string str);
   void findRoom();
   unsigned int findMatrNr(std::string m_Name);
+  void findStudent(std::string m_Name);
+  CStudy* findStudy(std::string m_Name);
+  
   unsigned findID(std::string m_Name);
   unsigned findSubjNr(std::string m_Name);
   CDate findBirthday(std::string m_Name);
-  std::string findStudy(std::string m_Name);
+  //std::string findStudy(std::string m_Name);
   void ClrMemory();
   void print();  
   ~CBookings()
-  {}
+  {
+      ClrMemory();
+  }
   
  private:
   std::vector<CBlock *>Blocks;

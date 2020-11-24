@@ -12,7 +12,7 @@ CStudent::CStudent(string m_Name, string m_Street,
            MatriculationNr(m_MatriculationNr),Term(m_Term),Credits(m_Credits),Study(m_Study)
           {}
 
-void CStudent::load(ifstream &File)
+void CStudent::load(ifstream &File, CBookings &subj)
 {
   string Zeile;
   int Len;
@@ -147,7 +147,7 @@ void CStudent::load(ifstream &File)
      if (strncmp(Zeile.c_str(), "<credits>", 6) == 0)
     {
       Len = Zeile.length() - (6 + 7); // length von "<name>" und </name> -> 6 + 7
-      if (strncmp(Zeile.c_str() + 6 + Len, "</term>", 7) == 0)
+      if (strncmp(Zeile.c_str() + 6 + Len, "</credits>", 7) == 0)
       {
          Credits = stoi(Zeile.substr(6, Len));
       }
@@ -156,9 +156,16 @@ void CStudent::load(ifstream &File)
     if (strncmp(Zeile.c_str(), "<study>", 7) == 0)
     {
       Len = Zeile.length() - (7 + 8); // length von "<name>" und </name> -> 6 + 7
-      if (strncmp(Zeile.c_str() + 7 + Len, "</term>", 8) == 0)
+      if (strncmp(Zeile.c_str() + 7 + Len, "</study>", 8) == 0)
       {
-         Study->setStudy(Zeile.substr(7, Len));
+    
+                  cout << "test : " << subj.findStudy(Zeile.substr(7, Len));
+            
+         //Study->setStudy(Zeile.substr(7, Len));
+         Study = subj.findStudy(Zeile.substr(7, Len));
+         cout << "Study : ";
+         cout << Study->getStudy();
+         cout << " Done ";
       }
     }    
   }

@@ -50,8 +50,9 @@ void CBooking::load(ifstream &File)
         {
             Len = Zeile.length() - (9 + 10);
             if (strncmp(Zeile.c_str() + 9 + Len, "</subject>", 10) == 0)
-            {
+            {   cout << "Crash ? " << endl;
                 Subject->setName(Zeile.substr(9, Len));
+                cout << "No" << endl;
             }
         }
 

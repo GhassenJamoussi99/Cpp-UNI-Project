@@ -46,7 +46,7 @@ CBookings::CBookings(string str)
       if (Zeile.compare("<student>") == 0)
       {
         CStudent *S1 = new CStudent();
-        S1->load(src);
+        S1->load(src, this);
         Persons.push_back(S1);
       }
 
@@ -74,6 +74,24 @@ CBookings::CBookings(string str)
   }
 }
 
+
+CStudy* CBookings::findStudy(string m_Name)
+{
+  cout << "works";
+ for (int i = 0 ; i < Studies.size() ; i ++)
+ {
+   cout << " Yes ";
+   cout << m_Name;
+   cout << Studies[i]->getStudy();
+   if (Studies[i]->getStudy() == m_Name)
+    {
+      cout << "Here boy ";
+      return Studies[i];
+    }
+ }
+ return NULL;
+}
+
 unsigned int CBookings::findMatrNr(string m_Name)
 {
   for (int i = 0; i < Persons.size(); i++)
@@ -98,7 +116,7 @@ unsigned CBookings::findID(string m_Name)
   return 0;
 }
 
-string CBookings::findStudy(string m_Name)
+/*string CBookings::findStudy(string m_Name)
 {
   for (int i = 0; i < Subjects.size(); i++)
   {
@@ -109,6 +127,7 @@ string CBookings::findStudy(string m_Name)
   }
   return "";
 }
+*/
 
 unsigned CBookings::findSubjNr(string m_Name)
 {
@@ -137,8 +156,8 @@ CDate CBookings::findBirthday(string m_Name)
 void CBookings::print()
 {
   cout << "Datei wurde erfolgreich eingelesen!" << endl;
-
-  for (int i = 0; i < Bookings.size(); i++)
+   
+   /*for (int i = 0; i < Bookings.size(); i++)
   {
     Bookings[i]->Student->setMatrNr(findMatrNr(Bookings[i]->Student->getName()));
     Bookings[i]->Student->setBirthday(findBirthday(Bookings[i]->Student->getName()));
@@ -149,8 +168,8 @@ void CBookings::print()
     cout << endl;
     cout << endl;
   }
-
-  ClrMemory();
+  */
+  
 }
 
 void CBookings::ClrMemory()
