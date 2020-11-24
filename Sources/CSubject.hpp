@@ -14,10 +14,10 @@ public:
   void addEvent(CEvent *m_Event);
   void print();
   std::string getName() { return Name; }
+  void setName(std::string m_Name) { Name = m_Name;}
   void setSubjNr(unsigned m_SubjNr){ SubjNr = m_SubjNr;}
   std::string getStudyName() { return Study->getStudy(); }
   void setStudyName(std::string m_Study){Study->setStudy(m_Study);} 
-  friend class CBooking;
   void load(std::ifstream &File);
   std::string getSubject() { return Name; }
   unsigned &getSubjNr() { return SubjNr; } //override die virtuelle Funtkion

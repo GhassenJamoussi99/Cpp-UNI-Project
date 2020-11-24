@@ -51,7 +51,7 @@ void CBooking::load(ifstream &File)
             Len = Zeile.length() - (9 + 10);
             if (strncmp(Zeile.c_str() + 9 + Len, "</subject>", 10) == 0)
             {
-                Subject->Name = Zeile.substr(9, Len);
+                Subject->setName(Zeile.substr(9, Len));
             }
         }
 

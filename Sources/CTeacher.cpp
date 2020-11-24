@@ -48,7 +48,7 @@ CTeacher::CTeacher(string m_Name, string m_Street,
           Len = Zeile.length() - (8 + 9);
           if (strncmp(Zeile.c_str() + 8 + Len, "</street>", 9) == 0)
           {
-            Address.Street = Zeile.substr(8, Len);
+            Address.setStreet(Zeile.substr(8, Len));
           }
         }
 
@@ -57,7 +57,7 @@ CTeacher::CTeacher(string m_Name, string m_Street,
           Len = Zeile.length() - (9 + 10);
           if (strncmp(Zeile.c_str() + 9 + Len, "</housenr>", 10) == 0)
           {
-            Address.HouseNr = Zeile.substr(9, Len);
+            Address.setHouseNr(Zeile.substr(9, Len));
           }
         }
 
@@ -66,7 +66,7 @@ CTeacher::CTeacher(string m_Name, string m_Street,
           Len = Zeile.length() - (9 + 10);
           if (strncmp(Zeile.c_str() + 9 + Len, "</zipcode>", 10) == 0)
           {
-            Address.Zipcode = stoi(Zeile.substr(9, Len));
+            Address.setZipcode(stoi(Zeile.substr(9, Len)));
           }
         }
 
@@ -75,7 +75,7 @@ CTeacher::CTeacher(string m_Name, string m_Street,
           Len = Zeile.length() - (6 + 7);
           if (strncmp(Zeile.c_str() + 6 + Len, "</city>", 7) == 0)
           {
-            Address.HouseNr = Zeile.substr(6, Len);
+            Address.setCity(Zeile.substr(6, Len));
           }
         }
       }
