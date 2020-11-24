@@ -24,10 +24,10 @@ void CBooking::print()
     cout << "hat " << Student->getName() << "(* ";
     (Student->getBirthday()).print();
     cout << "; "
-         << "MatrNr. " << Student->getMatrNr() << "; " << Student->ID << ")" << endl;
+         << "MatrNr. " << Student->getMatrNr() << "; " << Student->getID() << ")" << endl;
     
     cout << "das Fach '" << Subject->getSubject() << " (" << Subject->getSubjNr() << "; ";
-    cout<< Subject->Study->getStudy();
+    cout<< Subject->getStudyName();
     cout << ")' "
          << "belegt.";
 }
@@ -60,7 +60,7 @@ void CBooking::load(ifstream &File)
             Len = Zeile.length() - (9 + 10);
             if (strncmp(Zeile.c_str() + 9 + Len, "</student>", 10) == 0)
             {
-                Student->Name = Zeile.substr(9, Len);
+                Student->setName(Zeile.substr(9, Len));
             }
         }
     

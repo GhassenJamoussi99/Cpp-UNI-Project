@@ -11,6 +11,7 @@ class CStudy
   CStudy(std::string m_Name, bool m_NC, short m_NrOfTerms);
   std::string getStudy(){return Name;}
   void print() const;
+  void setStudy(std::string m_Name){ Name = m_Name;}
   friend class CStudent;
   friend class CBookings;
   friend class CSubject;

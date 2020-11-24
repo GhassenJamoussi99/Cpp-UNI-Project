@@ -17,6 +17,7 @@ class CBooking
              int m_Hour,int m_Minute,int m_Second);
     void print();
     friend class CBookings;
+     
     void load(std::ifstream& File);
     ~CBooking()
     {

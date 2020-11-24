@@ -102,9 +102,9 @@ string CBookings::findStudy(string m_Name)
 {
   for (int i = 0; i < Subjects.size(); i++)
   {
-    if (Subjects[i]->Name == m_Name)
+    if (Subjects[i]->getName() == m_Name)
     {
-      return Subjects[i]->Study->Name;
+      return Subjects[i]->getStudyName();
     }
   }
   return "";
@@ -140,11 +140,11 @@ void CBookings::print()
 
   for (int i = 0; i < Bookings.size(); i++)
   {
-    Bookings[i]->Student->MatriculationNr = findMatrNr(Bookings[i]->Student->Name);
-    Bookings[i]->Student->Birthday = findBirthday(Bookings[i]->Student->Name);
-    Bookings[i]->Student->ID = findID(Bookings[i]->Student->Name);
-    Bookings[i]->Subject->SubjNr = findSubjNr(Bookings[i]->Subject->Name);
-    Bookings[i]->Subject->Study->Name = findStudy(Bookings[i]->Subject->Name); //issue here
+    Bookings[i]->Student->setMatrNr(findMatrNr(Bookings[i]->Student->getName()));
+    Bookings[i]->Student->setBirthday(findBirthday(Bookings[i]->Student->getName()));
+    Bookings[i]->Student->setID(findID(Bookings[i]->Student->getName()));
+    Bookings[i]->Subject->setSubjNr(findSubjNr(Bookings[i]->Subject->getName()));
+    Bookings[i]->Subject->setStudyName(findStudy(Bookings[i]->Subject->getName())); //issue here
     Bookings[i]->print();
     cout << endl;
     cout << endl;

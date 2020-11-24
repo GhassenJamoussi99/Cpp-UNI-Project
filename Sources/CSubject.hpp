@@ -6,29 +6,31 @@
 #include "CEvent.hpp"
 #include <vector>
 
-
 class CSubject
 {
-  public:
+public:
   CSubject() = default;
-  CSubject(std::string m_Name,unsigned m_SubjNr,CStudy *m_Study);
+  CSubject(std::string m_Name, unsigned m_SubjNr, CStudy *m_Study);
   void addEvent(CEvent *m_Event);
   void print();
-  friend class CBookings; // zu entfernen
+  std::string getName() { return Name; }
+  void setSubjNr(unsigned m_SubjNr){ SubjNr = m_SubjNr;}
+  std::string getStudyName() { return Study->getStudy(); }
+  void setStudyName(std::string m_Study){Study->setStudy(m_Study);} 
   friend class CBooking;
-  void load(std::ifstream& File);
-  std::string getSubject(){return Name;}
-  unsigned getSubjNr(){return SubjNr;} //override die virtuelle Funtkion
+  void load(std::ifstream &File);
+  std::string getSubject() { return Name; }
+  unsigned &getSubjNr() { return SubjNr; } //override die virtuelle Funtkion
   ~CSubject()
-  {std::cout<<"   Studienfach " << Name <<" wird vernichtet."<<std::endl; }
+  {
+    std::cout << "   Studienfach " << Name << " wird vernichtet." << std::endl;
+  }
 
-  private:
-   unsigned SubjNr;   
-   std::string Name;
-   CStudy *Study = new CStudy();
-   std::vector<CEvent*> Events; 
-   
+private:
+  unsigned SubjNr;
+  std::string Name;
+  CStudy *Study = new CStudy();
+  std::vector<CEvent *> Events;
 };
-
 
 #endif
