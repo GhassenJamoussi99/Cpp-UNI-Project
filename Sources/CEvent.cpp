@@ -84,7 +84,7 @@ void CEvent::loadEvent(ifstream &File)
             Len = Zeile.length() - (9 + 10);
             if (strncmp(Zeile.c_str() + 9 + Len, "</teacher>", 10) == 0)
             {
-                Teacher->getName() = Zeile.substr(9, Len);
+                Teacher->setName(Zeile.substr(9, Len));
             }
         }
 
