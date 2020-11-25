@@ -1,5 +1,4 @@
 #include "CRoom.hpp"
-#include <fstream>
 #include <string>
 #include <regex>
 using namespace std;

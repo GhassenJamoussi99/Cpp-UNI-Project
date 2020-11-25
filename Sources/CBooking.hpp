@@ -9,6 +9,8 @@
 
 static unsigned TMP = 0;
 
+
+
 class CBooking
 {
  public:

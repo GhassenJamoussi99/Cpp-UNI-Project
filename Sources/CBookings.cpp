@@ -46,7 +46,7 @@ CBookings::CBookings(string str)
       if (Zeile.compare("<student>") == 0)
       {
         CStudent *S1 = new CStudent();
-        S1->load(src, this);
+        S1->load(src, *this);
         Persons.push_back(S1);
       }
 
@@ -77,15 +77,10 @@ CBookings::CBookings(string str)
 
 CStudy* CBookings::findStudy(string m_Name)
 {
-  cout << "works";
  for (int i = 0 ; i < Studies.size() ; i ++)
  {
-   cout << " Yes ";
-   cout << m_Name;
-   cout << Studies[i]->getStudy();
    if (Studies[i]->getStudy() == m_Name)
     {
-      cout << "Here boy ";
       return Studies[i];
     }
  }

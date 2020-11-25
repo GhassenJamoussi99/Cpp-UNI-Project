@@ -4,12 +4,12 @@
 #include "CSubject.hpp"
 #include "CPerson.hpp"
 #include "CRoom.hpp"
-#include "CStudy.hpp"
-#include "CBooking.hpp"
 #include "CBlock.hpp"
 #include "CTeacher.hpp"
-#include "CStudent.hpp"
-#include  "CDate.hpp"
+#include "CBookings.hpp"
+#include "CBooking.hpp"
+
+class CStudent;
 
 class CBookings 
 {

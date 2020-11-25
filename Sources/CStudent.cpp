@@ -1,4 +1,6 @@
 #include "CStudent.hpp"
+#include "CBookings.hpp"
+
 #include <regex>
 using namespace std;
 
@@ -157,15 +159,8 @@ void CStudent::load(ifstream &File, CBookings &subj)
     {
       Len = Zeile.length() - (7 + 8); // length von "<name>" und </name> -> 6 + 7
       if (strncmp(Zeile.c_str() + 7 + Len, "</study>", 8) == 0)
-      {
-    
-                  cout << "test : " << subj.findStudy(Zeile.substr(7, Len));
-            
-         //Study->setStudy(Zeile.substr(7, Len));
+      {     
          Study = subj.findStudy(Zeile.substr(7, Len));
-         cout << "Study : ";
-         cout << Study->getStudy();
-         cout << " Done ";
       }
     }    
   }

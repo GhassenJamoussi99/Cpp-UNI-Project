@@ -2,7 +2,10 @@
 #define CSTUDENT_H
 #include "CStudy.hpp"
 #include "CPerson.hpp"
-#include "CBookings.hpp"
+#include <fstream>
+
+class CBookings;
+
 class CStudent : public CPerson
 {
 public:
@@ -12,7 +15,6 @@ public:
            std::string m_City, int m_Day, int m_Month, int m_Year,
            unsigned int m_MatriculationNr, unsigned short m_Term, unsigned m_Credits,
            CStudy *m_Study);
-
   void load(std::ifstream &File, CBookings &subj);
   std::string getName() { return this->Name; }
   void setName(std::string m_Name) { Name = m_Name; }
