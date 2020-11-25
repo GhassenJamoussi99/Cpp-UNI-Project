@@ -25,11 +25,6 @@ class CBookings
   CSubject* findSubject(std::string m_Name);
   CStudent* findStudent(std::string m_Name);
   
-  //void findStudent(std::string m_Name);
-  unsigned findID(std::string m_Name);
-  unsigned findSubjNr(std::string m_Name);
-  CDate findBirthday(std::string m_Name);
-  //std::string findStudy(std::string m_Name);
   void ClrMemory();
   void print();  
   ~CBookings()

@@ -31,7 +31,7 @@ class CBooking
  private:
     static unsigned BookingNr;
     CSubject *Subject ;
-    CStudent *Student = new CStudent();
+    CStudent *Student ;
     CDate BookingDate;
     CTime BookingTime;
 };
