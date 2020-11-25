@@ -6,6 +6,8 @@
 #include "CEvent.hpp"
 #include <vector>
 
+class CBookings;
+
 class CSubject
 {
 public:
@@ -13,12 +15,12 @@ public:
   CSubject(std::string m_Name, unsigned m_SubjNr, CStudy *m_Study);
   void addEvent(CEvent *m_Event);
   void print();
+  void load(std::ifstream &File, CBookings &subj);
   std::string getName() { return Name; }
-  void setName(std::string m_Name) { Name = m_Name;}
-  void setSubjNr(unsigned m_SubjNr){ SubjNr = m_SubjNr;}
+  void setName(std::string m_Name) { Name = m_Name; }
+  void setSubjNr(unsigned m_SubjNr) { SubjNr = m_SubjNr; }
   std::string getStudyName() { return Study->getStudy(); }
-  void setStudyName(std::string m_Study){Study->setStudy(m_Study);} 
-  void load(std::ifstream &File);
+  void setStudyName(std::string m_Study) { Study->setStudy(m_Study); }
   std::string getSubject() { return Name; }
   unsigned &getSubjNr() { return SubjNr; } //override die virtuelle Funtkion
   ~CSubject()
@@ -29,7 +31,7 @@ public:
 private:
   unsigned SubjNr;
   std::string Name;
-  CStudy *Study = new CStudy();
+  CStudy *Study ;
   std::vector<CEvent *> Events;
 };
 

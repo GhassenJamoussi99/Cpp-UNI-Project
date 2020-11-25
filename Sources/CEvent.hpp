@@ -17,6 +17,8 @@ enum CWeekday
     So
 };
 
+class CBookings;
+
 class CEvent
 {
 public:
@@ -25,15 +27,15 @@ public:
            CWeekday m_day, short m_Period);
     std::string getDay(CWeekday m_WeekDay);
     CWeekday StringToEnum(std::string str);
-    void loadEvent(std::ifstream &File);
+    void loadEvent(std::ifstream &File, CBookings &subj);
     friend class CEvents;
     ~CEvent(){};
 
 private:
     std::string Name;
-    CPerson *Teacher = new CPerson();
-    CRoom *Room = new CRoom();
-    CBlock *Block = new CBlock();
+    CPerson *Teacher;
+    CRoom *Room ;
+    CBlock *Block ;
     CWeekday WeekDay;
     short Period;
 };

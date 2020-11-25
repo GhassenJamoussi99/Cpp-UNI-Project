@@ -1,5 +1,6 @@
 #include "CSubject.hpp"
 #include <regex>
+#include "CBookings.hpp"
 
 using namespace std;
 
@@ -14,7 +15,7 @@ void CSubject::addEvent(CEvent *m_Event)
 }
 
 
-void CSubject::load(ifstream &File)
+void CSubject::load(ifstream &File, CBookings &subj)
 {
     string Zeile;
     int Len;
@@ -47,7 +48,7 @@ void CSubject::load(ifstream &File)
         if (strncmp(Zeile.c_str(), "<event>", 11) == 0)
         {
             CEvent *E = new CEvent();
-            E->loadEvent(File);
+            E->loadEvent(File, subj);
             Events.push_back(E);     
         }
         
@@ -56,7 +57,8 @@ void CSubject::load(ifstream &File)
             Len = Zeile.length() - (7 + 8);
             if (strncmp(Zeile.c_str() + 7 + Len, "</study>", 8) == 0)
             {
-                Study->setStudy(Zeile.substr(7, Len));
+                 Study = subj.findStudy(Zeile.substr(7, Len));
+
             }
         }
         

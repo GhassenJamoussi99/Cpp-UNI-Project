@@ -1,6 +1,7 @@
 #include "CEvent.hpp"
 #include <regex>
 #include "CSubject.hpp"
+#include "CBookings.hpp"
 using namespace std;
 
 CEvent::CEvent(string m_Name,
@@ -57,7 +58,7 @@ string CEvent::getDay(CWeekday m_WeekDay)
     }
 }
 
-void CEvent::loadEvent(ifstream &File)
+void CEvent::loadEvent(ifstream &File, CBookings &subj)
 {
     string Zeile;
     int Len;
@@ -84,7 +85,7 @@ void CEvent::loadEvent(ifstream &File)
             Len = Zeile.length() - (9 + 10);
             if (strncmp(Zeile.c_str() + 9 + Len, "</teacher>", 10) == 0)
             {
-                Teacher->setName(Zeile.substr(9, Len));
+                Teacher = subj.findTeacher(Zeile.substr(9, Len));
             }
         }
 
@@ -94,7 +95,7 @@ void CEvent::loadEvent(ifstream &File)
             Len = Zeile.length() - (6 + 7);
             if (strncmp(Zeile.c_str() + 6 + Len, "</room>", 7) == 0)
             {
-                Room->setName(Zeile.substr(6, Len));
+                Room = subj.findRoom(Zeile.substr(6, Len));
             }
         }
 
@@ -103,7 +104,7 @@ void CEvent::loadEvent(ifstream &File)
             Len = Zeile.length() - (7 + 8);
             if (strncmp(Zeile.c_str() + 7 + Len, "</block>", 8) == 0)
             {
-                Block->BlockNr = stoi(Zeile.substr(7, Len));
+                Block = subj.findBlock(stoi(Zeile.substr(7, Len)));
             }
         }
 

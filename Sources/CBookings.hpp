@@ -6,10 +6,9 @@
 #include "CRoom.hpp"
 #include "CBlock.hpp"
 #include "CTeacher.hpp"
-#include "CBookings.hpp"
-#include "CBooking.hpp"
 
 class CStudent;
+class CBooking;
 
 class CBookings 
 {
@@ -18,9 +17,15 @@ class CBookings
   CBookings(std::string str);
   void findRoom();
   unsigned int findMatrNr(std::string m_Name);
-  void findStudent(std::string m_Name);
+
   CStudy* findStudy(std::string m_Name);
+  CPerson* findTeacher(std::string m_Name);
+  CRoom* findRoom(std::string m_Name);
+  CBlock* findBlock(short blockNr);
+  CSubject* findSubject(std::string m_Name);
+  CStudent* findStudent(std::string m_Name);
   
+  //void findStudent(std::string m_Name);
   unsigned findID(std::string m_Name);
   unsigned findSubjNr(std::string m_Name);
   CDate findBirthday(std::string m_Name);

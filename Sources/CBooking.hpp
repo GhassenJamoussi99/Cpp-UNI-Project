@@ -9,6 +9,7 @@
 
 static unsigned TMP = 0;
 
+class CBookings;
 
 
 class CBooking
@@ -20,7 +21,7 @@ class CBooking
     void print();
     friend class CBookings;
      
-    void load(std::ifstream& File);
+    void load(std::ifstream &File, CBookings &subj);
     ~CBooking()
     {
        TMP++;
@@ -29,7 +30,7 @@ class CBooking
 
  private:
     static unsigned BookingNr;
-    CSubject *Subject = new CSubject();
+    CSubject *Subject ;
     CStudent *Student = new CStudent();
     CDate BookingDate;
     CTime BookingTime;

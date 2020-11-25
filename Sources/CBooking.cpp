@@ -33,7 +33,7 @@ void CBooking::print()
          << "belegt.";
 }
 
-void CBooking::load(ifstream &File)
+void CBooking::load(ifstream &File, CBookings &subj)
 {
     string Zeile;
     int Len;
@@ -50,9 +50,8 @@ void CBooking::load(ifstream &File)
         {
             Len = Zeile.length() - (9 + 10);
             if (strncmp(Zeile.c_str() + 9 + Len, "</subject>", 10) == 0)
-            {   cout << "Crash ? " << endl;
-                Subject->setName(Zeile.substr(9, Len));
-                cout << "No" << endl;
+            {  
+                Subject =  subj.findSubject(Zeile.substr(9, Len));
             }
         }
 
@@ -62,7 +61,7 @@ void CBooking::load(ifstream &File)
             Len = Zeile.length() - (9 + 10);
             if (strncmp(Zeile.c_str() + 9 + Len, "</student>", 10) == 0)
             {
-                Student->setName(Zeile.substr(9, Len));
+                Student = subj.findStudent(Zeile.substr(9, Len));
             }
         }
 

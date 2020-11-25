@@ -2,6 +2,8 @@
 #include <fstream>
 using namespace std;
 #include <regex>
+#include "CStudent.hpp"
+#include "CBooking.hpp"
 
 CBookings::CBookings(string str)
 {
@@ -60,110 +62,107 @@ CBookings::CBookings(string str)
       if (Zeile.compare("<subject>") == 0)
       {
         CSubject *S = new CSubject();
-        S->load(src);
+        S->load(src, *this);
         Subjects.push_back(S);
       }
 
       if (Zeile.compare("<booking>") == 0)
       {
         CBooking *CB = new CBooking();
-        CB->load(src);
+        CB->load(src, *this);
         Bookings.push_back(CB);
       }
     }
   }
 }
 
-
-CStudy* CBookings::findStudy(string m_Name)
+CStudy *CBookings::findStudy(string m_Name)
 {
- for (int i = 0 ; i < Studies.size() ; i ++)
- {
-   if (Studies[i]->getStudy() == m_Name)
+  for (int i = 0; i < Studies.size(); i++)
+  {
+    if (Studies[i]->getStudy() == m_Name)
     {
       return Studies[i];
     }
- }
- return NULL;
+  }
+  return NULL;
 }
 
-unsigned int CBookings::findMatrNr(string m_Name)
+CPerson *CBookings::findTeacher(string m_Name)
 {
   for (int i = 0; i < Persons.size(); i++)
   {
     if (Persons[i]->getName() == m_Name)
     {
-      return Persons[i]->getMatrNr();
+      return Persons[i];
     }
   }
-  return 0;
+  return NULL;
 }
 
-unsigned CBookings::findID(string m_Name)
+CRoom *CBookings::findRoom(string m_Name)
 {
-  for (int i = 0; i < Persons.size(); i++)
+  for (int i = 0; i < Rooms.size(); i++)
   {
-    if (Persons[i]->getName() == m_Name)
+    if (Rooms[i]->getName() == m_Name)
     {
-      return Persons[i]->getID();
+      return Rooms[i];
     }
   }
-  return 0;
+  return NULL;
 }
 
-/*string CBookings::findStudy(string m_Name)
+CBlock *CBookings::findBlock(short blockNr)
 {
-  for (int i = 0; i < Subjects.size(); i++)
+  for (int i = 0; i < Blocks.size(); i++)
   {
-    if (Subjects[i]->getName() == m_Name)
+    if (Blocks[i]->getBlockNr() == blockNr)
     {
-      return Subjects[i]->getStudyName();
+      return Blocks[i];
     }
   }
-  return "";
+  return NULL;
 }
-*/
 
-unsigned CBookings::findSubjNr(string m_Name)
+CSubject *CBookings::findSubject(std::string m_Name)
 {
   for (int i = 0; i < Subjects.size(); i++)
   {
     if (Subjects[i]->getSubject() == m_Name)
     {
-      return Subjects[i]->getSubjNr();
+      return Subjects[i];
     }
   }
-  return 0;
+  return NULL;
 }
 
-CDate CBookings::findBirthday(string m_Name)
+CStudent *CBookings::findStudent(std::string m_Name)
 {
   for (int i = 0; i < Persons.size(); i++)
   {
-    if (Persons[i]->getName() == m_Name)
+    CStudent *Student = dynamic_cast<CStudent *>(Persons[i]);
+    if (Student)
     {
-      return Persons[i]->getBirthday();
+      if (Student->getName() == m_Name)
+      {
+        return Student;
+      }
     }
   }
-  return {0, 0, 0};
+  return NULL;
 }
+
 
 void CBookings::print()
 {
   cout << "Datei wurde erfolgreich eingelesen!" << endl;
-   
-   /*for (int i = 0; i < Bookings.size(); i++)
+
+  for (int i = 0; i < Bookings.size(); i++)
   {
-    Bookings[i]->Student->setMatrNr(findMatrNr(Bookings[i]->Student->getName()));
-    Bookings[i]->Student->setBirthday(findBirthday(Bookings[i]->Student->getName()));
-    Bookings[i]->Student->setID(findID(Bookings[i]->Student->getName()));
-    Bookings[i]->Subject->setSubjNr(findSubjNr(Bookings[i]->Subject->getName()));
-    Bookings[i]->Subject->setStudyName(findStudy(Bookings[i]->Subject->getName())); //issue here
     Bookings[i]->print();
     cout << endl;
     cout << endl;
   }
-  */
   
 }
 
