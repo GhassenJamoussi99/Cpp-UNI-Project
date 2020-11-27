@@ -22,7 +22,6 @@ public:
   std::string getStudyName() { return Study->getStudy(); }
   void setStudyName(std::string m_Study) { Study->setStudy(m_Study); }
   std::string getSubject() { return Name; }
-  unsigned &getSubjNr() { return SubjNr; } //override die virtuelle Funtkion
   ~CSubject()
   {
     std::cout << "   Studienfach " << Name << " wird vernichtet." << std::endl;
