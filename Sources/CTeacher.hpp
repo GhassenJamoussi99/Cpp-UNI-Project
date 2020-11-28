@@ -3,7 +3,7 @@
 #include "CPerson.hpp"
 #include <fstream>
 
-class CTeacher : public CPerson
+class CTeacher : virtual CPerson
 {
 public:
         CTeacher() = default;
@@ -12,6 +12,7 @@ public:
                  std::string m_City, int m_Day, int m_Month, int m_Year,
                  int m_PersonalNr);
         void print();
+        unsigned int getMatrNr() {return 0;}
         void load(std::ifstream &File);
         ~CTeacher()
         {

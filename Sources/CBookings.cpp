@@ -152,8 +152,15 @@ CStudent *CBookings::findStudent(std::string m_Name)
   return NULL;
 }
 
+void CBookings::printPersonen()
+{  
+  cout <<"Personen : "<<endl;
 
-void CBookings::print()
+
+
+} 
+
+void CBookings::printBelegungen()
 {
   cout << "Datei wurde erfolgreich eingelesen!" << endl;
 

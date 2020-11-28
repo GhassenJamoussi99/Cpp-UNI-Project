@@ -6,7 +6,7 @@
 
 class CBookings;
 
-class CStudent : public CPerson
+class CStudent : virtual CPerson
 {
 public:
   CStudent() = default;
@@ -22,7 +22,7 @@ public:
   void setBirthday(CDate m_Birthday) { Birthday = m_Birthday; }
   void setID(unsigned int m_ID) { ID = m_ID; }
   CDate getBirthday() { return this->Birthday; }
-  unsigned int &getMatrNr() { return this->MatriculationNr; }
+  unsigned int getMatrNr() { return this->MatriculationNr; }
 
   void print();
   ~CStudent()

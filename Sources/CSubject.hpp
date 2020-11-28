@@ -21,6 +21,7 @@ public:
   void setSubjNr(unsigned m_SubjNr) { SubjNr = m_SubjNr; }
   std::string getStudyName() { return Study->getStudy(); }
   void setStudyName(std::string m_Study) { Study->setStudy(m_Study); }
+  unsigned &getSubjNr() { return SubjNr; }
   std::string getSubject() { return Name; }
   ~CSubject()
   {

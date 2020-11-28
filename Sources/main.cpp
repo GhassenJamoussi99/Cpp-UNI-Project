@@ -7,7 +7,7 @@ int main()
 {
    CBookings Belegungen("belegungen.xml");
 
-   Belegungen.print();
+   Belegungen.printBelegungen();
 
     return 0;
 }

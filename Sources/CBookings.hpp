@@ -26,7 +26,8 @@ class CBookings
   CStudent* findStudent(std::string m_Name);
   
   void ClrMemory();
-  void print();  
+  void printBelegungen();  
+  void printPersonen(); //TODO
   ~CBookings()
   {
       ClrMemory();

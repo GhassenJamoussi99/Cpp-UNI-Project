@@ -15,6 +15,7 @@ public:
           std::string m_City, int m_Day, int m_Month, int m_Year);
   CAddress &getAddress();
   void setName(std::string m_Name){ Name = m_Name;}
+  virtual unsigned int getMatrNr() = 0;
   CDate getBirthday(){return Birthday;}
   unsigned &getID(){return ID;}
   std::string &getName() { return Name; }
