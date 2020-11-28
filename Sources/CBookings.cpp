@@ -59,6 +59,13 @@ CBookings::CBookings(string str)
         Persons.push_back(T1);
       }
 
+      if (Zeile.compare("<teacher>") == 0)
+      {
+        CTutor *TU = new CTutor();
+        TU->load(src, *this);
+        Persons.push_back(TU);
+      }
+      
       if (Zeile.compare("<subject>") == 0)
       {
         CSubject *S = new CSubject();
@@ -155,8 +162,15 @@ CStudent *CBookings::findStudent(std::string m_Name)
 void CBookings::printPersonen()
 {  
   cout <<"Personen : "<<endl;
-
-
+  
+  for (int i = 0 ; i < Persons.size();i++)
+  {
+    Persons[i]->print();     //IDEA : delete print from persons 
+                            // and make it an abstract class 
+                           // then use CTeacher print 
+                          // and CStudent print
+  }
+  
 
 } 
 

@@ -6,7 +6,8 @@ using namespace std;
 int main()
 {
    CBookings Belegungen("belegungen.xml");
-
+   
+   Belegungen.printPersonen();
    Belegungen.printBelegungen();
 
     return 0;

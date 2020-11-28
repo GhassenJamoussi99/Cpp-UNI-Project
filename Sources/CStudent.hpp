@@ -6,7 +6,7 @@
 
 class CBookings;
 
-class CStudent : virtual CPerson
+class CStudent : virtual public CPerson  //Auf virtual public setzen, um Diamond of Death zu vermeiden
 {
 public:
   CStudent() = default;
@@ -23,14 +23,13 @@ public:
   void setID(unsigned int m_ID) { ID = m_ID; }
   CDate getBirthday() { return this->Birthday; }
   unsigned int getMatrNr() { return this->MatriculationNr; }
-
-  void print();
+  virtual void print(); //..
   ~CStudent()
   {
     std::cout << "   Student*in " << Name << " wird vernichtet." << std::endl;
   }
 
-private:
+protected:
   unsigned int MatriculationNr;
   unsigned short Term;
   unsigned Credits;

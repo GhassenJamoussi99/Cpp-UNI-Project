@@ -115,6 +115,21 @@
   <credits>28</credits>
   <study>Technische Informatik</study>
  </student>
+ <teacher>
+  <name>Sabine Sauber</name>
+  <address>
+   <street>Saubere Gasse</street>
+   <housenr>1</housenr>
+   <zipcode>17001</zipcode>
+   <city>Auf dem Land</city>
+  </address>
+  <birthday>
+   <day>3</day>
+   <month>1</month>
+   <year>1962</year>
+  </birthday>
+  <personalnr>68</personalnr>
+ </teacher>
  <student>
   <name>Detlef Dicht</name>
   <address>
@@ -184,7 +199,7 @@
   </birthday>
   <personalnr>12</personalnr>
  </teacher>
- <teacher>
+ <tutor>
   <name>Nathan Neuling</name>
   <address>
    <street>Neue Str.</street>
@@ -197,23 +212,12 @@
    <month>9</month>
    <year>1969</year>
   </birthday>
-  <personalnr>97</personalnr>
- </teacher>
- <teacher>
-  <name>Sabine Sauber</name>
-  <address>
-   <street>Saubere Gasse</street>
-   <housenr>1</housenr>
-   <zipcode>17001</zipcode>
-   <city>Auf dem Land</city>
-  </address>
-  <birthday>
-   <day>3</day>
-   <month>1</month>
-   <year>1962</year>
-  </birthday>
-  <personalnr>68</personalnr>
- </teacher>
+  <matriculationnr>191919</matriculationnr>
+  <term>5</term>
+  <credits>78</credits>
+  <study>Technische Informatik</study>
+  <personalnr>101</personalnr>
+ </tutor>
  <teacher>
   <name>Willi Witzig</name>
   <address>
@@ -371,6 +375,21 @@
    <hour>19</hour>
    <minute>21</minute>
    <second>3</second>
+  </bookingtime>
+ </booking>
+ <booking>
+  <bookingnr>5</bookingnr>
+  <subject>Englisch</subject>
+  <student>Nathan Neuling</student>
+  <bookingdate>
+   <day>17</day>
+   <month>10</month>
+   <year>2020</year>
+  </bookingdate>
+  <bookingtime>
+   <hour>23</hour>
+   <minute>59</minute>
+   <second>007</second>
   </bookingtime>
  </booking>
 </data>

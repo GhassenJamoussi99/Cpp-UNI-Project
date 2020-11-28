@@ -9,6 +9,14 @@ CTeacher::CTeacher(string m_Name, string m_Street,
          : CPerson(m_Name,m_Street,m_HouseNr,m_Zipcode,m_City,m_Day,m_Month,m_Year),
            PersonalNr(m_PersonalNr)
  {}
+ 
+ void CTeacher::print()
+ {
+   cout << Name << " (* ";
+   Birthday.print();
+   cout << "; ID " << ID << "; PersNr. " << PersonalNr << ")" << endl; 
+ }
+
 
  void CTeacher::load(ifstream &File)
 {

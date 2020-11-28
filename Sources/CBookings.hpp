@@ -6,6 +6,7 @@
 #include "CRoom.hpp"
 #include "CBlock.hpp"
 #include "CTeacher.hpp"
+#include "CTutor.hpp"
 
 class CStudent;
 class CBooking;
@@ -24,7 +25,6 @@ class CBookings
   CBlock* findBlock(short blockNr);
   CSubject* findSubject(std::string m_Name);
   CStudent* findStudent(std::string m_Name);
-  
   void ClrMemory();
   void printBelegungen();  
   void printPersonen(); //TODO

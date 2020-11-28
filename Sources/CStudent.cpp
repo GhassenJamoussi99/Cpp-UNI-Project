@@ -14,6 +14,13 @@ CStudent::CStudent(string m_Name, string m_Street,
            MatriculationNr(m_MatriculationNr),Term(m_Term),Credits(m_Credits),Study(m_Study)
           {}
 
+ void CStudent::print()
+ {
+   cout << Name << " (* ";
+   Birthday.print();
+   cout << "; ID " << ID << "; MatrNr. " << MatriculationNr << ")" << endl; 
+ }
+
 void CStudent::load(ifstream &File, CBookings &subj)
 {
   string Zeile;

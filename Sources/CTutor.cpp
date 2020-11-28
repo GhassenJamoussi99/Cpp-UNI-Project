@@ -1,9 +1,15 @@
 #include "CTutor.hpp"
 //TODO
 
-
-void CTutor::print(CPerson &subj)
+void CTutor::print()
 {
-  
-
+     if (PersonalNr  == 0)
+    {
+        CStudent::print();
+    }
+    else
+    {
+        CTeacher::print();
+    }
+    
 }
