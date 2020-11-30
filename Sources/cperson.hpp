@@ -21,7 +21,7 @@ public:
   CDate getBirthday(){return Birthday;}
   unsigned &getID(){return ID;}
   std::string &getName() { return Name; }
-  virtual void print() const;
+  virtual void print() = 0;
   virtual ~CPerson()
   {
     std::cout << "   Person " << Name << " wird vernichtet." << std::endl;

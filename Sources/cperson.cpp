@@ -16,14 +16,6 @@ CPerson::CPerson(
   ID = ++LfNr;
 }
 
-void CPerson::print() const
-{
-  cout << Name << " (* ";
-  Birthday.print();
-  cout << ")";
-  
-}
-
 CAddress &CPerson::getAddress()
 {
   return this->Address;

@@ -7,15 +7,11 @@
 using namespace std;
 
 void CTutor::print()
-{
-     if (PersonalNr  == 0)
-    {
-        CStudent::print();
-    }
-    else
-    {
-        CTeacher::print();
-    }
+{   
+    //***/!\*****
+    cout << Name << " (* ";
+    Birthday.print();
+    cout << "; ID " << ID << "; " << "MatrNr. " << MatriculationNr << "; PersNr. " << PersonalNr << ")" << endl;
 }
 
  void CTutor::load(std::ifstream &File, CBookings &subj)

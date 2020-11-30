@@ -37,6 +37,9 @@ CTeacher::CTeacher(string m_Name, string m_Street,
       if (strncmp(Zeile.c_str() + 6 + Len, "</name>", 7) == 0)
       {
         Name = Zeile.substr(6, Len);
+
+        LfNr++;
+        ID = LfNr;
       }
     }
 

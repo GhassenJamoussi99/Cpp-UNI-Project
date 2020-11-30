@@ -27,7 +27,6 @@ void CBooking::print()
 
     if (Student->getMatrNr() != 0 && Student->getPersonalNr() != 0)
     {
-        cout << "test";
         cout << "; ID " << Student->getID() << "; "
              << "MatrNr. " << Student->getMatrNr() << "; PersNr. " << Student->getPersonalNr() << ")" << endl;
     }
