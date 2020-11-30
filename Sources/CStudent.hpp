@@ -16,6 +16,7 @@ public:
            unsigned int m_MatriculationNr, unsigned short m_Term, unsigned m_Credits,
            CStudy *m_Study);
   void load(std::ifstream &File, CBookings &subj);
+  virtual unsigned int getPersonalNr(){return 0;}
   std::string getName() { return this->Name; }
   void setName(std::string m_Name) { Name = m_Name; }
   void setMatrNr(unsigned int m_MatrNr) { MatriculationNr = m_MatrNr; }

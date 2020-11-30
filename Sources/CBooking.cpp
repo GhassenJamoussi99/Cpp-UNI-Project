@@ -22,10 +22,20 @@ void CBooking::print()
     BookingTime.print();
     cout << endl;
 
-    cout << "hat " << Student->getName() << "(* ";
+    cout << "hat " << Student->getName() << " (* ";
     (Student->getBirthday()).print();
-    cout << "; "
-         << "MatrNr. " << Student->getMatrNr() << "; " << Student->getID() << ")" << endl;
+
+    if (Student->getMatrNr() != 0 && Student->getPersonalNr() != 0)
+    {
+        cout << "test";
+        cout << "; ID " << Student->getID() << "; "
+             << "MatrNr. " << Student->getMatrNr() << "; PersNr. " << Student->getPersonalNr() << ")" << endl;
+    }
+    else
+    {
+        cout << "; ID " << Student->getID() << "; "
+             << "MatrNr. " << Student->getMatrNr() << ")" << endl;
+    }
 
     cout << "das Fach '" << Subject->getSubject() << " (" << Subject->getSubjNr() << "; ";
     cout << Subject->getStudyName();
@@ -50,8 +60,8 @@ void CBooking::load(ifstream &File, CBookings &subj)
         {
             Len = Zeile.length() - (9 + 10);
             if (strncmp(Zeile.c_str() + 9 + Len, "</subject>", 10) == 0)
-            {  
-                Subject =  subj.findSubject(Zeile.substr(9, Len));
+            {
+                Subject = subj.findSubject(Zeile.substr(9, Len));
             }
         }
 

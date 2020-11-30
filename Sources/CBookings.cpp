@@ -59,7 +59,7 @@ CBookings::CBookings(string str)
         Persons.push_back(T1);
       }
 
-      if (Zeile.compare("<teacher>") == 0)
+      if (Zeile.compare("<tutor>") == 0)
       {
         CTutor *TU = new CTutor();
         TU->load(src, *this);
@@ -168,7 +168,7 @@ void CBookings::printPersonen()
     Persons[i]->print();     //IDEA : delete print from persons 
                             // and make it an abstract class 
                            // then use CTeacher print 
-                          // and CStudent print
+                          // and CStudent print -> NO
   }
   
 
