@@ -159,7 +159,7 @@ CStudent *CBookings::findStudent(std::string m_Name)
   return NULL;
 }
 
-void CBookings::printPersonen()
+void CBookings::printPersons()
 {
   cout << "Datei wurde erfolgreich eingelesen!\n" << endl;
   cout << "Personen : " << endl;
@@ -172,7 +172,7 @@ void CBookings::printPersonen()
   cout << endl;
 }
 
-void CBookings::printBelegungen()
+void CBookings::printBookings()
 {
 
   for (int i = 0; i < Bookings.size(); i++)

@@ -6,7 +6,7 @@
 
 class CBookings;
 
-class CStudent : virtual public CPerson  //Auf virtual public setzen, um Diamond of Death zu vermeiden
+class CStudent : virtual public CPerson  //Auf virtual public setzen, um "Diamond of Death" zu vermeiden
 {
 public:
   CStudent() = default;

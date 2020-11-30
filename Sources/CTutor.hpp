@@ -8,10 +8,8 @@ class CTutor : public CStudent , public CTeacher
 {
 public:
   CTutor() = default;
-  void load(std::ifstream &File, CBookings &subj); //Work on the load function
-  void print(); //Mischung aus den print-Methoden 
-                //von Student und Dozent: 
-                //Name (* Geburtstag; ID; Matrikelnr.;Personalnr.)
+  void load(std::ifstream &File, CBookings &subj); 
+  void print(); 
   unsigned int getMatrNr(){return MatriculationNr;}
   virtual unsigned int getPersonalNr(){return PersonalNr;}
   ~CTutor()

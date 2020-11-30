@@ -3,7 +3,7 @@
 #include "CPerson.hpp"
 #include <fstream>
 
-class CTeacher : virtual public CPerson  //Auf virtual public setzen, um Diamond of Death zu vermeiden
+class CTeacher : virtual public CPerson  //Auf virtual public setzen, um "Diamond of Death" zu vermeiden
 {
 public:
         CTeacher() = default;
