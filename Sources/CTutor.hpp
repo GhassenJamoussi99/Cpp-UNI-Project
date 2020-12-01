@@ -13,7 +13,9 @@ public:
   unsigned int getMatrNr(){return MatriculationNr;}
   virtual unsigned int getPersonalNr(){return PersonalNr;}
   ~CTutor()
-  {}
+  {
+    std::cout << "   Tutor freigegeben: " << Name << std::endl;
+  }
 
 private:
  unsigned NrOfTermsAsTutor;

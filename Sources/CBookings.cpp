@@ -206,29 +206,12 @@ void CBookings::ClrMemory()
   }
   cout << "Studiengaenge freigeben ok" << endl;
 
-  cout << "Studenten freigeben ..." << endl;
+  cout << "Personen freigeben ..." << endl;
   for (int i = 0; i < Persons.size(); i++)
   {
-    CStudent *Student = dynamic_cast<CStudent *>(Persons[i]);
-    if (Student)
-    {
-      Persons.erase(Persons.begin() + i);
-      delete Student;
-      i--;
-    }
+    delete Persons[i];
   }
-  cout << "Studenten freigeben ok" << endl;
-
-  cout << "Dozenten freigeben ..." << endl;
-  for (int i = 0; i < Persons.size(); i++)
-  {
-    CTeacher *Teacher = dynamic_cast<CTeacher *>(Persons[i]);
-    if (Teacher)
-    {
-      delete Teacher;
-    }
-  }
-  cout << "Dozenten freigeben ok" << endl;
+  cout << "Personen freigeben ok" << endl;
 
   cout << "Faecher freigeben ..." << endl;
   for (int i = 0; i < Subjects.size(); i++)
