@@ -1,4 +1,5 @@
 #include <iostream>
+
 using namespace std;
 
 #include "CBookings.hpp"
@@ -6,9 +7,12 @@ using namespace std;
 int main()
 {
    CBookings Belegungen("belegungen.xml");
+   Belegungen(ofPersons); //TODO
+   Belegungen(ofStudents); //TODO
+   Belegungen(ofTeachers); //TODO
+   Belegungen(ofBookings); //TODO
+   Belegungen(ofScheduleOfStudents); //TODO
+   Belegungen(ofScheduleOfStudies); //TODO
    
-   Belegungen.printPersons();
-   Belegungen.printBookings();
-
-    return 0;
+   return 0;
 }

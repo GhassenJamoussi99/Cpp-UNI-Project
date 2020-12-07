@@ -7,6 +7,17 @@
 #include "CBlock.hpp"
 #include "CTeacher.hpp"
 #include "CTutor.hpp"
+#include "CSchedule.hpp"
+
+enum Data
+{
+ ofPersons,
+ ofStudents,
+ ofTeachers,
+ ofBookings,
+ ofScheduleOfStudents,
+ ofScheduleOfStudies
+};
 
 class CStudent;
 class CBooking;
@@ -16,6 +27,7 @@ class CBookings
  public:
   CBookings() = default;
   CBookings(std::string str);
+  CBookings(Data P);
   void findRoom();
   unsigned int findMatrNr(std::string m_Name);
 
@@ -25,6 +37,9 @@ class CBookings
   CBlock* findBlock(short blockNr);
   CSubject* findSubject(std::string m_Name);
   CStudent* findStudent(std::string m_Name);
+  void operator()(Data D);
+  //Noch eine Funktion für den Ausgabeoperator 
+
   void ClrMemory();
   void printBookings();  
   void printPersons(); 
@@ -40,6 +55,7 @@ class CBookings
   std::vector<CPerson *>Persons;
   std::vector<CSubject *>Subjects;
   std::vector<CBooking *>Bookings;   
+  CSchedule *Schedule;
 };
 
 

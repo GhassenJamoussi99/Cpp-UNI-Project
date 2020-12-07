@@ -5,14 +5,14 @@
   <seats>28</seats>
  </room>
  <room>
-  <name>D 114</name>
   <building>Haus Bauwesen</building>
+  <name>D 114</name>
   <seats>28</seats>
  </room>
  <room>
+  <seats>104</seats>
   <name>D 117 (H3)</name>
   <building>Haus Bauwesen</building>
-  <seats>104</seats>
  </room>
  <room>
   <name>D 136 (H5)</name>
@@ -41,11 +41,11 @@
   </begin>
  </block>
  <block>
-  <blocknr>2</blocknr>
   <begin>
    <hour>10</hour>
    <minute>0</minute>
   </begin>
+  <blocknr>2</blocknr>
  </block>
  <block>
   <blocknr>3</blocknr>
@@ -84,16 +84,6 @@
  </block>
  <study>
   <name>Technische Informatik</name>
-  <nc>false</nc>
-  <nrofterms>8</nrofterms>
- </study>
- <study>
-  <name>Physik</name>
-  <nc>true</nc>
-  <nrofterms>10</nrofterms>
- </study>
- <study>
-  <name>Elektrotechnik</name>
   <nc>false</nc>
   <nrofterms>8</nrofterms>
  </study>
@@ -146,43 +136,25 @@
   <matriculationnr>191115</matriculationnr>
   <term>3</term>
   <credits>31</credits>
-  <study>Physik</study>
+  <study>Technische Informatik</study>
  </student>
  <student>
   <name>Frank Faust</name>
   <address>
-   <street>Goethestr.</street>
    <housenr>3-5</housenr>
-   <zipcode>12345</zipcode>
+   <street>Goethestr.</street>
    <city>Berlin</city>
+   <zipcode>12345</zipcode>
   </address>
   <birthday>
-   <day>3</day>
-   <month>11</month>
    <year>1987</year>
+   <month>11</month>
+   <day>3</day>
   </birthday>
-  <matriculationnr>191492</matriculationnr>
   <term>2</term>
+  <matriculationnr>191492</matriculationnr>
   <credits>24</credits>
   <study>Technische Informatik</study>
- </student>
- <student>
-  <name>Max Muster</name>
-  <address>
-   <street>Meistergasse</street>
-   <housenr>23</housenr>
-   <zipcode>19885</zipcode>
-   <city>Hintertupfingen</city>
-  </address>
-  <birthday>
-   <day>19</day>
-   <month>7</month>
-   <year>1985</year>
-  </birthday>
-  <matriculationnr>191368</matriculationnr>
-  <term>2</term>
-  <credits>21</credits>
-  <study>Elektrotechnik</study>
  </student>
  <teacher>
   <name>Kevin Kaufmann</name>
@@ -241,6 +213,14 @@
    <name>SU IN I</name>
    <teacher>Kevin Kaufmann</teacher>
    <room>D 117 (H3)</room>
+   <weekday>Fr</weekday>
+   <block>1</block>
+   <period>1</period>
+  </event>
+  <event>
+   <name>UEB IN I</name>
+   <teacher>Kevin Kaufmann</teacher>
+   <room>D 114</room>
    <block>2</block>
    <weekday>Fr</weekday>
    <period>1</period>
@@ -251,22 +231,14 @@
    <room>D 114</room>
    <block>3</block>
    <weekday>Fr</weekday>
-   <period>2</period>
-  </event>
-  <event>
-   <name>UEB IN I</name>
-   <teacher>Kevin Kaufmann</teacher>
-   <room>D 114</room>
-   <block>4</block>
-   <weekday>Fr</weekday>
-   <period>2</period>
+   <period>1</period>
   </event>
  </subject>
  <subject>
   <name>Mathematik I</name>
   <subjectnr>132017</subjectnr>
   <event>
-   <name>SU M I</name>
+   <name>SU Math I</name>
    <teacher>Nathan Neuling</teacher>
    <room>B 301</room>
    <block>2</block>
@@ -275,7 +247,7 @@
   </event>
   <study>Technische Informatik</study>
   <event>
-   <name>UEB M I</name>
+   <name>UEB Math I</name>
    <teacher>Nathan Neuling</teacher>
    <room>D 209</room>
    <block>2</block>
@@ -295,12 +267,20 @@
    <weekday>Do</weekday>
    <period>1</period>
   </event>
+  <event>
+   <name>SU E</name>
+   <teacher>Sabine Sauber</teacher>
+   <room>D 419</room>
+   <block>3</block>
+   <weekday>Mi</weekday>
+   <period>1</period>
+  </event>
  </subject>
  <subject>
-  <name>Digitale Systeme</name>
+  <name>Grundlagen Digitaler Systeme</name>
   <subjectnr>136024</subjectnr>
   <event>
-   <name>SU DS</name>
+   <name>SU GDS</name>
    <teacher>Willi Witzig</teacher>
    <room>D 136 (H5)</room>
    <block>5</block>
@@ -308,7 +288,7 @@
    <period>1</period>
   </event>
   <event>
-   <name>UEB DS</name>
+   <name>UEB GDS</name>
    <teacher>Willi Witzig</teacher>
    <room>D 114</room>
    <block>6</block>
@@ -317,10 +297,52 @@
   </event>
   <study>Technische Informatik</study>
  </subject>
+ <subject>
+  <name>Elektrische Systeme</name>
+  <subjectnr>136025</subjectnr>
+  <event>
+   <name>SU ES</name>
+   <teacher>Willi Witzig</teacher>
+   <room>D 136 (H5)</room>
+   <block>4</block>
+   <weekday>Mo</weekday>
+   <period>1</period>
+  </event>
+  <event>
+   <name>UEB ES</name>
+   <teacher>Willi Witzig</teacher>
+   <room>D 114</room>
+   <block>5</block>
+   <weekday>Mo</weekday>
+   <period>1</period>
+  </event>
+  <study>Technische Informatik</study>
+ </subject>
+ <subject>
+  <name>Physik I</name>
+  <subjectnr>136029</subjectnr>
+  <event>
+   <name>SU Phy I</name>
+   <teacher>Sabine Sauber</teacher>
+   <room>D 136 (H5)</room>
+   <block>6</block>
+   <weekday>Mi</weekday>
+   <period>1</period>
+  </event>
+  <event>
+   <name>UEB Phy I</name>
+   <teacher>Willi Witzig</teacher>
+   <room>D 113</room>
+   <block>7</block>
+   <weekday>Mi</weekday>
+   <period>1</period>
+  </event>
+  <study>Technische Informatik</study>
+ </subject>
  <booking>
   <bookingnr>1</bookingnr>
   <subject>Informatik I</subject>
-  <student>Max Muster</student>
+  <student>Detlef Dicht</student>
   <bookingdate>
    <day>15</day>
    <month>10</month>
@@ -357,13 +379,73 @@
    <year>2020</year>
   </bookingdate>
   <bookingtime>
-   <hour>23</hour>
+   <hour>22</hour>
    <minute>07</minute>
    <second>31</second>
   </bookingtime>
  </booking>
  <booking>
   <bookingnr>4</bookingnr>
+  <subject>Grundlagen Digitaler Systeme</subject>
+  <student>Frank Faust</student>
+  <bookingdate>
+   <day>16</day>
+   <month>10</month>
+   <year>2020</year>
+  </bookingdate>
+  <bookingtime>
+   <hour>22</hour>
+   <minute>11</minute>
+   <second>53</second>
+  </bookingtime>
+ </booking>
+ <booking>
+  <bookingnr>5</bookingnr>
+  <subject>Englisch</subject>
+  <student>Frank Faust</student>
+  <bookingdate>
+   <day>16</day>
+   <month>10</month>
+   <year>2020</year>
+  </bookingdate>
+  <bookingtime>
+   <hour>22</hour>
+   <minute>18</minute>
+   <second>29</second>
+  </bookingtime>
+ </booking>
+ <booking>
+  <bookingnr>6</bookingnr>
+  <subject>Mathematik I</subject>
+  <student>Frank Faust</student>
+  <bookingdate>
+   <day>16</day>
+   <month>10</month>
+   <year>2020</year>
+  </bookingdate>
+  <bookingtime>
+   <hour>22</hour>
+   <minute>23</minute>
+   <second>3</second>
+  </bookingtime>
+ </booking>
+ <booking>
+  <bookingnr>7</bookingnr>
+  <subject>Physik I</subject>
+  <student>Detlef Dicht</student>
+  <bookingdate>
+   <day>15</day>
+   <month>10</month>
+   <year>2020</year>
+  </bookingdate>
+  <bookingtime>
+   <hour>8</hour>
+   <minute>17</minute>
+   <second>21</second>
+  </bookingtime>
+ </booking>
+ <booking>
+  <bookingnr>8</bookingnr>
   <subject>Informatik I</subject>
   <student>Anna Albrecht</student>
   <bookingdate>
@@ -378,7 +460,37 @@
   </bookingtime>
  </booking>
  <booking>
-  <bookingnr>5</bookingnr>
+  <bookingnr>9</bookingnr>
+  <subject>Informatik I</subject>
+  <student>Nathan Neuling</student>
+  <bookingdate>
+   <day>17</day>
+   <month>10</month>
+   <year>2020</year>
+  </bookingdate>
+  <bookingtime>
+   <hour>23</hour>
+   <minute>46</minute>
+   <second>12</second>
+  </bookingtime>
+ </booking>
+ <booking>
+  <bookingnr>10</bookingnr>
+  <subject>Grundlagen Digitaler Systeme</subject>
+  <student>Nathan Neuling</student>
+  <bookingdate>
+   <day>17</day>
+   <month>10</month>
+   <year>2020</year>
+  </bookingdate>
+  <bookingtime>
+   <hour>23</hour>
+   <minute>52</minute>
+   <second>53</second>
+  </bookingtime>
+ </booking>
+ <booking>
+  <bookingnr>11</bookingnr>
   <subject>Englisch</subject>
   <student>Nathan Neuling</student>
   <bookingdate>
@@ -390,6 +502,96 @@
    <hour>23</hour>
    <minute>59</minute>
    <second>007</second>
+  </bookingtime>
+ </booking>
+ <booking>
+  <bookingnr>12</bookingnr>
+  <subject>Physik I</subject>
+  <student>Anna Albrecht</student>
+  <bookingdate>
+   <day>17</day>
+   <month>10</month>
+   <year>2020</year>
+  </bookingdate>
+  <bookingtime>
+   <hour>23</hour>
+   <minute>59</minute>
+   <second>18</second>
+  </bookingtime>
+ </booking>
+ <booking>
+  <bookingnr>13</bookingnr>
+  <subject>Englisch</subject>
+  <student>Anna Albrecht</student>
+  <bookingdate>
+   <day>17</day>
+   <month>10</month>
+   <year>2020</year>
+  </bookingdate>
+  <bookingtime>
+   <hour>23</hour>
+   <minute>59</minute>
+   <second>21</second>
+  </bookingtime>
+ </booking>
+ <booking>
+  <bookingnr>14</bookingnr>
+  <subject>Grundlagen Digitaler Systeme</subject>
+  <student>Anna Albrecht</student>
+  <bookingdate>
+   <day>17</day>
+   <month>10</month>
+   <year>2020</year>
+  </bookingdate>
+  <bookingtime>
+   <hour>23</hour>
+   <minute>59</minute>
+   <second>34</second>
+  </bookingtime>
+ </booking>
+ <booking>
+  <bookingnr>15</bookingnr>
+  <subject>Elektrische Systeme</subject>
+  <student>Anna Albrecht</student>
+  <bookingdate>
+   <day>17</day>
+   <month>10</month>
+   <year>2020</year>
+  </bookingdate>
+  <bookingtime>
+   <hour>23</hour>
+   <minute>59</minute>
+   <second>41</second>
+  </bookingtime>
+ </booking>
+ <booking>
+  <bookingnr>16</bookingnr>
+  <subject>Mathematik I</subject>
+  <student>Detlef Dicht</student>
+  <bookingdate>
+   <day>17</day>
+   <month>10</month>
+   <year>2020</year>
+  </bookingdate>
+  <bookingtime>
+   <hour>23</hour>
+   <minute>59</minute>
+   <second>47</second>
+  </bookingtime>
+ </booking>
+ <booking>
+  <bookingnr>17</bookingnr>
+  <subject>Elektrische Systeme</subject>
+  <student>Nathan Neuling</student>
+  <bookingdate>
+   <day>17</day>
+   <month>10</month>
+   <year>2020</year>
+  </bookingdate>
+  <bookingtime>
+   <hour>23</hour>
+   <minute>59</minute>
+   <second>59</second>
   </bookingtime>
  </booking>
 </data>
