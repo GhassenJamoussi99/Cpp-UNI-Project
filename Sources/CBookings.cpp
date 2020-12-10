@@ -95,6 +95,39 @@ CStudy *CBookings::findStudy(string m_Name)
   return NULL;
 }
 
+
+void CBookings::operator()(Data D)
+{
+   switch(D) 
+   {
+     case ofPersons            : {
+                                  printPersons();
+                                  break;
+                                  }
+     case ofStudents           : {
+                                   printStudents();
+                                   break;
+                                 }
+     case ofTeachers           : {
+                                   printTeachers();
+                                   break;
+                                 }
+     case ofBookings           : {
+                                   printBookings();
+                                   break;
+                                 }
+     case ofScheduleOfStudents : {
+                                   printSchedOfStudents();
+                                   break;
+                                   }
+     case ofScheduleOfStudies  : {
+                                   printSchedOfStudies();
+                                   break;
+                                 }
+     default                   : break;
+   }
+}
+
 CPerson *CBookings::findTeacher(string m_Name)
 {
   for (int i = 0; i < Persons.size(); i++)
@@ -171,6 +204,43 @@ void CBookings::printPersons()
   }
 
   cout << endl;
+}
+
+void CBookings::printStudents()
+{
+  cout << "Studenten: " << endl;
+
+  for (int i = 0; i < Persons.size(); i++)
+  {
+    CStudent *Student = dynamic_cast<CStudent *>(Persons[i]);
+    if (Student)
+    Persons[i]->print(); 
+  }
+  
+  cout << endl;
+
+}
+
+void CBookings::printTeachers()
+{
+  cout << "Dozenten: " << endl;
+
+  for (int i = 0; i < Persons.size(); i++)
+  {
+    CTeacher *Dozent = dynamic_cast<CTeacher *>(Persons[i]);
+    if (Dozent)
+    Persons[i]->print(); 
+  }
+ 
+  cout << endl;
+
+}
+
+void CBookings::printSchedOfStudents()
+{
+  cout << "Stundenplaene der Studenten:\n" << endl;
+
+
 }
 
 void CBookings::printBookings()

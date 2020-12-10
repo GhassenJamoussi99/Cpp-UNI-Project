@@ -11,54 +11,55 @@
 
 enum Data
 {
- ofPersons,
- ofStudents,
- ofTeachers,
- ofBookings,
- ofScheduleOfStudents,
- ofScheduleOfStudies
+  ofPersons,
+  ofStudents,
+  ofTeachers,
+  ofBookings,
+  ofScheduleOfStudents,
+  ofScheduleOfStudies
 };
 
 class CStudent;
 class CBooking;
 
-class CBookings 
+class CBookings
 {
- public:
+public:
   CBookings() = default;
   CBookings(std::string str);
-  CBookings(Data P);
+  void operator()(Data D);
   void findRoom();
   unsigned int findMatrNr(std::string m_Name);
 
-  CStudy* findStudy(std::string m_Name);
-  CPerson* findTeacher(std::string m_Name);
-  CRoom* findRoom(std::string m_Name);
-  CBlock* findBlock(short blockNr);
-  CSubject* findSubject(std::string m_Name);
-  CStudent* findStudent(std::string m_Name);
-  void operator()(Data D);
-  //Noch eine Funktion für den Ausgabeoperator 
+  CStudy *findStudy(std::string m_Name);
+  CPerson *findTeacher(std::string m_Name);
+  CRoom *findRoom(std::string m_Name);
+  CBlock *findBlock(short blockNr);
+  CSubject *findSubject(std::string m_Name);
+  CStudent *findStudent(std::string m_Name);
+  //Noch eine Funktion für den Ausgabeoperator
 
   void ClrMemory();
-  void printBookings();  
-  void printPersons(); 
+  void printBookings();
+  void printPersons();
+  void printStudents();
+  void printTeachers();
+  void printSchedOfStudents(){};
+  void printSchedOfStudies(){};
+
   ~CBookings()
   {
-      ClrMemory();
+    ClrMemory();
   }
-  
- private:
-  std::vector<CBlock *>Blocks;
-  std::vector<CRoom *>Rooms;
-  std::vector<CStudy *>Studies;
-  std::vector<CPerson *>Persons;
-  std::vector<CSubject *>Subjects;
-  std::vector<CBooking *>Bookings;   
+
+private:
+  std::vector<CBlock *> Blocks;
+  std::vector<CRoom *> Rooms;
+  std::vector<CStudy *> Studies;
+  std::vector<CPerson *> Persons;
+  std::vector<CSubject *> Subjects;
+  std::vector<CBooking *> Bookings;
   CSchedule *Schedule;
 };
-
-
-
 
 #endif
