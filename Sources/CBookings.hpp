@@ -45,7 +45,7 @@ public:
   void printStudents();
   void printTeachers();
   void Stundenplan(CStudent *std);
-  void Stundenplan(CSubject *sbj);
+  void StundenplanStd(CStudy *study);
   //void Stundenplan(CStudent std);
   void printSchedOfStudents();
   void printSchedOfStudies();

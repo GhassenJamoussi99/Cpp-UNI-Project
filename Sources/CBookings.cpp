@@ -322,14 +322,14 @@ void CBookings::Stundenplan(CStudent *std)
   cout << endl;
 }
 
-void CBookings::Stundenplan(CSubject *sbj)
+void CBookings::StundenplanStd(CStudy *study)
 {
   cout << endl;
   cout << "|-----|------------------|------------------|------------------|------------------|------------------|" << endl;
   cout << "|     |        Mo        |        Di        |        Mi        |        Do        |        Fr        |" << endl;
   cout << "|-----|------------------|------------------|------------------|------------------|------------------|" << endl;
 
-  string StudyName = sbj->getStudy();
+  string StudyName = study->getStudy();
 
   vector<vector<string>> Fach;
   vector<vector<string>> Dozent;
@@ -354,11 +354,13 @@ void CBookings::Stundenplan(CSubject *sbj)
     if (Subjects[i]->getStudyName() == StudyName)
     {
       int a = (Subjects[i]->Events).size();
+
       for (int j = 0; j < a; j++)
       {
-        Fach[Subjects[i]->Events[j]->getBlock()][Subjects[i]->Events[j]->getWeekDay()] = Subjects[i]->Events[j]->getName();
-        Dozent[Subjects[i]->Events[j]->getBlock()][Subjects[i]->Events[j]->getWeekDay()] = Subjects[i]->Events[j]->getDozentName();
-        Raum[Subjects[i]->Events[j]->getBlock()][Subjects[i]->Events[j]->getWeekDay()] = Subjects[i]->Events[j]->getRoom();
+        //cout << Subjects[i]->Events[j]->getBlock() - 1 << Subjects[i]->Events[j]->getWeekDay() << endl;
+        Fach[Subjects[i]->Events[j]->getBlock() - 1][Subjects[i]->Events[j]->getWeekDay()] = Subjects[i]->Events[j]->getName();
+        Dozent[Subjects[i]->Events[j]->getBlock() - 1][Subjects[i]->Events[j]->getWeekDay()] = Subjects[i]->Events[j]->getDozentName();
+        Raum[Subjects[i]->Events[j]->getBlock() - 1][Subjects[i]->Events[j]->getWeekDay()] = Subjects[i]->Events[j]->getRoom();
       }
     }
   }
@@ -420,10 +422,10 @@ void CBookings::printSchedOfStudies()
   cout << "Stundenplaene der Studiengaenge:\n"
        << endl;
 
-  for (int i = 0; i < Subjects.size(); i++)
+  for (int i = 0; i < Studies.size(); i++)
   {
-    cout << "Stundenplan fuer " << Subjects[i]->getName() << ": \n";
-    Stundenplan(Subjects[i]);
+    cout << "Stundenplan fuer " << Studies[i]->getStudy() << ": \n";
+    StundenplanStd(Studies[i]);
   }
 }
 
