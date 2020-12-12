@@ -6,6 +6,8 @@
 #include "CRoom.hpp"
 #include "CPerson.hpp"
 
+static int EVNTS = 0;
+
 enum CWeekday
 {
     Mo,
@@ -28,14 +30,16 @@ public:
     std::string getDay(CWeekday m_WeekDay);
     CWeekday StringToEnum(std::string str);
     void loadEvent(std::ifstream &File, CBookings &subj);
+    int getCounter() { return EVNTS; }
+
     friend class CEvents;
     ~CEvent(){};
 
 private:
     std::string Name;
     CPerson *Teacher;
-    CRoom *Room ;
-    CBlock *Block ;
+    CRoom *Room;
+    CBlock *Block;
     CWeekday WeekDay;
     short Period;
 };

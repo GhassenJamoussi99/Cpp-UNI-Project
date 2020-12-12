@@ -253,8 +253,6 @@ void CBookings::Stundenplan(CStudent *std)
     vector<vector<string>> Fach;
     vector<vector<string>> Dozent;
     vector<vector<string>> Raum;
-    
-    for (int i = 0 ; i )
 
     int count  = 0;
 
@@ -268,6 +266,17 @@ void CBookings::Stundenplan(CStudent *std)
         Fach.push_back(temp);
         Dozent.push_back(temp);
         Raum.push_back(temp);
+    }
+
+     for (int i = 0 ; i <Subjects.size();i++)
+    {
+       if (Subjects[i]->getStudyName() == StudyName)
+        {
+          cout << Subjects[i]->getEventNr() << ",";//Check number of events and write it in a loop//Fach[Subjects[i].]
+          //TOWORK ON EVENTSNR//ERROR EVENTS GET 0;      
+        }
+       
+       break;
     }
    
     for (int i = 0; i < Fach.size(); i++)
