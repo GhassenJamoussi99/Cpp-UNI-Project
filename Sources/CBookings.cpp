@@ -246,10 +246,15 @@ void CBookings::Stundenplan(CStudent *std)
     cout << "|-----|------------------|------------------|------------------|------------------|------------------|" << endl;
     cout << "|     |        Mo        |        Di        |        Mi        |        Do        |        Fr        |" << endl;
     cout << "|-----|------------------|------------------|------------------|------------------|------------------|" << endl;
-
+    
+    string StudyName = std->getStudy();
+    
+    
     vector<vector<string>> Fach;
     vector<vector<string>> Dozent;
     vector<vector<string>> Raum;
+    
+    for (int i = 0 ; i )
 
     int count  = 0;
 

@@ -23,6 +23,7 @@ public:
   void setBirthday(CDate m_Birthday) { Birthday = m_Birthday; }
   void setID(unsigned int m_ID) { ID = m_ID; }
   CDate getBirthday() { return this->Birthday; }
+  std::string getStudy(){ return Study->getStudy();}
   unsigned int getMatrNr() { return this->MatriculationNr; }
   virtual void print(); //..
   ~CStudent()
