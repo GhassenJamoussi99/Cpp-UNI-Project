@@ -1,9 +1,14 @@
 #include "CBookings.hpp"
 #include <fstream>
-using namespace std;
 #include <regex>
 #include "CStudent.hpp"
 #include "CBooking.hpp"
+#include <iostream>
+#include <string>
+#include <vector>
+#include <iomanip>
+
+using namespace std;
 
 CBookings::CBookings(string str)
 {
@@ -236,11 +241,76 @@ void CBookings::printTeachers()
 
 }
 
+void CBookings::Stundenplan(CStudent *std)
+{
+    cout << "|-----|------------------|------------------|------------------|------------------|------------------|" << endl;
+    cout << "|     |        Mo        |        Di        |        Mi        |        Do        |        Fr        |" << endl;
+    cout << "|-----|------------------|------------------|------------------|------------------|------------------|" << endl;
+
+    vector<vector<string>> Fach;
+    vector<vector<string>> Dozent;
+    vector<vector<string>> Raum;
+
+    int count  = 0;
+
+    for (int i = 0; i < 7; i++)
+    {
+        vector<string> temp;
+        for (int j = 0; j < 5; j++)
+        {
+            temp.push_back("");
+        }
+        Fach.push_back(temp);
+        Dozent.push_back(temp);
+        Raum.push_back(temp);
+    }
+   
+    for (int i = 0; i < Fach.size(); i++)
+    {
+        for (int j = 0; j < Fach[i].size(); j++)
+        {
+            if (j==0)
+            {
+                cout << "|     |";
+            }
+            cout << Fach[i][j] << setfill(' ') << setw(19 - Fach[i][j].length()) << "|";
+        }
+        cout << "\n";
+        for (int j = 0; j < Dozent[i].size(); j++)
+        {
+            
+
+            if (j==0)
+            {
+                count++;
+                cout << "|  "<< count <<"  |";
+            }
+            cout << Dozent[i][j] << setfill(' ') << setw(19 - Dozent[i][j].length()) << "|";
+        }
+        cout << "\n";
+        for (int j = 0; j < Raum[i].size(); j++)
+        {
+            if (j==0)
+            {
+                cout << "|     |";
+            }
+            cout << Raum[i][j] << setfill(' ') << setw(19 - Raum[i][j].length()) << "|";
+        }
+        cout << "\n|-----|------------------|------------------|------------------|------------------|------------------|" << endl;
+    }      
+}
+
 void CBookings::printSchedOfStudents()
 {
   cout << "Stundenplaene der Studenten:\n" << endl;
-
-
+   for (int i = 0; i < Persons.size(); i++)
+  {
+   CStudent *Student = dynamic_cast<CStudent *>(Persons[i]);
+    if (Student)
+    {
+       Stundenplan(Student);
+    }
+  }
 }
 
 void CBookings::printBookings()

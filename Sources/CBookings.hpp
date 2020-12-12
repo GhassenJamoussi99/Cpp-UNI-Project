@@ -44,8 +44,10 @@ public:
   void printPersons();
   void printStudents();
   void printTeachers();
-  void printSchedOfStudents(){};
-  void printSchedOfStudies(){};
+  void Stundenplan(CStudent *std);
+  //void Stundenplan(CStudent std);
+  void printSchedOfStudents();
+  void printSchedOfStudies();
 
   ~CBookings()
   {
