@@ -20,11 +20,12 @@ public:
   std::string getName() { return Name; }
   void setName(std::string m_Name) { Name = m_Name; }
   void setSubjNr(unsigned m_SubjNr) { SubjNr = m_SubjNr; }
-  int getEventNr(){return EVNTS;}
   std::string getStudyName() { return Study->getStudy(); }
   void setStudyName(std::string m_Study) { Study->setStudy(m_Study); }
   unsigned &getSubjNr() { return SubjNr; }
   std::string getSubject() { return Name; }
+  friend class CBookings;
+
   ~CSubject()
   {
     std::cout << "   Studienfach " << Name << " wird vernichtet." << std::endl;

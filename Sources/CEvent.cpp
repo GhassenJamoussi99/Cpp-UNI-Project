@@ -71,7 +71,6 @@ void CEvent::loadEvent(ifstream &File, CBookings &subj)
             break;
         }
        
-        EVNTS++;
 
         if (strncmp(Zeile.c_str(), "<name>", 6) == 0)
         {

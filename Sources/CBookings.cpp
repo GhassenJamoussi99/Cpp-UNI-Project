@@ -100,37 +100,43 @@ CStudy *CBookings::findStudy(string m_Name)
   return NULL;
 }
 
-
 void CBookings::operator()(Data D)
 {
-   switch(D) 
-   {
-     case ofPersons            : {
-                                  printPersons();
-                                  break;
-                                  }
-     case ofStudents           : {
-                                   printStudents();
-                                   break;
-                                 }
-     case ofTeachers           : {
-                                   printTeachers();
-                                   break;
-                                 }
-     case ofBookings           : {
-                                   printBookings();
-                                   break;
-                                 }
-     case ofScheduleOfStudents : {
-                                   printSchedOfStudents();
-                                   break;
-                                   }
-     case ofScheduleOfStudies  : {
-                                   printSchedOfStudies();
-                                   break;
-                                 }
-     default                   : break;
-   }
+  switch (D)
+  {
+  case ofPersons:
+  {
+    printPersons();
+    break;
+  }
+  case ofStudents:
+  {
+    printStudents();
+    break;
+  }
+  case ofTeachers:
+  {
+    printTeachers();
+    break;
+  }
+  case ofBookings:
+  {
+    printBookings();
+    break;
+  }
+  case ofScheduleOfStudents:
+  {
+    printSchedOfStudents();
+    break;
+  }
+  case ofScheduleOfStudies:
+  {
+    printSchedOfStudies();
+    break;
+  }
+  default:
+    break;
+  }
 }
 
 CPerson *CBookings::findTeacher(string m_Name)
@@ -197,15 +203,15 @@ CStudent *CBookings::findStudent(std::string m_Name)
   return NULL;
 }
 
-
 void CBookings::printPersons()
 {
-  cout << "Datei wurde erfolgreich eingelesen!\n" << endl;
+  cout << "Datei wurde erfolgreich eingelesen!\n"
+       << endl;
   cout << "Personen : " << endl;
 
   for (int i = 0; i < Persons.size(); i++)
   {
-    Persons[i]->print(); 
+    Persons[i]->print();
   }
 
   cout << endl;
@@ -219,11 +225,10 @@ void CBookings::printStudents()
   {
     CStudent *Student = dynamic_cast<CStudent *>(Persons[i]);
     if (Student)
-    Persons[i]->print(); 
+      Persons[i]->print();
   }
-  
-  cout << endl;
 
+  cout << endl;
 }
 
 void CBookings::printTeachers()
@@ -234,95 +239,101 @@ void CBookings::printTeachers()
   {
     CTeacher *Dozent = dynamic_cast<CTeacher *>(Persons[i]);
     if (Dozent)
-    Persons[i]->print(); 
+      Persons[i]->print();
   }
- 
-  cout << endl;
 
+  cout << endl;
 }
 
 void CBookings::Stundenplan(CStudent *std)
 {
-    cout << "|-----|------------------|------------------|------------------|------------------|------------------|" << endl;
-    cout << "|     |        Mo        |        Di        |        Mi        |        Do        |        Fr        |" << endl;
-    cout << "|-----|------------------|------------------|------------------|------------------|------------------|" << endl;
-    
-    string StudyName = std->getStudy();
-    
-    
-    vector<vector<string>> Fach;
-    vector<vector<string>> Dozent;
-    vector<vector<string>> Raum;
+  cout << "|-----|------------------|------------------|------------------|------------------|------------------|" << endl;
+  cout << "|     |        Mo        |        Di        |        Mi        |        Do        |        Fr        |" << endl;
+  cout << "|-----|------------------|------------------|------------------|------------------|------------------|" << endl;
 
-    int count  = 0;
+  string StudyName = std->getStudy();
 
-    for (int i = 0; i < 7; i++)
+  vector<vector<string>> Fach;
+  vector<vector<string>> Dozent;
+  vector<vector<string>> Raum;
+
+  int count = 0;
+
+  for (int i = 0; i < 7; i++)
+  {
+    vector<string> temp;
+    for (int j = 0; j < 5; j++)
     {
-        vector<string> temp;
-        for (int j = 0; j < 5; j++)
-        {
-            temp.push_back("");
-        }
-        Fach.push_back(temp);
-        Dozent.push_back(temp);
-        Raum.push_back(temp);
+      temp.push_back("");
     }
+    Fach.push_back(temp);
+    Dozent.push_back(temp);
+    Raum.push_back(temp);
+  }
 
-     for (int i = 0 ; i <Subjects.size();i++)
+  for (int i = 0; i < Subjects.size(); i++)
+  {
+    if (Subjects[i]->getStudyName() == StudyName)
     {
-       if (Subjects[i]->getStudyName() == StudyName)
-        {
-          cout << Subjects[i]->getEventNr() << ",";//Check number of events and write it in a loop//Fach[Subjects[i].]
-          //TOWORK ON EVENTSNR//ERROR EVENTS GET 0;      
-        }
-       
-       break;
+      int a = (Subjects[i]->Events).size();
+
+      for (int j = 0; j < a; j++)
+      {
+        Fach[Subjects[i]->Events[j]->getBlock()][Subjects[i]->Events[j]->getWeekDay()] = Subjects[i]->Events[j]->getName();
+        Dozent[Subjects[i]->Events[j]->getBlock()][Subjects[i]->Events[j]->getWeekDay()] = Subjects[i]->Events[j]->getDozentName();
+        Raum[Subjects[i]->Events[j]->getBlock()][Subjects[i]->Events[j]->getWeekDay()] = Subjects[i]->Events[j]->getRoom();
+      }
+      
     }
+  }
    
-    for (int i = 0; i < Fach.size(); i++)
+   cout <<"reached here ?";
+  for (int i = 0; i < Fach.size(); i++)
+  {
+    for (int j = 0; j < Fach[i].size(); j++)
     {
-        for (int j = 0; j < Fach[i].size(); j++)
-        {
-            if (j==0)
-            {
-                cout << "|     |";
-            }
-            cout << Fach[i][j] << setfill(' ') << setw(19 - Fach[i][j].length()) << "|";
-        }
-        cout << "\n";
-        for (int j = 0; j < Dozent[i].size(); j++)
-        {
-            
+      if (j == 0)
+      {
+        cout << "|     |";
+      }
+      cout << Fach[i][j] << setfill(' ') << setw(19 - Fach[i][j].length()) << "|";
+    }
+    cout << "\n";
+    for (int j = 0; j < Dozent[i].size(); j++)
+    {
 
-            if (j==0)
-            {
-                count++;
-                cout << "|  "<< count <<"  |";
-            }
-            cout << Dozent[i][j] << setfill(' ') << setw(19 - Dozent[i][j].length()) << "|";
-        }
-        cout << "\n";
-        for (int j = 0; j < Raum[i].size(); j++)
-        {
-            if (j==0)
-            {
-                cout << "|     |";
-            }
-            cout << Raum[i][j] << setfill(' ') << setw(19 - Raum[i][j].length()) << "|";
-        }
-        cout << "\n|-----|------------------|------------------|------------------|------------------|------------------|" << endl;
-    }      
+      if (j == 0)
+      {
+        count++;
+        cout << "|  " << count << "  |";
+      }
+      cout << Dozent[i][j] << setfill(' ') << setw(19 - Dozent[i][j].length()) << "|";
+    }
+    cout << "\n";
+    for (int j = 0; j < Raum[i].size(); j++)
+    {
+      if (j == 0)
+      {
+        cout << "|     |";
+      }
+      cout << Raum[i][j] << setfill(' ') << setw(19 - Raum[i][j].length()) << "|";
+    }
+    cout << "\n|-----|------------------|------------------|------------------|------------------|------------------|" << endl;
+  }
+
+  cout << endl;
 }
 
 void CBookings::printSchedOfStudents()
 {
-  cout << "Stundenplaene der Studenten:\n" << endl;
-   for (int i = 0; i < Persons.size(); i++)
+  cout << "Stundenplaene der Studenten:\n"
+       << endl;
+  for (int i = 0; i < Persons.size(); i++)
   {
-   CStudent *Student = dynamic_cast<CStudent *>(Persons[i]);
+    CStudent *Student = dynamic_cast<CStudent *>(Persons[i]);
     if (Student)
     {
-       Stundenplan(Student);
+      Stundenplan(Student);
     }
   }
 }
