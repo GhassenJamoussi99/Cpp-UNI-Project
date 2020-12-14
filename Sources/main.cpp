@@ -12,7 +12,7 @@ int main()
    Belegungen(ofTeachers); 
    Belegungen(ofBookings); 
    Belegungen(ofScheduleOfStudents); 
-   Belegungen(ofScheduleOfStudies); 
+   //Belegungen(ofScheduleOfStudies); 
    
    return 0;
 }

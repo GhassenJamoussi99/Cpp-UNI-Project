@@ -49,7 +49,6 @@ public:
   //void Stundenplan(CStudent std);
   void printSchedOfStudents();
   void printSchedOfStudies();
-
   ~CBookings()
   {
     ClrMemory();

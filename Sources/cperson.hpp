@@ -20,7 +20,7 @@ public:
   void setName(std::string m_Name){ Name = m_Name;}
   CDate getBirthday(){return Birthday;}
   unsigned &getID(){return ID;}
-  std::string &getName() { return Name; }
+  std::string getName() { return Name; }
   virtual void print() = 0;
   virtual ~CPerson()
   {

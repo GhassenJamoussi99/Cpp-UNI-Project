@@ -29,6 +29,9 @@ public:
     CWeekday StringToEnum(std::string str);
     int getBlock(){return Block->BlockNr;}
     int getWeekDay(){return WeekDay;}
+    void setFachName(std::string str){ Name = str;}
+    void setDozentName(std::string str){ Teacher->setName(str);}
+    void setRaumName(std::string str){ Room->setName(str);}
     std::string getRoom(){return Room->getName();}
     std::string getName(){return Name;}
     std::string getDozentName() {return Teacher->getName();}

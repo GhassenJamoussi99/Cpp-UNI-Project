@@ -247,156 +247,68 @@ void CBookings::printTeachers()
 
 void CBookings::Stundenplan(CStudent *std)
 {
-  cout << endl;
-  cout << "|-----|------------------|------------------|------------------|------------------|------------------|" << endl;
-  cout << "|     |        Mo        |        Di        |        Mi        |        Do        |        Fr        |" << endl;
-  cout << "|-----|------------------|------------------|------------------|------------------|------------------|" << endl;
+  Schedule = new CSchedule();
+  Schedule->Titel = std->getName();
 
-  vector<vector<string>> Fach;
-  vector<vector<string>> Dozent;
-  vector<vector<string>> Raum;
-
-  int count = 0;
-
-  for (int i = 0; i < 7; i++)
-  {
-    vector<string> temp;
-    for (int j = 0; j < 5; j++)
-    {
-      temp.push_back("");
-    }
-    Fach.push_back(temp);
-    Dozent.push_back(temp);
-    Raum.push_back(temp);
-  }
+  Schedule->reset();
 
   for (int i = 0; i < Bookings.size(); i++)
   {
+
     if (Bookings[i]->Student->getName() == std->getName())
     {
       int a = (Bookings[i]->Subject->Events).size();
+
       for (int j = 0; j < a; j++)
       {
-        Fach[Bookings[i]->Subject->Events[j]->getBlock() - 1][Bookings[i]->Subject->Events[j]->getWeekDay()] = Bookings[i]->Subject->Events[j]->getName();
-        Dozent[Bookings[i]->Subject->Events[j]->getBlock() - 1][Bookings[i]->Subject->Events[j]->getWeekDay()] = Bookings[i]->Subject->Events[j]->getDozentName();
-        Raum[Bookings[i]->Subject->Events[j]->getBlock() - 1][Bookings[i]->Subject->Events[j]->getWeekDay()] = Bookings[i]->Subject->Events[j]->getRoom();
+        Schedule->Schedule[Bookings[i]->Subject->Events[j]->getBlock() - 1][Bookings[i]->Subject->Events[j]->getWeekDay()] = new CEvent();
+
+        Schedule->Schedule[Bookings[i]->Subject->Events[j]->getBlock() - 1][Bookings[i]->Subject->Events[j]->getWeekDay()]->setFachName(Bookings[i]->Subject->Events[j]->getName());
+        cout << Schedule->Schedule[Bookings[i]->Subject->Events[j]->getBlock() - 1][Bookings[i]->Subject->Events[j]->getWeekDay()]->getName();
+                cout <<"taw";
+
+        Schedule->Schedule[Bookings[i]->Subject->Events[j]->getBlock() - 1][Bookings[i]->Subject->Events[j]->getWeekDay()]->setDozentName(Bookings[i]->Subject->Events[j]->getDozentName());
+        cout <<"taw";
+        cout << Bookings[i]->Subject->Events[j]->getDozentName();
+
+        Schedule->Schedule[Bookings[i]->Subject->Events[j]->getBlock() - 1][Bookings[i]->Subject->Events[j]->getWeekDay()]->setRaumName(Bookings[i]->Subject->Events[j]->getRoom());
+        cout << Schedule->Schedule[Bookings[i]->Subject->Events[j]->getBlock() - 1][Bookings[i]->Subject->Events[j]->getWeekDay()]->getRoom();
+
+        cout << endl;
       }
     }
   }
 
-  for (int i = 0; i < Fach.size(); i++)
-  {
-    for (int j = 0; j < Fach[i].size(); j++)
-    {
-      if (j == 0)
-      {
-        cout << "|     |";
-      }
-      cout << Fach[i][j] << setfill(' ') << setw(19 - Fach[i][j].length()) << "|";
-    }
-    cout << "\n";
-    for (int j = 0; j < Dozent[i].size(); j++)
-    {
-
-      if (j == 0)
-      {
-        count++;
-        cout << "|  " << count << "  |";
-      }
-      cout << Dozent[i][j] << setfill(' ') << setw(19 - Dozent[i][j].length()) << "|";
-    }
-    cout << "\n";
-    for (int j = 0; j < Raum[i].size(); j++)
-    {
-      if (j == 0)
-      {
-        cout << "|     |";
-      }
-      cout << Raum[i][j] << setfill(' ') << setw(19 - Raum[i][j].length()) << "|";
-    }
-    cout << "\n|-----|------------------|------------------|------------------|------------------|------------------|" << endl;
-  }
-
-  cout << endl;
+  cout << "reached here ?";
+  cout << *Schedule;
+  cout << "\n";
 }
 
 void CBookings::StundenplanStd(CStudy *study)
 {
-  cout << endl;
-  cout << "|-----|------------------|------------------|------------------|------------------|------------------|" << endl;
-  cout << "|     |        Mo        |        Di        |        Mi        |        Do        |        Fr        |" << endl;
-  cout << "|-----|------------------|------------------|------------------|------------------|------------------|" << endl;
+  Schedule = new CSchedule();
 
-  string StudyName = study->getStudy();
-
-  vector<vector<string>> Fach;
-  vector<vector<string>> Dozent;
-  vector<vector<string>> Raum;
-
-  int count = 0;
-
-  for (int i = 0; i < 7; i++)
-  {
-    vector<string> temp;
-    for (int j = 0; j < 5; j++)
-    {
-      temp.push_back("");
-    }
-    Fach.push_back(temp);
-    Dozent.push_back(temp);
-    Raum.push_back(temp);
-  }
+  Schedule->Titel = study->getStudy();
+  Schedule->reset();
 
   for (int i = 0; i < Subjects.size(); i++)
   {
-    if (Subjects[i]->getStudyName() == StudyName)
+    if (Subjects[i]->getStudyName() == study->getStudy())
     {
       int a = (Subjects[i]->Events).size();
 
       for (int j = 0; j < a; j++)
       {
-        //cout << Subjects[i]->Events[j]->getBlock() - 1 << Subjects[i]->Events[j]->getWeekDay() << endl;
-        Fach[Subjects[i]->Events[j]->getBlock() - 1][Subjects[i]->Events[j]->getWeekDay()] = Subjects[i]->Events[j]->getName();
-        Dozent[Subjects[i]->Events[j]->getBlock() - 1][Subjects[i]->Events[j]->getWeekDay()] = Subjects[i]->Events[j]->getDozentName();
-        Raum[Subjects[i]->Events[j]->getBlock() - 1][Subjects[i]->Events[j]->getWeekDay()] = Subjects[i]->Events[j]->getRoom();
+        Schedule->Schedule[Subjects[i]->Events[j]->getBlock() - 1][Subjects[i]->Events[j]->getWeekDay()] = new CEvent();
+
+        Schedule->Schedule[Subjects[i]->Events[j]->getBlock() - 1][Subjects[i]->Events[j]->getWeekDay()]->setFachName(Subjects[i]->Events[j]->getName());
+        Schedule->Schedule[Subjects[i]->Events[j]->getBlock() - 1][Subjects[i]->Events[j]->getWeekDay()]->setDozentName(Subjects[i]->Events[j]->getDozentName());
+        Schedule->Schedule[Subjects[i]->Events[j]->getBlock() - 1][Subjects[i]->Events[j]->getWeekDay()]->setRaumName(Subjects[i]->Events[j]->getRoom());
       }
     }
   }
-
-  for (int i = 0; i < Fach.size(); i++)
-  {
-    for (int j = 0; j < Fach[i].size(); j++)
-    {
-      if (j == 0)
-      {
-        cout << "|     |";
-      }
-      cout << Fach[i][j] << setfill(' ') << setw(19 - Fach[i][j].length()) << "|";
-    }
-    cout << "\n";
-    for (int j = 0; j < Dozent[i].size(); j++)
-    {
-
-      if (j == 0)
-      {
-        count++;
-        cout << "|  " << count << "  |";
-      }
-      cout << Dozent[i][j] << setfill(' ') << setw(19 - Dozent[i][j].length()) << "|";
-    }
-    cout << "\n";
-    for (int j = 0; j < Raum[i].size(); j++)
-    {
-      if (j == 0)
-      {
-        cout << "|     |";
-      }
-      cout << Raum[i][j] << setfill(' ') << setw(19 - Raum[i][j].length()) << "|";
-    }
-    cout << "\n|-----|------------------|------------------|------------------|------------------|------------------|" << endl;
-  }
-
-  cout << endl;
+  cout << Schedule;
+  cout << "\n";
 }
 
 void CBookings::printSchedOfStudents()
@@ -408,8 +320,6 @@ void CBookings::printSchedOfStudents()
     CStudent *Student = dynamic_cast<CStudent *>(Persons[i]);
     if (Student)
     {
-      cout << "Stundenplan fuer " << Student->getName() << ": \n";
-
       Stundenplan(Student);
     }
   }

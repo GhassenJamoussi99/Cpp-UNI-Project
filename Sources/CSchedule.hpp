@@ -6,10 +6,9 @@ class CSchedule
 {
  public:
  CSchedule() = default;
- CSchedule(CEvent *Schedule[7][5],std::string Titel);
- friend std::ostream &operator<<(std::ostream &ostr, CSchedule &a);
- void reset(); //TODO
- //Noch eine Funktion für den Ausgabeoperator 
+ friend std::ostream &operator<<(std::ostream &ostr, CSchedule &Sched);
+ friend class CBookings;
+ void reset(); 
 
  private:
  CEvent *Schedule[7][5];
