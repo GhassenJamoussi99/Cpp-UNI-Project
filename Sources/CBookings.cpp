@@ -1,4 +1,3 @@
-
 #include <fstream>
 #include <regex>
 #include "CStudent.hpp"
@@ -252,8 +251,6 @@ void CBookings::Stundenplan(CStudent *std)
   cout << "|-----|------------------|------------------|------------------|------------------|------------------|" << endl;
   cout << "|     |        Mo        |        Di        |        Mi        |        Do        |        Fr        |" << endl;
   cout << "|-----|------------------|------------------|------------------|------------------|------------------|" << endl;
-
-  //string StudyName = std->getStudy();
 
   vector<vector<string>> Fach;
   vector<vector<string>> Dozent;

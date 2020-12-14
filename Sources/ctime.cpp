@@ -29,7 +29,25 @@ CTime operator+(CTime &T , int a)
     res.Hour   = T.Hour  + STD;
 
    return res;
-  }
+}
+
+CTime operator-(CTime &T, int a)
+{
+    CTime res;
+
+    res.Second = T.Second;
+    int STD = (T.Minute - a) / 60;
+    res.Minute = (T.Minute - a) % 60;
+    if (res.Minute < 0 && STD == 0)
+    {
+        res.Minute = 60 + res.Minute;
+        res.Hour = T.Hour - 1;
+    }
+    else
+        res.Hour = T.Hour - STD;
+
+    return res;
+}
 
 void CTime::print() const
 {
