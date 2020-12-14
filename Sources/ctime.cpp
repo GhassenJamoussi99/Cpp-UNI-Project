@@ -19,6 +19,18 @@ CTime::CTime()
     Second = ltm->tm_sec; //Seconds
 }
 
+CTime operator+(CTime &T , int a)
+{
+    CTime res;
+    
+    res.Second = T.Second;
+    int STD    = (T.Minute + a) / 60;
+    res.Minute = (T.Minute + a ) % 60;
+    res.Hour   = T.Hour  + STD;
+
+   return res;
+  }
+
 void CTime::print() const
 {
     if (Second != 0)

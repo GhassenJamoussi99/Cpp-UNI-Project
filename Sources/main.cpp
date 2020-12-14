@@ -7,12 +7,12 @@ using namespace std;
 int main()
 {
    CBookings Belegungen("belegungen.xml");
-   Belegungen(ofPersons); //TODO
-   Belegungen(ofStudents); //TODO
-   Belegungen(ofTeachers); //TODO
-   Belegungen(ofBookings); //TODO
-   Belegungen(ofScheduleOfStudents); //TODO
-   Belegungen(ofScheduleOfStudies); //TODO
+   Belegungen(ofPersons); 
+   Belegungen(ofStudents); 
+   Belegungen(ofTeachers); 
+   Belegungen(ofBookings); 
+   Belegungen(ofScheduleOfStudents); 
+   Belegungen(ofScheduleOfStudies); 
    
    return 0;
 }

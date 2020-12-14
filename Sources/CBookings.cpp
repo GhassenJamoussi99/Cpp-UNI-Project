@@ -1,8 +1,9 @@
-#include "CBookings.hpp"
+
 #include <fstream>
 #include <regex>
 #include "CStudent.hpp"
 #include "CBooking.hpp"
+#include "CBookings.hpp"
 #include <iostream>
 #include <string>
 #include <vector>

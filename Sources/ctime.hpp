@@ -10,6 +10,7 @@ class CTime
   CTime(int m_Hours, int m_Minutes, int m_Seconds = 0); //Konstruktor
   friend class CBlock;
   void setHour(int m_Hour){Hour = m_Hour;}
+  friend CTime operator+(CTime &T , int a);
   void setMinute(int m_Minute){Minute = m_Minute;}
   void setSecond(int m_Second){Second = m_Second;}
   ~CTime(){}; //Destruktor

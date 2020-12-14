@@ -9,7 +9,7 @@ class CBlock
  public:
    CBlock() = default;
    CBlock(short m_BlockNr,CTime m_Begin);
-   short getBlockNr();
+   short getBlockNr(){return BlockNr;}
    void print();
    friend class CEvent;
    void load(std::ifstream& File);
@@ -17,7 +17,9 @@ class CBlock
    
    ~CBlock()
    {
-      std::cout << "   Block Nr. " << BlockNr << " wird vernichtet."<<std::endl;
+      std::cout << "   Block Nr. " << BlockNr << " (";
+      CBlock::print();
+      std::cout << ") wird vernichtet."<<std::endl;
    }
 
  private:

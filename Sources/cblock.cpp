@@ -6,18 +6,13 @@ using namespace std;
 CBlock::CBlock(short m_BlockNr, CTime m_Begin) : BlockNr(m_BlockNr), Begin(m_Begin.Hour, m_Begin.Minute)
 {}
 
-short CBlock::getBlockNr()
-{
-  return BlockNr;
-}
-
 CTime CBlock::getEnd()
 {
-  int STD = (Begin.Minute + 30) / 60;
-  Begin.Minute = (Begin.Minute + 30) % 60;
-  Begin.Hour = Begin.Hour + 1 + STD;
+  CTime Ende;
 
-  return Begin;
+  Ende = Begin + 90;
+
+  return Ende;
 }
 
 void CBlock::print()
@@ -26,10 +21,11 @@ void CBlock::print()
   int MBegin = Begin.Minute;
 
   cout << setfill('0') << setw(2) << Begin.Hour << ":" << setw(2) << Begin.Minute << " - ";
+ 
+  CTime Ende;
+  Ende = getEnd();
 
-  getEnd();
-
-  cout << setfill('0') << setw(2) << Begin.Hour << ":" << setw(2) << Begin.Minute;
+  cout << setfill('0') << setw(2) << Ende.Hour << ":" << setw(2) << Ende.Minute;
 
   Begin.Hour = HBegin;
   Begin.Minute = MBegin;
