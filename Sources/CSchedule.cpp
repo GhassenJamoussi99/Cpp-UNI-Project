@@ -19,8 +19,7 @@ ostream &operator<<(ostream &ostr, CSchedule &Sched)
   // remove everything from CBookings related to the ouput of Schedules
   // and adapt them here in this function
   int count = 0;
-  ostr << Sched.Schedule[0][4]->getRoom();
-  /*for (int i = 0; i < 7; i++)
+  for (int i = 0; i < 7; i++)
   {
     for (int j = 0; j < 5; j++)
     {
@@ -70,7 +69,7 @@ ostream &operator<<(ostream &ostr, CSchedule &Sched)
   }
   
    ostr << endl;
- */
+ 
   return ostr;
 }
 

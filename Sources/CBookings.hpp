@@ -37,6 +37,7 @@ public:
   CBlock *findBlock(short blockNr);
   CSubject *findSubject(std::string m_Name);
   CStudent *findStudent(std::string m_Name);
+
   //Noch eine Funktion für den Ausgabeoperator
 
   void ClrMemory();
