@@ -249,8 +249,6 @@ void CBookings::Stundenplan(CStudent *std)
 {
   Schedule = new CSchedule(); //todelete later
   Schedule->Titel = std->getName();
-  CRoom *R;
-  CTeacher *T;
   Schedule->reset();
 
   for (int i = 0; i < Bookings.size(); i++)
@@ -262,22 +260,19 @@ void CBookings::Stundenplan(CStudent *std)
 
       for (int j = 0; j < a; j++)
       {
-        Schedule->Schedule[Bookings[i]->Subject->Events[j]->getBlock() - 1][Bookings[i]->Subject->Events[j]->getWeekDay()] = new CEvent();
+        Schedule->Schedule[Bookings[i]->Subject->Events[j]->getBlock() - 1][Bookings[i]->Subject->Events[j]->getWeekDay()] = Bookings[i]->Subject->Events[j];
         Schedule->Schedule[Bookings[i]->Subject->Events[j]->getBlock() - 1][Bookings[i]->Subject->Events[j]->getWeekDay()]->setFachName(Bookings[i]->Subject->Events[j]->getName());
-        //cout << Bookings[i]->Subject->Events[j]->getDozentName();
-        Schedule->Schedule[Bookings[i]->Subject->Events[j]->getBlock() - 1][Bookings[i]->Subject->Events[j]->getWeekDay()]->setDozentName(Bookings[i]->Subject->Events[j]->getDozentName());
-        //Schedule->Schedule[Bookings[i]->Subject->Events[j]->getBlock() - 1][Bookings[i]->Subject->Events[j]->getWeekDay()]->setDozentName(Bookings[i]->Subject->Events[j]->getDozentName());
-        //cout << "taw";
-        //cout <<Schedule->Schedule[Bookings[i]->Subject->Events[j]->getBlock() - 1][Bookings[i]->Subject->Events[j]->getWeekDay()]->getDozentName();
-        //cout << Bookings[i]->Subject->Events[j]->getDozentName();
-       Schedule->Schedule[Bookings[i]->Subject->Events[j]->getBlock() - 1][Bookings[i]->Subject->Events[j]->getWeekDay()]->setRaumName(Bookings[i]->Subject->Events[j]->getRoom());
-        //cout <<Schedule->Schedule[Bookings[i]->Subject->Events[j]->getBlock() - 1][Bookings[i]->Subject->Events[j]->getWeekDay()]->getRoom();
+        string T = Bookings[i]->Subject->Events[j]->getDozentName();
+        Schedule->Schedule[Bookings[i]->Subject->Events[j]->getBlock() - 1][Bookings[i]->Subject->Events[j]->getWeekDay()]->setDozentName(this->findTeacher(T));
+        string R = Bookings[i]->Subject->Events[j]->getRoom();
+        Schedule->Schedule[Bookings[i]->Subject->Events[j]->getBlock() - 1][Bookings[i]->Subject->Events[j]->getWeekDay()]->setRaumName(this->findRoom(R));
       }
     }
   }
 
   cout << *Schedule;
   cout << "\n";
+  delete Schedule;
 }
 
 void CBookings::StundenplanStd(CStudy *study)
@@ -295,16 +290,18 @@ void CBookings::StundenplanStd(CStudy *study)
 
       for (int j = 0; j < a; j++)
       {
-        Schedule->Schedule[Subjects[i]->Events[j]->getBlock() - 1][Subjects[i]->Events[j]->getWeekDay()] = new CEvent();
-
+        Schedule->Schedule[Subjects[i]->Events[j]->getBlock() - 1][Subjects[i]->Events[j]->getWeekDay()] = Bookings[i]->Subject->Events[j];
         Schedule->Schedule[Subjects[i]->Events[j]->getBlock() - 1][Subjects[i]->Events[j]->getWeekDay()]->setFachName(Subjects[i]->Events[j]->getName());
-        Schedule->Schedule[Subjects[i]->Events[j]->getBlock() - 1][Subjects[i]->Events[j]->getWeekDay()]->setDozentName(Subjects[i]->Events[j]->getDozentName());
-        Schedule->Schedule[Subjects[i]->Events[j]->getBlock() - 1][Subjects[i]->Events[j]->getWeekDay()]->setRaumName(Subjects[i]->Events[j]->getRoom());
+        string T = Bookings[i]->Subject->Events[j]->getDozentName();
+        Schedule->Schedule[Subjects[i]->Events[j]->getBlock() - 1][Subjects[i]->Events[j]->getWeekDay()]->setDozentName(this->findTeacher(T));
+        string R = Bookings[i]->Subject->Events[j]->getRoom();
+        Schedule->Schedule[Subjects[i]->Events[j]->getBlock() - 1][Subjects[i]->Events[j]->getWeekDay()]->setRaumName(this->findRoom(R));
       }
     }
   }
   cout << *Schedule;
   cout << "\n";
+  delete Schedule;
 }
 
 void CBookings::printSchedOfStudents()

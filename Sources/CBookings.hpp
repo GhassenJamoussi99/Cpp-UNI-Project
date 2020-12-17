@@ -38,8 +38,6 @@ public:
   CSubject *findSubject(std::string m_Name);
   CStudent *findStudent(std::string m_Name);
 
-  //Noch eine Funktion für den Ausgabeoperator
-
   void ClrMemory();
   void printBookings();
   void printPersons();
@@ -47,7 +45,6 @@ public:
   void printTeachers();
   void Stundenplan(CStudent *std);
   void StundenplanStd(CStudy *study);
-  //void Stundenplan(CStudent std);
   void printSchedOfStudents();
   void printSchedOfStudies();
   ~CBookings()
