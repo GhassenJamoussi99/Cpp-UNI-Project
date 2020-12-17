@@ -25,7 +25,7 @@ public:
   CDate getBirthday() { return this->Birthday; }
   std::string getStudy(){ return Study->getStudy();}
   unsigned int getMatrNr() { return this->MatriculationNr; }
-  virtual void print(); //..
+  virtual void print(); 
   ~CStudent()
   {
     std::cout << "   Student*in " << Name << " wird vernichtet." << std::endl;

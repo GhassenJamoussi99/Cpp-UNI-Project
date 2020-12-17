@@ -13,9 +13,6 @@ class CSchedule
  private:
  CEvent *Schedule[7][5];
  std::string Titel;
-
-
-
 };
 
 

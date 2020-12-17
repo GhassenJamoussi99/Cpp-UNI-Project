@@ -31,14 +31,8 @@ public:
     int getBlock(){return Block->BlockNr;}
     int getWeekDay(){return WeekDay;}
     void setFachName(std::string str){ Name = str;}
-    void setDozentName(CPerson *D)
-    {
-         Teacher = D;
-    }
-    void setRaumName(CRoom *R)
-    { 
-         Room = R;
-    }
+    void setDozentName(CPerson *D){Teacher = D;}
+    void setRaumName(CRoom *R){Room = R;}
     std::string getRoom(){return Room->getName();}
     std::string getName(){return Name;}
     std::string  getDozentName() {return Teacher->getName();}
