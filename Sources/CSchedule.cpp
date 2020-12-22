@@ -10,8 +10,10 @@ ostream &operator<<(ostream &ostr, CSchedule &Sched)
   ostr << "|-----|------------------|------------------|------------------|------------------|------------------|\n";
   ostr << "|     |        Mo        |        Di        |        Mi        |        Do        |        Fr        |\n";
   ostr << "|-----|------------------|------------------|------------------|------------------|------------------|\n";
+
   string empty = "";
   int count = 0;
+
   for (int i = 0; i < 7; i++)
   {
     for (int j = 0; j < 5; j++)
@@ -28,6 +30,7 @@ ostream &operator<<(ostream &ostr, CSchedule &Sched)
         cout << empty << setfill(' ') << setw(19) << "|";
       }
     }
+
     ostr << "\n";
     for (int j = 0; j < 5; j++)
     {
@@ -44,6 +47,7 @@ ostream &operator<<(ostream &ostr, CSchedule &Sched)
         cout << empty << setfill(' ') << setw(19) << "|";
       }
     }
+    
     ostr << "\n";
     for (int j = 0; j < 5; j++)
     {

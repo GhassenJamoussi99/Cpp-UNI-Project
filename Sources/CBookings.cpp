@@ -247,7 +247,7 @@ void CBookings::printTeachers()
 
 void CBookings::Stundenplan(CStudent *std)
 {
-  Schedule = new CSchedule(); //todelete later
+  Schedule = new CSchedule();
   Schedule->Titel = std->getName();
   Schedule->reset();
 
@@ -261,11 +261,6 @@ void CBookings::Stundenplan(CStudent *std)
       for (int j = 0; j < a; j++)
       {
         Schedule->Schedule[Bookings[i]->Subject->Events[j]->getBlock() - 1][Bookings[i]->Subject->Events[j]->getWeekDay()] = Bookings[i]->Subject->Events[j];
-        Schedule->Schedule[Bookings[i]->Subject->Events[j]->getBlock() - 1][Bookings[i]->Subject->Events[j]->getWeekDay()]->setFachName(Bookings[i]->Subject->Events[j]->getName());
-        string T = Bookings[i]->Subject->Events[j]->getDozentName();
-        Schedule->Schedule[Bookings[i]->Subject->Events[j]->getBlock() - 1][Bookings[i]->Subject->Events[j]->getWeekDay()]->setDozentName(this->findTeacher(T));
-        string R = Bookings[i]->Subject->Events[j]->getRoom();
-        Schedule->Schedule[Bookings[i]->Subject->Events[j]->getBlock() - 1][Bookings[i]->Subject->Events[j]->getWeekDay()]->setRaumName(this->findRoom(R));
       }
     }
   }
@@ -290,12 +285,7 @@ void CBookings::StundenplanStd(CStudy *study)
 
       for (int j = 0; j < a; j++)
       {
-        Schedule->Schedule[Subjects[i]->Events[j]->getBlock() - 1][Subjects[i]->Events[j]->getWeekDay()] = Bookings[i]->Subject->Events[j];
-        Schedule->Schedule[Subjects[i]->Events[j]->getBlock() - 1][Subjects[i]->Events[j]->getWeekDay()]->setFachName(Subjects[i]->Events[j]->getName());
-        string T = Bookings[i]->Subject->Events[j]->getDozentName();
-        Schedule->Schedule[Subjects[i]->Events[j]->getBlock() - 1][Subjects[i]->Events[j]->getWeekDay()]->setDozentName(this->findTeacher(T));
-        string R = Bookings[i]->Subject->Events[j]->getRoom();
-        Schedule->Schedule[Subjects[i]->Events[j]->getBlock() - 1][Subjects[i]->Events[j]->getWeekDay()]->setRaumName(this->findRoom(R));
+        Schedule->Schedule[Subjects[i]->Events[j]->getBlock() - 1][Subjects[i]->Events[j]->getWeekDay()] = Subjects[i]->Events[j];
       }
     }
   }
