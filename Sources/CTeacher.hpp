@@ -13,7 +13,7 @@ public:
                  int m_PersonalNr);
         unsigned int getPersonalNr() {return PersonalNr;}
         unsigned int getMatrNr() { return 0;}
-        virtual void print();  //..
+        virtual void print();  
         void load(std::ifstream &File);
         ~CTeacher()
         {
