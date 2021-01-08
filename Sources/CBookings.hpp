@@ -8,6 +8,7 @@
 #include "CTeacher.hpp"
 #include "CTutor.hpp"
 #include "CSchedule.hpp"
+#include "CList.hpp"
 
 enum Data
 {
@@ -56,7 +57,7 @@ private:
   std::vector<CBlock *> Blocks;
   std::vector<CRoom *> Rooms;
   std::vector<CStudy *> Studies;
-  std::vector<CPerson *> Persons;
+  CList <CPerson *> Persons;
   std::vector<CSubject *> Subjects;
   std::vector<CBooking *> Bookings;
   CSchedule *Schedule;

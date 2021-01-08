@@ -12,7 +12,7 @@ CDate::CDate()
    time_t now = time(0);   //Aktuelles Datum / Uhrzeit basierend auf dem aktuellen System
 
    tm *ltm = localtime(&now); //struct ltm
-   //Aktuelles Datum
+    //Aktuelles Datum
    Day = ltm->tm_mday;
    Month = 1 + ltm->tm_mon;
    Year = 1900 + ltm->tm_year;

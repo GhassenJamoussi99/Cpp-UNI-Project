@@ -7,6 +7,7 @@
 #include "CStudent.hpp"
 #include "CTime.hpp"
 
+
 static unsigned TMP = 0;
 
 class CBookings;

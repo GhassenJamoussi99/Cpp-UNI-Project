@@ -141,11 +141,11 @@ void CBookings::operator()(Data D)
 
 CPerson *CBookings::findTeacher(string m_Name)
 {
-  for (int i = 0; i < Persons.size(); i++)
+  for (CList<CPerson *>::iterator it = Persons.begin(); it != Persons.end(); it++)
   {
-    if (Persons[i]->getName() == m_Name)
+    if ((*it)->getName() == m_Name)
     {
-      return Persons[i];
+      return (*it);
     }
   }
   return NULL;
@@ -189,9 +189,10 @@ CSubject *CBookings::findSubject(std::string m_Name)
 
 CStudent *CBookings::findStudent(std::string m_Name)
 {
-  for (int i = 0; i < Persons.size(); i++)
+
+  for (CList<CPerson *>::iterator it = Persons.begin(); it != Persons.end(); it++)
   {
-    CStudent *Student = dynamic_cast<CStudent *>(Persons[i]);
+    CStudent *Student = dynamic_cast<CStudent *>((*it));
     if (Student)
     {
       if (Student->getName() == m_Name)
@@ -209,9 +210,9 @@ void CBookings::printPersons()
        << endl;
   cout << "Personen : " << endl;
 
-  for (int i = 0; i < Persons.size(); i++)
+  for (CList<CPerson *>::iterator it = Persons.begin(); it != Persons.end(); it++)
   {
-    Persons[i]->print();
+    (*it)->print();
   }
 
   cout << endl;
@@ -221,11 +222,11 @@ void CBookings::printStudents()
 {
   cout << "Studenten: " << endl;
 
-  for (int i = 0; i < Persons.size(); i++)
+  for (CList<CPerson*>::iterator it = Persons.begin(); it != Persons.end() ; it++)
   {
-    CStudent *Student = dynamic_cast<CStudent *>(Persons[i]);
+    CStudent *Student = dynamic_cast<CStudent *>((*it));
     if (Student)
-      Persons[i]->print();
+      (*it)->print();
   }
 
   cout << endl;
@@ -235,11 +236,11 @@ void CBookings::printTeachers()
 {
   cout << "Dozenten: " << endl;
 
-  for (int i = 0; i < Persons.size(); i++)
+  for (CList<CPerson*>::iterator it = Persons.begin(); it != Persons.end() ; it++)
   {
-    CTeacher *Dozent = dynamic_cast<CTeacher *>(Persons[i]);
+    CTeacher *Dozent = dynamic_cast<CTeacher *>((*it));
     if (Dozent)
-      Persons[i]->print();
+      (*it)->print();
   }
 
   cout << endl;
@@ -298,9 +299,9 @@ void CBookings::printSchedOfStudents()
 {
   cout << "Stundenplaene der Studenten:\n"
        << endl;
-  for (int i = 0; i < Persons.size(); i++)
+  for (CList<CPerson*>::iterator it = Persons.begin(); it != Persons.end() ; it++)
   {
-    CStudent *Student = dynamic_cast<CStudent *>(Persons[i]);
+    CStudent *Student = dynamic_cast<CStudent *>((*it));
     if (Student)
     {
       Stundenplan(Student);
@@ -354,9 +355,9 @@ void CBookings::ClrMemory()
   cout << "Studiengaenge freigeben ok" << endl;
 
   cout << "Personen freigeben ..." << endl;
-  for (int i = 0; i < Persons.size(); i++)
+  for (CList<CPerson*>::iterator it = Persons.begin(); it != Persons.end() ; it++)
   {
-    delete Persons[i];
+    delete *it;
   }
   cout << "Personen freigeben ok" << endl;
 
