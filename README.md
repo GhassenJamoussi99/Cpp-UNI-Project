@@ -18,7 +18,10 @@ In den Übungsaufgaben soll ein Programm entstehen, dass die Belegungen von Stud
 
 ## Verwendung:
 
-Laden Sie das gesamte Projekt herunter und führen Sie den Code mit diesem Befehl aus: 
+Laden Sie das gesamte Projekt herunter und führen Sie den Code mit diesen Befehlen aus: 
 
- `g++ *.cpp -o prog`
+  `cd Project` 
+
+  `g++ *.cpp -o prog` or `./main`
+  
 
