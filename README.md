@@ -20,14 +20,14 @@ In den Übungsaufgaben soll ein Programm entstehen, dass die Belegungen von Stud
 
 Laden Sie das gesamte Projekt herunter und führen Sie den Code mit diesen Befehlen aus: 
 
- 1.
   `cd Project` 
 
-  `g++ *.cpp -o prog` 
+  `g++ *.cpp -o main` 
    
   `./main`
 
- 2. 
+Da ich es bereits kompiliert habe, können Sie den Hauptbefehl direkt ausführen :
+
   `cd Project` 
 
   `./main` 
