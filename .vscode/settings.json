@@ -50,6 +50,7 @@
         "ratio": "cpp",
         "regex": "cpp"
     },
+    
     "C_Cpp.dimInactiveRegions": false,
     "git.ignoreLimitWarning": true
 }
