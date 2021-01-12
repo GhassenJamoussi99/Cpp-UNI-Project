@@ -19,6 +19,7 @@ In den Übungsaufgaben soll ein Programm entstehen, dass die Belegungen von Stud
 ## Verwendung:
 
 Laden Sie das gesamte Projekt herunter und führen Sie den Code mit diesen Befehlen aus: 
+
  1.
   `cd Project` 
 
