@@ -1,6 +1,6 @@
 #ifndef CBLOCK_H
 #define CBLOCK_H
-#include "ctime.hpp"
+#include "CTime.hpp"
 #include <iostream>
 #include <fstream>
 

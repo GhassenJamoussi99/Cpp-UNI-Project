@@ -3,6 +3,7 @@
 
 #include <cassert>
 
+
 template <class T>
 class CList
 {
