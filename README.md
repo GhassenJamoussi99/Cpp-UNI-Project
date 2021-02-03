@@ -20,7 +20,7 @@ In den Übungsaufgaben soll ein Programm entstehen, dass die Belegungen von Stud
 
 Laden Sie das gesamte Projekt unter Linux herunter und führen Sie den Code mit diesen Befehlen aus: 
 
-  `make` 
+  `cd Project && make` 
   
   `./project`
 
