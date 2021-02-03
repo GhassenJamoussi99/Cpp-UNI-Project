@@ -18,13 +18,11 @@ In den Übungsaufgaben soll ein Programm entstehen, dass die Belegungen von Stud
 
 ## Verwendung:
 
-Laden Sie das gesamte Projekt herunter und führen Sie den Code mit diesen Befehlen aus: 
+Laden Sie das gesamte Projekt unter Linux herunter und führen Sie den Code mit diesen Befehlen aus: 
 
-  `cd Project` 
-
-  `g++ *.cpp -o main` 
-   
-  `./main`
+  `make` 
+  
+  `./project`
 
 
 
