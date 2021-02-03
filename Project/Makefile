@@ -1,14 +1,13 @@
-# Compiler settings - Can be customized.
+# Compiler settings - Customized.
 CC = g++
 CXXFLAGS = -std=c++11 -Wall
 
-# Makefile settings - Can be customized.
+# Makefile settings - Customized.
 APPNAME = project
 EXT = .cpp
 SRCDIR = /home/ghassen/git/Cpp-UNI-Project/Project
 OBJDIR = obj
 
-############## Do not change anything from here downwards! #############
 SRC = $(wildcard $(SRCDIR)/*$(EXT))
 OBJ = $(SRC:$(SRCDIR)/%$(EXT)=$(OBJDIR)/%.o)
 DEP = $(OBJ:$(OBJDIR)/%.o=%.d)
@@ -37,7 +36,6 @@ $(APPNAME): $(OBJ)
 $(OBJDIR)/%.o: $(SRCDIR)/%$(EXT)
 	$(CC) $(CXXFLAGS) -o $@ -c $<
 
-################### Cleaning rules for Unix-based OS ###################
 # Cleans complete project
 .PHONY: clean
 clean:
@@ -47,12 +45,6 @@ clean:
 .PHONY: cleandep
 cleandep:
 	$(RM) $(DEP)
-
-#################### Cleaning rules for Windows OS #####################
-# Cleans complete project
-.PHONY: cleanw
-cleanw:
-	$(DEL) $(WDELOBJ) $(DEP) $(APPNAME)$(EXE)
 
 # Cleans only all files with the extension .d
 .PHONY: cleandepw
