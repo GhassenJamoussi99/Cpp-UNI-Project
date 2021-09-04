@@ -4,8 +4,6 @@ Um zu üben, was ich in der Programmiersprache C++ gelernt habe, habe ich an die
 
 In den Übungsaufgaben soll ein Programm entstehen, dass die Belegungen von Studenten und Stundenpläne sowie Belegungslisten entsprechend einer XML Datei ausgeben kann.
 
-## Über:
-
 ## Erledigt von:
 
  Ghassen Jamoussi
